@@ -17,16 +17,27 @@ EOF
 MODE="${1:-}"
 TIER="${2:-}"
 
+############################################################################
+#
+# Base problem size memory is based on size of the MALL on MI300A, which
+# is 256 GiB; i.e., 256 * 1024 * 1024 = 268435456 bytes. For SPX mode, we
+# start with 1/8 this size (1 MPI rank per APU on a node), which is 
+# 33554432 bytes. For CPX mode, an APU is partitioned into 6 XCDs, so we
+# start with 1/6 * 1/8 this size # (6 MPI ranks per APU on a node), which is
+# 5592405 bytes.
+#
+############################################################################
+
 case "${MODE,,}" in
   spx)
     BASE_OUTDIR="RPBenchmark"
-    BASEMEM=134217728
+    BASEMEM=33554432
     ALLOC_ARGS="-xN1 -t 45"
     RUN_ARGS="-xN1 -n4"
     ;;
   cpx)
     BASE_OUTDIR="RPBenchmark"
-    BASEMEM=22369621
+    BASEMEM=5592405
     ALLOC_ARGS="-xN1 --amd-gpumode=CPX -t 45"
     RUN_ARGS="-xN1 -n24 -g 1"
     ;;
@@ -67,7 +78,7 @@ export OUTDIR BASEMEM RUN_ARGS TIER
 flux alloc ${ALLOC_ARGS} bash -lc '
   set -euo pipefail
 
-  FACTORS=(1 2 4 8 10 12 16 20)
+  FACTORS=(1 2 4 8 16 32 64)
 
   case "${TIER,,}" in
     tier1)
