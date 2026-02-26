@@ -7,7 +7,7 @@
 [comment]: # (# SPDX-License-Identifier: BSD-3-Clause)
 [comment]: # (#################################################################)
 
-# <img src="/tpl/RAJA/share/raja/logo/RAJA_LOGO_Color.png?raw=true" width="128" valign="middle" alt="RAJA"/>
+# <img src="share/raja/logo/RAJA_LOGO_Color.png?raw=true" width="128" valign="middle" alt="RAJA"/>
 
 RAJA Performance Suite Benchmarking
 ====================================
@@ -24,26 +24,11 @@ parallel programming models, such as OpenMP and CUDA, directly.
 This project is used to maintain scripts and data associated with RAJA
 Performance Suite benchmarking activities.
 
-User Documentation
+Documentation
 -------------------
 
-The RAJA Performance Suite User Guide is the best place to start learning 
-about it -- how to build it, how to run it, etc. 
-
-The RAJA Performance Suite Developer Guide contains information about 
-how the source code is structured, how to contribute to it, etc.
-
-The most recent version of these documents (develop branch) is available here: https://rajaperf.readthedocs.io
-
-To access docs for other branches or version versions: https://readthedocs.org/projects/rajaperf/
-
-Please see the [RAJA] project for more information about RAJA.
-
-To cite RAJA Performance Suite, please use the following references:
-
-* RAJA Performance Suite. https://github.com/LLNL/RAJAPerf
-
-* Olga Pearce, Jason Burmark, Rich Hornung, Befikir Bogale, Ian Lumsden, Michael McKinsey, Dewi Yokelson, David Boehme, Stephanie Brink, Michela Taufer, Tom Scogland, "RAJA Performance Suite: Performance Portability Analysis with Caliper and Thicket", in 2024 IEEE/ACM International Workshop on Performance, Portability and Productivity in HPC (P3HPC) at the International Conference on High Performance Computing, Network, Storage, and Analysis (SC-W 2024). [Download here](https://dl.acm.org/doi/pdf/10.1109/SCW63240.2024.00162)
+Please see the [RAJA] project for information about RAJA and the 
+[RAJA Performance Suite] project for information about the Performance Suite.
 
 
 Communicate with Us
@@ -92,24 +77,8 @@ text in the license header:
 
     SPDX-License-Identifier: (BSD-3-Clause)
 
-External Packages
-------------------
-
-The RAJA Performance Suite has some external dependencies, which are included
-as Git submodules. These packages are covered by various permissive licenses.
-A summary listing follows. See the license included with each package for
-full details.
-
-PackageName: RAJA  
-PackageHomePage: http://github.com/LLNL/RAJA/   
-PackageLicenseDeclared: BSD-3-Clause
-
-PackageName: BLT  
-PackageHomePage: https://github.com/LLNL/blt/  
-PackageLicenseDeclared: BSD-3-Clause
-
 * * *
 
-[RAJA]: https://github.com/LLNL/RAJA
-[BLT]: https://github.com/LLNL/blt
+[RAJA Performance Suite]: https://github.com/llnl/RAJAPerf
+[RAJA]: https://github.com/llnl/RAJA
 
