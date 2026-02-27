@@ -19,25 +19,25 @@ TIER="${2:-}"
 
 ############################################################################
 #
-# Base problem size memory is based on size of the MALL on MI300A, which
-# is 256 GiB; i.e., 256 * 1024 * 1024 = 268435456 bytes. For SPX mode, we
-# start with 1/16 this size (1 MPI rank per APU on a node), which is 
-# 16777216 bytes. For CPX mode, an APU is partitioned into 6 XCDs, so we
-# start with 1/6 * 1/16 this size # (6 MPI ranks per APU on a node), which is
-# 2796202 bytes.
+# Range of problem sizes is based on the size of the MALL on MI300A, which
+# is 256 GiB (256 * 1024 * 1024 = 268435456 bytes). For SPX mode, we
+# start with 1/512 this size (1 MPI rank per APU on a node), which is 
+# 524288 bytes. For CPX mode, an APU is partitioned into 6 XCDs, so we
+# start with 1/6 * SPX mode size (6 MPI ranks per APU on a node), which is
+# 87381 bytes.
 #
 ############################################################################
 
 case "${MODE,,}" in
   spx)
     BASE_OUTDIR="RPBenchmark"
-    BASEMEM=16777216
+    BASEMEM=524288
     ALLOC_ARGS="-xN1 -t 45"
     RUN_ARGS="-xN1 -n4"
     ;;
   cpx)
     BASE_OUTDIR="RPBenchmark"
-    BASEMEM=2796202
+    BASEMEM=87381
     ALLOC_ARGS="-xN1 --amd-gpumode=CPX -t 45"
     RUN_ARGS="-xN1 -n24 -g 1"
     ;;
@@ -66,7 +66,7 @@ case "${TIER,,}" in
     ;;
 esac
 
-OUTDIR="${BASE_OUTDIR}_${TIER}-${MODE^^}-small"
+OUTDIR="${BASE_OUTDIR}_${TIER}-${MODE^^}-range"
 
 if [[ ! -x ./bin/raja-perf.exe ]]; then
   echo "Error: ./bin/raja-perf.exe not found or not executable."
@@ -78,7 +78,7 @@ export OUTDIR BASEMEM RUN_ARGS TIER
 flux alloc ${ALLOC_ARGS} bash -lc '
   set -euo pipefail
 
-  FACTORS=(1 2 4 8 16 32 64 128 256)
+  FACTORS=(1 4 16 32 64 128 256 512 1024 1536)
 
   case "${TIER,,}" in
     tier1)
@@ -89,7 +89,6 @@ flux alloc ${ALLOC_ARGS} bash -lc '
                "MASS3DEA"
                "MASS3DPA_ATOMIC"
                "MASSVEC3DPA"
-               "MATVEC_3D_STENCIL"
                "NODAL_ACCUMULATION_3D"
                "VOL3D")
       ;;
@@ -99,6 +98,7 @@ flux alloc ${ALLOC_ARGS} bash -lc '
                "INTSC_HEXHEX"
                "LTIMES"
                "MASS3DPA"
+               "MATVEC_3D_STENCIL"
                "MULTI_REDUCEC"
                "REDUCE_STRUCT"
                "INDEXLIST_3LOOP"
