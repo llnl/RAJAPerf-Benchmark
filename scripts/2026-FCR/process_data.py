@@ -281,20 +281,27 @@ def find_saturation_point(x, y_smooth, eps: float = 0.1, w: int = 3):
     """
     Returns the index of the x value at the first saturation point,
     or None if none is found. 
-    First, define y_end = y_smooth[n - 1], where n is the length of y_smooth.
+    First, set y_end = y_smooth[n - 1], where n is the length of y_smooth.
     Then, search for the first run of y_smooth values of length >= w
     where abs( (y_smooth[i] - y_end) / y_end ) <= eps. If such a run is
-    found, return the index of the first y_smooth value in the run.
-    Second, if the first attempt does not find such a run, set
-    y_max = max(y_smooth) and try to find the first run of y_smooth values
-    of length >= w where y_smooth >= (1 - eps) * y_max. If such a run is
-    found, return the index of the first y_smooth value in the run.
+    found, one possible saturation point is the index of the first y_smooth
+    value in the run.
+    Second, set y_max = max(y_smooth). Then, search for the first run of
+    y_smooth values of length >= w where y_smooth >= (1 - eps) * y_max. If
+    such a run is found, another possible saturation point is the index of the
+    first y_smooth value in the run.
+    Third, find the first y_smooth value where
+    abs( (y_smooth[i] - y_end) / y_end ) <= eps. If such a value is found,
+    a third possible saturation point is the index of the y_smooth value.
+    Finally, return the minimum of each saturation point that is found among
+    the three possibilities described above.
     """
 
     if len(x) < w or len(y_smooth) < w:
         return None
 
     n = len(y_smooth)
+    sat_idx = None
 
 # =========================
 # First attempt to find index of saturation point
@@ -310,7 +317,8 @@ def find_saturation_point(x, y_smooth, eps: float = 0.1, w: int = 3):
                 run_start_idx = i
             run_length += 1
             if run_length >= w:
-                return run_start_idx
+                sat_idx = run_start_idx
+                break
         else:
             run_length = 0
             run_start_idx = None
@@ -329,12 +337,32 @@ def find_saturation_point(x, y_smooth, eps: float = 0.1, w: int = 3):
                 run_start_idx = i
             run_length += 1
             if run_length >= w:
-                return run_start_idx
+                if sat_idx is None: 
+                    sat_idx = run_start_idx
+                else:
+                    sat_idx = min(sat_idx, run_start_idx)
         else:
             run_length = 0
-            run_start_idx = None 
+            run_start_idx = None
 
-    return None
+# =========================
+# Third attempt to find index of saturation point
+# =========================
+    y_end = y_smooth[n - 1]
+    threshold = eps
+    run_start_idx = None
+
+    for i in range(n):
+        if abs( (y_smooth[i] - y_end) / y_end ) <= threshold:
+            if sat_idx is None:
+                sat_idx = i
+            else:
+                sat_idx = min(sat_idx, i)
+        else:
+            run_length = 0
+            run_start_idx = None
+
+    return sat_idx
 
 # =========================
 # Find the saturation point for single kernel
@@ -507,7 +535,7 @@ def plot_kernel(
             sat_idx = subdf[SAT_IDX_COL].astype(int).values[0]
 
             sat_x = x[sat_idx]
-            sat_y = y_smooth[sat_idx]
+            sat_y = y[sat_idx]
 
             plt.plot(
                 [sat_x], [sat_y], "-",
