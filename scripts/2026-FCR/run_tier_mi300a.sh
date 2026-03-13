@@ -43,7 +43,7 @@ case "${MODE,,}" in
     ;;
   cpx)
     BASE_OUTDIR="RPBenchmark"
-    BASEMEM=87381
+    BASEMEM=50000
     ALLOC_ARGS="-xN1 --amd-gpumode=CPX -t 45"
     RUN_ARGS="-xN1 -n24 -g 1"
     ;;
@@ -79,12 +79,10 @@ if [[ ! -x ./bin/raja-perf.exe ]]; then
   exit 1
 fi
 
-export OUTDIR BASEMEM RUN_ARGS TIER
+export OUTDIR BASEMEM RUN_ARGS MODE TIER
 
 flux alloc ${ALLOC_ARGS} bash -lc '
   set -euo pipefail
-
-  FACTORS=(1 4 16 32 64 128 256 512 1024 1500 2048 3000 4000)
 
   case "${TIER,,}" in
     tier1)
@@ -113,6 +111,15 @@ flux alloc ${ALLOC_ARGS} bash -lc '
     *)
       echo "Error: unknown kernel set: ${TIER}"
       exit 2
+      ;;
+  esac
+
+  case "${MODE,,}" in
+    spx)
+        FACTORS=(1 4 16 32 64 128 256 512 1024 1500 2048 3000 4000)
+      ;;
+    cpx)
+        FACTORS=(1 4 16 32 64 128 256 512 1024 1500)
       ;;
   esac
 
