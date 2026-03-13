@@ -39,13 +39,13 @@ TIER="${2:-}"
 
 case "${MODE,,}" in
   spx)
-    BASE_OUTDIR="RPBenchmark"
+    BASE_OUTDIR="RPBenchmark_MI300A"
     BASEMEM=100000
     ALLOC_ARGS="-xN1 -t 45"
     RUN_ARGS="-xN1 -n4"
     ;;
   cpx)
-    BASE_OUTDIR="RPBenchmark"
+    BASE_OUTDIR="RPBenchmark_MI300A"
     BASEMEM=50000
     ALLOC_ARGS="-xN1 --amd-gpumode=CPX -t 45"
     RUN_ARGS="-xN1 -n24 -g 1"
@@ -75,7 +75,7 @@ case "${TIER,,}" in
     ;;
 esac
 
-OUTDIR="${BASE_OUTDIR}_${TIER}-MI300A-${MODE^^}"
+OUTDIR="${BASE_OUTDIR}_${TIER}-${MODE^^}"
 
 if [[ ! -x ./bin/raja-perf.exe ]]; then
   echo "Error: ./bin/raja-perf.exe not found or not executable."
