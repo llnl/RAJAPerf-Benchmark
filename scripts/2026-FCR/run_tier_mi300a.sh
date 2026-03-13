@@ -30,7 +30,10 @@ TIER="${2:-}"
 # to use ~400MB of allocated memory, which is about 1.5 times MALL size on
 # the MI300A. The MALL is 256 MB (256 * 1024 * 1024 = 268435456 bytes).
 #
-# For CPX mode (run with 6 MPI ranks per APU on a node), we ...
+# For CPX mode (run with 6 MPI ranks per APU on a node), we choose the
+# smallest problem to use ~50,000 bytes of allocated memory and the largest
+# problem to use ~75MB of allocated memory, which is about less than 1/3
+# the MALL size.
 #
 ############################################################################
 
