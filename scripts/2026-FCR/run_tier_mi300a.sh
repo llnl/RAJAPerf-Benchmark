@@ -19,19 +19,25 @@ TIER="${2:-}"
 
 ############################################################################
 #
-# Range of problem sizes is based on the size of the MALL on MI300A, which
-# is 256 GiB (256 * 1024 * 1024 = 268435456 bytes). For SPX mode, we
-# start with 1/512 this size (1 MPI rank per APU on a node), which is 
-# 524288 bytes. For CPX mode, an APU is partitioned into 6 XCDs, so we
-# start with 1/6 * SPX mode size (6 MPI ranks per APU on a node), which is
-# 87381 bytes.
+# We are interested in finding the problem size at which each kernel
+# saturates the compute resources on the AMD MI300A architecture. We do this
+# by running a sequence of problem sizes for each kernel such that the 
+# saturation point is evident on the associated throughput curve for each
+# kernel.
+#
+# For SPX mode (run with 1 MPI rank per APU on a node), we choose the smallest
+# problem to use ~100,000 bytes of allocated memory and the largest problem
+# to use ~400MB of allocated memory, which is about 1.5 times MALL size on
+# the MI300A. The MALL is 256 MB (256 * 1024 * 1024 = 268435456 bytes).
+#
+# For CPX mode (run with 6 MPI ranks per APU on a node), we ...
 #
 ############################################################################
 
 case "${MODE,,}" in
   spx)
     BASE_OUTDIR="RPBenchmark"
-    BASEMEM=524288
+    BASEMEM=100000
     ALLOC_ARGS="-xN1 -t 45"
     RUN_ARGS="-xN1 -n4"
     ;;
@@ -66,7 +72,7 @@ case "${TIER,,}" in
     ;;
 esac
 
-OUTDIR="${BASE_OUTDIR}_${TIER}-${MODE^^}-range"
+OUTDIR="${BASE_OUTDIR}_${TIER}-${MODE^^}"
 
 if [[ ! -x ./bin/raja-perf.exe ]]; then
   echo "Error: ./bin/raja-perf.exe not found or not executable."
@@ -78,27 +84,27 @@ export OUTDIR BASEMEM RUN_ARGS TIER
 flux alloc ${ALLOC_ARGS} bash -lc '
   set -euo pipefail
 
-  FACTORS=(1 4 16 32 64 128 256 512 1024 1536)
+  FACTORS=(1 4 16 32 64 128 256 512 1024 1500 2048 3000 4000)
 
   case "${TIER,,}" in
     tier1)
-      KERNELS=("DIFFUSION3DPA"
-               "EDGE3D"
-               "ENERGY"
-               "INTSC_HEXRECT"
-               "MASS3DEA"
-               "MASS3DPA_ATOMIC"
-               "MASSVEC3DPA"
-               "NODAL_ACCUMULATION_3D"
-               "VOL3D")
-      ;;
+       KERNELS=("DIFFUSION3DPA"
+                "EDGE3D"
+                "ENERGY"
+                "FEMSWEEP"
+                "INTSC_HEXRECT"
+                "MASS3DEA"
+                "MASS3DPA_ATOMIC"
+                "MASSVEC3DPA"
+                "NODAL_ACCUMULATION_3D"
+                "VOL3D")
+     ;;
     tier2)
       KERNELS=("CONVECTION3DPA"
                "DEL_DOT_VEC_2D"
                "INTSC_HEXHEX"
                "LTIMES"
                "MASS3DPA"
-               "MATVEC_3D_STENCIL"
                "MULTI_REDUCEC"
                "REDUCE_STRUCT"
                "INDEXLIST_3LOOP"
