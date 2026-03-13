@@ -75,7 +75,7 @@ case "${TIER,,}" in
     ;;
 esac
 
-OUTDIR="${BASE_OUTDIR}_${TIER}-${MODE^^}"
+OUTDIR="${BASE_OUTDIR}_${TIER}-MI300A-${MODE^^}"
 
 if [[ ! -x ./bin/raja-perf.exe ]]; then
   echo "Error: ./bin/raja-perf.exe not found or not executable."
