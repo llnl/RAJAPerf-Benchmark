@@ -24,7 +24,7 @@ TIER="${1:-}"
 #
 # We run with 1 MPI rank per GPU on a node. We choose the smallest
 # problem to use ~50,000 bytes of allocated memory and the largest problem
-# to use ~75MB of allocated memory, which is about 1.5 times the L2-cache
+# to use ~150MB of allocated memory, which is about 3 times the L2-cache
 # size on the H100. The L2-cache is 50 MB (50 * 1024 * 1024 = 52428800 bytes).
 #
 ############################################################################
@@ -90,7 +90,7 @@ salloc ${ALLOC_ARGS} bash -lc '
       ;;
   esac
 
-  FACTORS=(1 4 16 32 64 128 256 512 1024 1500)
+  FACTORS=(1 4 16 32 64 128 256 512 1024 1500 3000)
 
   for KERNEL_NAME in "${KERNELS[@]}"; do
     echo "Running kernel: ${KERNEL_NAME}"
