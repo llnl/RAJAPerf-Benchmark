@@ -537,7 +537,7 @@ def plot_kernel(
             sat_idx = subdf[SAT_IDX_COL].astype(int).values[0]
 
             sat_x = x[sat_idx]
-            sat_y = y[sat_idx]
+            sat_y = y_smooth[sat_idx]
 
             plt.plot(
                 [sat_x], [sat_y], "-",
