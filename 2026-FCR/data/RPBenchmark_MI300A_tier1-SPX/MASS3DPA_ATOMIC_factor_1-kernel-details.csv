@@ -1,0 +1,3 @@
+Kernels run on 4 MPI ranks
+Kernel                 ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
+Apps_MASS3DPA_ATOMIC   ,            1331 ,      50 ,              1125 ,           1 ,            123040 ,       233375 ,              112392 ,           101744 ,                   0 ,                         0 ,                           10648 ,                112392 , ConsistentPerVariantTuning   , O(N)                   

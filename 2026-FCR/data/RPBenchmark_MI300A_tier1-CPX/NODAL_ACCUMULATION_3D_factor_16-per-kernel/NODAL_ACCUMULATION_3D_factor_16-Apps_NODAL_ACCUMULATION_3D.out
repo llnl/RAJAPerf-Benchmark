@@ -1,0 +1,72 @@
+Kernels run on 24 MPI ranks
+Kernel                       ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency   , OperationalComplexity  
+Apps_NODAL_ACCUMULATION_3D   ,           27000 ,     100 ,             27000 ,           1 ,            908656 ,       243000 ,              670328 ,           432000 ,                   0 ,                         0 ,                          238328 ,                835336 , Inconsistent          , O(N)                   
+
+
+Kernels run on 24 MPI ranks
+Kernel                       , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_NODAL_ACCUMULATION_3D   , Base_HIP   , block_256   ,           27000 , PASSED     ,                 8.49322e-06 ,                          99.6385 ,                           28.6111
+Apps_NODAL_ACCUMULATION_3D   , RAJA_HIP   , block_256   ,           27000 , PASSED     ,                 7.84623e-06 ,                          107.855 ,                           30.9703
+
+
+===================================================================================================
+Checksum Report for 24 MPI ranks 
+===================================================================================================
+Kernel                     
+........................................................
+Variants                   Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                           (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_NODAL_ACCUMULATION_3D 
+........................................................
+Base_HIP-block_256         PASSED  1.0000000000000000364e-10   2697728.7133635743996       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-block_256         PASSED  1.0000000000000000364e-10   2697728.7133635743996       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  , 
+Variant                     , Base_HIP  , RAJA_HIP 
+Tuning                      , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  ,  0.000849 ,  0.000785
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant                     , Base_HIP  , RAJA_HIP 
+Tuning                      , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  ,     1.000 ,     1.082
+
+
+Min Runtime Report (sec.)  ,  , 
+Variant                     , Base_HIP  , RAJA_HIP 
+Tuning                      , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  ,  0.000849 ,  0.000785
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant                     , Base_HIP  , RAJA_HIP 
+Tuning                      , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  ,     1.000 ,     1.082
+
+
+Max Runtime Report (sec.)  ,  , 
+Variant                     , Base_HIP  , RAJA_HIP 
+Tuning                      , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  ,  0.000849 ,  0.000785
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant                     , Base_HIP  , RAJA_HIP 
+Tuning                      , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  ,     1.000 ,     1.082
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
+Kernel                      , Base_HIP-block_256,         , RAJA_HIP-block_256,        
+Apps_NODAL_ACCUMULATION_3D  , 0.00              ,base_ref , -0.08             ,        
+                            ,                   ,         ,                   ,        
+Col Min                     , 0.00              ,         , -0.08             ,        
+Col Max                     , 0.00              ,         , -0.08             ,        
+Col Avg                     , 0.00              ,         , -0.08             ,        
+Col Std Dev                 , 0.00              ,         , 0.00              ,        

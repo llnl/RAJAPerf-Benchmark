@@ -1,0 +1,72 @@
+Kernels run on 4 MPI ranks
+Kernel          ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
+Apps_FEMSWEEP   ,          839808 ,       1 ,                 1 ,           1 ,         151182544 ,    731192832 ,           123412896 ,         97434832 ,            53747712 ,                  27769648 ,                               0 ,             123412896 , ConsistentPerVariantTuning   , O(N)                   
+
+
+Kernels run on 4 MPI ranks
+Kernel          , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_FEMSWEEP   , Base_HIP   , block_64   ,          839808 , PASSED     ,                 0.000653403 ,                          215.487 ,                           1119.05
+Apps_FEMSWEEP   , RAJA_HIP   , block_64   ,          839808 , PASSED     ,                 0.000652223 ,                          215.877 ,                           1121.08
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel            
+........................................................
+Variants          Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                  (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_FEMSWEEP     
+........................................................
+Base_HIP-block_64 PASSED  5.0000000000000004090e-06   176157956.66605556148       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-block_64 PASSED  5.0000000000000004090e-06   176157956.66605556148       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  , 
+Variant        , Base_HIP , RAJA_HIP
+Tuning         , block_64 , block_64
+Apps_FEMSWEEP  , 0.000653 , 0.000652
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant        , Base_HIP , RAJA_HIP
+Tuning         , block_64 , block_64
+Apps_FEMSWEEP  ,    1.000 ,    1.002
+
+
+Min Runtime Report (sec.)  ,  , 
+Variant        , Base_HIP , RAJA_HIP
+Tuning         , block_64 , block_64
+Apps_FEMSWEEP  , 0.000653 , 0.000652
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant        , Base_HIP , RAJA_HIP
+Tuning         , block_64 , block_64
+Apps_FEMSWEEP  ,    1.000 ,    1.002
+
+
+Max Runtime Report (sec.)  ,  , 
+Variant        , Base_HIP , RAJA_HIP
+Tuning         , block_64 , block_64
+Apps_FEMSWEEP  , 0.000653 , 0.000652
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant        , Base_HIP , RAJA_HIP
+Tuning         , block_64 , block_64
+Apps_FEMSWEEP  ,    1.000 ,    1.002
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
+Kernel         , Base_HIP-block_64,         , RAJA_HIP-block_64,        
+Apps_FEMSWEEP  , 0.00             ,base_ref , -0.00            ,        
+               ,                  ,         ,                  ,        
+Col Min        , 0.00             ,         , -0.00            ,        
+Col Max        , 0.00             ,         , -0.00            ,        
+Col Avg        , 0.00             ,         , -0.00            ,        
+Col Std Dev    , 0.00             ,         , 0.00             ,        

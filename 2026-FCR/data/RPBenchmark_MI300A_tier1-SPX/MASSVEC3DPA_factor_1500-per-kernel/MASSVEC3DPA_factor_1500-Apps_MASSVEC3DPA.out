@@ -1,0 +1,78 @@
+Kernels run on 4 MPI ranks
+Kernel             ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
+Apps_MASSVEC3DPA   ,        15929280 ,      50 ,          15929280 ,           1 ,         150000816 ,    457966800 ,           150000816 ,         96239496 ,            53761320 ,                         0 ,                               0 ,             150000816 , ConsistentPerVariantTuning   , O(N)                   
+
+
+Kernels run on 4 MPI ranks
+Kernel             , Variant    , Tuning                         ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MASSVEC3DPA   , Base_HIP   , runtime_block_stride_loop_64   ,        15929280 , PASSED     ,                 0.000178037 ,                          784.665 ,                           2572.32
+Apps_MASSVEC3DPA   , Base_HIP   , direct_64                      ,        15929280 , PASSED     ,                 0.000137727 ,                          1014.32 ,                           3325.17
+Apps_MASSVEC3DPA   , RAJA_HIP   , runtime_block_stride_loop_64   ,        15929280 , PASSED     ,                 0.000258314 ,                          540.812 ,                           1772.91
+Apps_MASSVEC3DPA   , RAJA_HIP   , direct_64                      ,        15929280 , PASSED     ,                 0.000137179 ,                          1018.37 ,                           3338.47
+Apps_MASSVEC3DPA   , RAJA_HIP   , cached_block_stride_loop_64    ,        15929280 , PASSED     ,                 0.000170215 ,                          820.722 ,                           2690.52
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel                                
+........................................................
+Variants                              Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                                      (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_MASSVEC3DPA                      
+........................................................
+Base_HIP-runtime_block_stride_loop_64 PASSED  1.0000000000000000364e-10   11612380870.940065996       0.0000000000000000000       0.0000000000000000000       
+Base_HIP-direct_64                    PASSED  1.0000000000000000364e-10   11612380870.940065996       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-runtime_block_stride_loop_64 PASSED  1.0000000000000000364e-10   11612380870.940065996       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-direct_64                    PASSED  1.0000000000000000364e-10   11612380870.940065996       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-cached_block_stride_loop_64  PASSED  1.0000000000000000364e-10   11612380870.940065996       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant           , Base_HIP                     , Base_HIP  , RAJA_HIP                     , RAJA_HIP  , RAJA_HIP                   
+Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
+Apps_MASSVEC3DPA  ,                     0.008902 ,  0.006886 ,                     0.012916 ,  0.006859 ,                    0.008511
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  ,  ,  ,  , 
+Variant           , Base_HIP                     , Base_HIP  , RAJA_HIP                     , RAJA_HIP  , RAJA_HIP                   
+Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
+Apps_MASSVEC3DPA  ,                        1.000 ,     1.293 ,                        0.689 ,     1.298 ,                       1.046
+
+
+Min Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant           , Base_HIP                     , Base_HIP  , RAJA_HIP                     , RAJA_HIP  , RAJA_HIP                   
+Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
+Apps_MASSVEC3DPA  ,                     0.008902 ,  0.006886 ,                     0.012916 ,  0.006859 ,                    0.008511
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  ,  ,  ,  , 
+Variant           , Base_HIP                     , Base_HIP  , RAJA_HIP                     , RAJA_HIP  , RAJA_HIP                   
+Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
+Apps_MASSVEC3DPA  ,                        1.000 ,     1.293 ,                        0.689 ,     1.298 ,                       1.046
+
+
+Max Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant           , Base_HIP                     , Base_HIP  , RAJA_HIP                     , RAJA_HIP  , RAJA_HIP                   
+Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
+Apps_MASSVEC3DPA  ,                     0.008902 ,  0.006886 ,                     0.012916 ,  0.006859 ,                    0.008511
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  ,  ,  ,  , 
+Variant           , Base_HIP                     , Base_HIP  , RAJA_HIP                     , RAJA_HIP  , RAJA_HIP                   
+Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
+Apps_MASSVEC3DPA  ,                        1.000 ,     1.293 ,                        0.689 ,     1.298 ,                       1.046
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Kernel            , Base_HIP-runtime_block_stride_loop_64,         , Base_HIP-direct_64                   ,         , RAJA_HIP-runtime_block_stride_loop_64,         , RAJA_HIP-direct_64                   ,         , RAJA_HIP-cached_block_stride_loop_64 ,        
+Apps_MASSVEC3DPA  , 0.00                                 ,base_ref , -0.23                                ,         , 0.45                                 ,OVER_TOL , -0.23                                ,         , -0.04                                ,        
+                  ,                                      ,         ,                                      ,         ,                                      ,         ,                                      ,         ,                                      ,        
+Col Min           , 0.00                                 ,         , -0.23                                ,         , 0.45                                 ,         , -0.23                                ,         , -0.04                                ,        
+Col Max           , 0.00                                 ,         , -0.23                                ,         , 0.45                                 ,         , -0.23                                ,         , -0.04                                ,        
+Col Avg           , 0.00                                 ,         , -0.23                                ,         , 0.45                                 ,         , -0.23                                ,         , -0.04                                ,        
+Col Std Dev       , 0.00                                 ,         , 0.00                                 ,         , 0.00                                 ,         , 0.00                                 ,         , 0.00                                 ,        

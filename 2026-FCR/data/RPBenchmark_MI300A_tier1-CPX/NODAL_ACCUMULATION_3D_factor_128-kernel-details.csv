@@ -1,0 +1,3 @@
+Kernels run on 24 MPI ranks
+Kernel                       ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency   , OperationalComplexity  
+Apps_NODAL_ACCUMULATION_3D   ,          238328 ,     100 ,            238328 ,           1 ,           7814000 ,      2144952 ,             5813624 ,          3813248 ,                   0 ,                         0 ,                         2000376 ,               6471176 , Inconsistent          , O(N)                   

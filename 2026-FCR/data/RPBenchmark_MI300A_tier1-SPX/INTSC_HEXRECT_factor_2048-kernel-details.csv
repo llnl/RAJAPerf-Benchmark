@@ -1,0 +1,3 @@
+Kernels run on 4 MPI ranks
+Kernel               ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,     FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
+Apps_INTSC_HEXRECT   ,         4410944 ,       1 ,           4410944 ,           1 ,         207804424 ,   15879398400 ,           207804424 ,         66654216 ,           141150208 ,                         0 ,                               0 ,             207806480 , ConsistentPerVariantTuning   , O(N)                   

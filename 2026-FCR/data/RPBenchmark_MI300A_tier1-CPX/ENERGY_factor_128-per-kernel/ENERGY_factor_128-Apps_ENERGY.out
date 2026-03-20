@@ -1,0 +1,72 @@
+Kernels run on 24 MPI ranks
+Kernel        ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
+Apps_ENERGY   ,           53334 ,     130 ,            320004 ,           6 ,          11520144 ,      2933370 ,            10240128 ,          9386784 ,             2133360 ,                   1280016 ,                               0 ,               6400080 , ConsistentPerVariantTuning   , O(N)                   
+
+
+Kernels run on 24 MPI ranks
+Kernel        , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_ENERGY   , Base_HIP   , block_256   ,           53334 , PASSED     ,                 1.35911e-05 ,                          789.411 ,                           215.830
+Apps_ENERGY   , RAJA_HIP   , block_256   ,           53334 , PASSED     ,                 1.23543e-05 ,                          868.437 ,                           237.436
+
+
+===================================================================================================
+Checksum Report for 24 MPI ranks 
+===================================================================================================
+Kernel             
+........................................................
+Variants           Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                   (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_ENERGY        
+........................................................
+Base_HIP-block_256 PASSED  1.0000000000000000364e-10   5218.4333809695474113       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-block_256 PASSED  1.0000000000000000364e-10   5218.4333809695474113       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  , 
+Variant      , Base_HIP  , RAJA_HIP 
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,  0.001767 ,  0.001606
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant      , Base_HIP  , RAJA_HIP 
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,     1.000 ,     1.100
+
+
+Min Runtime Report (sec.)  ,  , 
+Variant      , Base_HIP  , RAJA_HIP 
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,  0.001767 ,  0.001606
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant      , Base_HIP  , RAJA_HIP 
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,     1.000 ,     1.100
+
+
+Max Runtime Report (sec.)  ,  , 
+Variant      , Base_HIP  , RAJA_HIP 
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,  0.001767 ,  0.001606
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant      , Base_HIP  , RAJA_HIP 
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,     1.000 ,     1.100
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
+Kernel       , Base_HIP-block_256,         , RAJA_HIP-block_256,        
+Apps_ENERGY  , 0.00              ,base_ref , -0.09             ,        
+             ,                   ,         ,                   ,        
+Col Min      , 0.00              ,         , -0.09             ,        
+Col Max      , 0.00              ,         , -0.09             ,        
+Col Avg      , 0.00              ,         , -0.09             ,        
+Col Std Dev  , 0.00              ,         , 0.00              ,        

@@ -1,0 +1,3 @@
+Kernels run on 24 MPI ranks
+Kernel               ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
+Apps_DIFFUSION3DPA   ,          394524 ,      50 ,            394524 ,           1 ,          54356832 ,     75967788 ,            51200640 ,         51200640 ,             3156192 ,                   3156192 ,                               0 ,              51200640 , ConsistentPerVariantTuning   , O(N)                   
