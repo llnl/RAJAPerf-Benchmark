@@ -89,7 +89,7 @@ fi
 
 export OUTDIR BASEMEM RUN_ARGS MODE TIER
 
-flux alloc -q pdebug ${ALLOC_ARGS} bash -lc '
+flux alloc ${ALLOC_ARGS} bash -lc '
   set -euo pipefail
 
   case "${TIER,,}" in
