@@ -65,13 +65,13 @@ salloc ${ALLOC_ARGS} bash -lc '
        KERNELS=("DIFFUSION3DPA"
                 "EDGE3D"
                 "ENERGY"
-                "FEMSWEEP"
                 "INTSC_HEXRECT"
-                "MASS3DEA"
                 "MASS3DPA_ATOMIC"
                 "MASSVEC3DPA"
                 "NODAL_ACCUMULATION_3D"
                 "VOL3D")
+       KERNELS_DIFFRANGE=("FEMSWEEP"
+                          "MASS3DEA")
      ;;
     tier2)
       KERNELS=("CONVECTION3DPA"
@@ -91,6 +91,7 @@ salloc ${ALLOC_ARGS} bash -lc '
   esac
 
   FACTORS=(1 4 16 32 64 128 256 512 1024 1500 3000)
+  FACTORS_DIFFRANGE=(32 64 128 256 512 1024 1500 3000 4000 5000 6000)
 
   for KERNEL_NAME in "${KERNELS[@]}"; do
     echo "Running kernel: ${KERNEL_NAME}"
@@ -109,4 +110,26 @@ salloc ${ALLOC_ARGS} bash -lc '
         -ev Seq Lambda
     done
   done
+
+  if [[ -n "$KERNELS_DIFFRANGE" ]]; then
+
+    for KERNEL_NAME in "${KERNELS_DIFFRANGE[@]}"; do
+      echo "Running kernel: ${KERNEL_NAME}"
+      for factor in "${FACTORS_DIFFRANGE[@]}"; do
+        mem=$(( factor * BASEMEM ))
+        echo "  Running with memory = ${mem}"
+
+        srun ${RUN_ARGS} ./bin/raja-perf.exe \
+          -k "${KERNEL_NAME}" \
+          --npasses 1 \
+          --npasses-combiners Average Minimum Maximum \
+          --outdir "${OUTDIR}" \
+          --outfile "${KERNEL_NAME}_factor_${factor}" \
+          --memory-allocated "${mem}" \
+          --warmup-perfrun-same \
+          -ev Seq Lambda
+      done
+    done
+
+  fi
 '
