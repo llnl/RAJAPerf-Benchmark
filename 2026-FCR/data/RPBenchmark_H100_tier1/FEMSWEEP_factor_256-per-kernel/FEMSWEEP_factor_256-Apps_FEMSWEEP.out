@@ -1,0 +1,76 @@
+Kernels run on 4 MPI ranks
+Kernel          ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
+Apps_FEMSWEEP   ,          144000 ,       1 ,                 1 ,           1 ,          24836480 ,    123379200 ,            20551040 ,         15620480 ,             9216000 ,                   4285440 ,                               0 ,              20551040 , ConsistentPerVariantTuning   , O(N)                   
+
+
+Kernels run on 4 MPI ranks
+Kernel          , Variant       , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_FEMSWEEP   , Base_OpenMP   , default     ,          144000 , PASSED     ,                  0.00187996 ,                          12.3039 ,                           65.6286
+Apps_FEMSWEEP   , RAJA_OpenMP   , default     ,          144000 , PASSED     ,                  0.00183382 ,                          12.6134 ,                           67.2799
+Apps_FEMSWEEP   , Base_CUDA     , block_128   ,          144000 , PASSED     ,                 0.000663841 ,                          34.8438 ,                           185.857
+Apps_FEMSWEEP   , RAJA_CUDA     , block_128   ,          144000 , PASSED     ,                 0.000977506 ,                          23.6631 ,                           126.218
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel              
+........................................................
+Variants            Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                    (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_FEMSWEEP       
+........................................................
+Base_OpenMP-default PASSED  5.0000000000000004090e-06   8445136.0457821078007       0.0000000000000000000       0.0000000000000000000       
+RAJA_OpenMP-default PASSED  5.0000000000000004090e-06   8445136.0457821078007       0.0000000000000000000       0.0000000000000000000       
+Base_CUDA-block_128 PASSED  5.0000000000000004090e-06   8445136.0467270482168       1.1189167479660721962e-10   0.0000000000000000000       
+RAJA_CUDA-block_128 PASSED  5.0000000000000004090e-06   8445136.0467270482168       1.1189167479660721962e-10   0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  ,  , 
+Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning         , default     , default     , block_128 , block_128
+Apps_FEMSWEEP  ,    0.001880 ,    0.001834 ,  0.000664 ,  0.000978
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
+Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning         , default     , default     , block_128 , block_128
+Apps_FEMSWEEP  ,       1.000 ,       1.025 ,     2.832 ,     1.923
+
+
+Min Runtime Report (sec.)  ,  ,  ,  , 
+Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning         , default     , default     , block_128 , block_128
+Apps_FEMSWEEP  ,    0.001880 ,    0.001834 ,  0.000664 ,  0.000978
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
+Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning         , default     , default     , block_128 , block_128
+Apps_FEMSWEEP  ,       1.000 ,       1.025 ,     2.832 ,     1.923
+
+
+Max Runtime Report (sec.)  ,  ,  ,  , 
+Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning         , default     , default     , block_128 , block_128
+Apps_FEMSWEEP  ,    0.001880 ,    0.001834 ,  0.000664 ,  0.000978
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
+Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning         , default     , default     , block_128 , block_128
+Apps_FEMSWEEP  ,       1.000 ,       1.025 ,     2.832 ,     1.923
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  , 
+Kernel         , Base_OpenMP-default,         , RAJA_OpenMP-default,         , Base_CUDA-block_128,         , RAJA_CUDA-block_128,        
+Apps_FEMSWEEP  , 0.00               ,base_ref , -0.02              ,         , 0.00               ,base_ref , 0.47               ,OVER_TOL
+               ,                    ,         ,                    ,         ,                    ,         ,                    ,        
+Col Min        , 0.00               ,         , -0.02              ,         , 0.00               ,         , 0.47               ,        
+Col Max        , 0.00               ,         , -0.02              ,         , 0.00               ,         , 0.47               ,        
+Col Avg        , 0.00               ,         , -0.02              ,         , 0.00               ,         , 0.47               ,        
+Col Std Dev    , 0.00               ,         , 0.00               ,         , 0.00               ,         , 0.00               ,        

@@ -1,0 +1,4 @@
+Mean Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
+Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning       , default     , default     , block_256 , block_256
+Apps_EDGE3D  ,       1.000 ,       0.985 ,     8.097 ,     8.074

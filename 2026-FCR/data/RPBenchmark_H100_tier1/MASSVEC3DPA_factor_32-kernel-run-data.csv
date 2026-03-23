@@ -1,0 +1,9 @@
+Kernels run on 4 MPI ranks
+Kernel             , Variant       , Tuning                         ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MASSVEC3DPA   , Base_OpenMP   , default                        ,          169920 , PASSED     ,                 2.49816e-05 ,                          59.6550 ,                           195.552
+Apps_MASSVEC3DPA   , RAJA_OpenMP   , default                        ,          169920 , PASSED     ,                 2.61281e-05 ,                          57.0375 ,                           186.971
+Apps_MASSVEC3DPA   , Base_CUDA     , runtime_block_stride_loop_64   ,          169920 , PASSED     ,                 8.38774e-06 ,                          177.674 ,                           582.421
+Apps_MASSVEC3DPA   , Base_CUDA     , direct_64                      ,          169920 , PASSED     ,                 5.35016e-06 ,                          278.549 ,                           913.094
+Apps_MASSVEC3DPA   , RAJA_CUDA     , runtime_block_stride_loop_64   ,          169920 , PASSED     ,                 8.00556e-06 ,                          186.156 ,                           610.226
+Apps_MASSVEC3DPA   , RAJA_CUDA     , direct_64                      ,          169920 , PASSED     ,                 5.15704e-06 ,                          288.980 ,                           947.288
+Apps_MASSVEC3DPA   , RAJA_CUDA     , cached_block_stride_loop_64    ,          169920 , PASSED     ,                 7.98798e-06 ,                          186.565 ,                           611.569

@@ -1,0 +1,4 @@
+Max Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
+Variant     , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning      , default     , default     , block_256 , block_256
+Apps_VOL3D  ,       1.000 ,       0.993 ,    21.574 ,    22.502

@@ -1,0 +1,4 @@
+Mean Runtime Report (sec.)  ,  ,  ,  , 
+Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning              , default     , default     , block_64  , block_64 
+Apps_INTSC_HEXRECT  ,    0.000793 ,    0.000771 ,  0.000164 ,  0.000159

@@ -1,0 +1,76 @@
+Kernels run on 4 MPI ranks
+Kernel               ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
+Apps_DIFFUSION3DPA   ,           49329 ,      50 ,             49329 ,           1 ,           6796632 ,      9498573 ,             6402000 ,          6402000 ,              394632 ,                    394632 ,                               0 ,               6402000 , ConsistentPerVariantTuning   , O(N)                   
+
+
+Kernels run on 4 MPI ranks
+Kernel               , Variant       , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_DIFFUSION3DPA   , Base_OpenMP   , default    ,           49329 , PASSED     ,                 3.99362e-05 ,                          158.499 ,                           237.844
+Apps_DIFFUSION3DPA   , RAJA_OpenMP   , default    ,           49329 , PASSED     ,                 4.42317e-05 ,                          143.107 ,                           214.746
+Apps_DIFFUSION3DPA   , Base_CUDA     , block_64   ,           49329 , PASSED     ,                 6.54764e-06 ,                          966.739 ,                           1450.69
+Apps_DIFFUSION3DPA   , RAJA_CUDA     , block_64   ,           49329 , PASSED     ,                 5.95776e-06 ,                          1062.46 ,                           1594.32
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel              
+........................................................
+Variants            Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                    (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_DIFFUSION3DPA  
+........................................................
+Base_OpenMP-default PASSED  1.0000000000000000364e-10   38330690290.569249857       0.0000000000000000000       0.0000000000000000000       
+RAJA_OpenMP-default PASSED  1.0000000000000000364e-10   38330690290.569249857       0.0000000000000000000       0.0000000000000000000       
+Base_CUDA-block_64  PASSED  1.0000000000000000364e-10   38330690290.569249857       0.0000000000000000000       0.0000000000000000000       
+RAJA_CUDA-block_64  PASSED  1.0000000000000000364e-10   38330690290.569249857       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  ,  , 
+Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning              , default     , default     , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,    0.001997 ,    0.002212 ,  0.000327 ,  0.000298
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
+Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning              , default     , default     , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,       1.000 ,       0.903 ,     6.099 ,     6.703
+
+
+Min Runtime Report (sec.)  ,  ,  ,  , 
+Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning              , default     , default     , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,    0.001997 ,    0.002212 ,  0.000327 ,  0.000298
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
+Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning              , default     , default     , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,       1.000 ,       0.903 ,     6.099 ,     6.703
+
+
+Max Runtime Report (sec.)  ,  ,  ,  , 
+Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning              , default     , default     , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,    0.001997 ,    0.002212 ,  0.000327 ,  0.000298
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
+Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning              , default     , default     , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,       1.000 ,       0.903 ,     6.099 ,     6.703
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  , 
+Kernel              , Base_OpenMP-default,         , RAJA_OpenMP-default,         , Base_CUDA-block_64 ,         , RAJA_CUDA-block_64 ,        
+Apps_DIFFUSION3DPA  , 0.00               ,base_ref , 0.11               ,OVER_TOL , 0.00               ,base_ref , -0.09              ,        
+                    ,                    ,         ,                    ,         ,                    ,         ,                    ,        
+Col Min             , 0.00               ,         , 0.11               ,         , 0.00               ,         , -0.09              ,        
+Col Max             , 0.00               ,         , 0.11               ,         , 0.00               ,         , -0.09              ,        
+Col Avg             , 0.00               ,         , 0.11               ,         , 0.00               ,         , -0.09              ,        
+Col Std Dev         , 0.00               ,         , 0.00               ,         , 0.00               ,         , 0.00               ,        

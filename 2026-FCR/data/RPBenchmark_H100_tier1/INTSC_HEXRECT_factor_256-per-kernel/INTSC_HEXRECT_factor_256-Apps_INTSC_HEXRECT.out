@@ -1,0 +1,76 @@
+Kernels run on 4 MPI ranks
+Kernel               ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
+Apps_INTSC_HEXRECT   ,          287496 ,       1 ,            287496 ,           1 ,          13593120 ,   1034985600 ,            13593120 ,          4393248 ,             9199872 ,                         0 ,                               0 ,              13594000 , ConsistentPerVariantTuning   , O(N)                   
+
+
+Kernels run on 4 MPI ranks
+Kernel               , Variant       , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_INTSC_HEXRECT   , Base_OpenMP   , default    ,          287496 , PASSED     ,                   0.0113823 ,                          1.11222 ,                           90.9298
+Apps_INTSC_HEXRECT   , RAJA_OpenMP   , default    ,          287496 , PASSED     ,                   0.0116953 ,                          1.08245 ,                           88.4957
+Apps_INTSC_HEXRECT   , Base_CUDA     , block_64   ,          287496 , PASSED     ,                 0.000724256 ,                          17.4794 ,                           1429.03
+Apps_INTSC_HEXRECT   , RAJA_CUDA     , block_64   ,          287496 , PASSED     ,                 0.000849423 ,                          14.9037 ,                           1218.46
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel              
+........................................................
+Variants            Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                    (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_INTSC_HEXRECT  
+........................................................
+Base_OpenMP-default PASSED  1.0000000000000000364e-10   189.94854612524920662       0.0000000000000000000       0.0000000000000000000       
+RAJA_OpenMP-default PASSED  1.0000000000000000364e-10   189.94854612524920662       0.0000000000000000000       0.0000000000000000000       
+Base_CUDA-block_64  PASSED  1.0000000000000000364e-10   189.94854612524920590       3.7991602501158916168e-18   0.0000000000000000000       
+RAJA_CUDA-block_64  PASSED  1.0000000000000000364e-10   189.94854612524920590       3.7991602501158916168e-18   0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  ,  , 
+Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning              , default     , default     , block_64  , block_64 
+Apps_INTSC_HEXRECT  ,    0.011382 ,    0.011695 ,  0.000724 ,  0.000849
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
+Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning              , default     , default     , block_64  , block_64 
+Apps_INTSC_HEXRECT  ,       1.000 ,       0.973 ,    15.716 ,    13.400
+
+
+Min Runtime Report (sec.)  ,  ,  ,  , 
+Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning              , default     , default     , block_64  , block_64 
+Apps_INTSC_HEXRECT  ,    0.011382 ,    0.011695 ,  0.000724 ,  0.000849
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
+Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning              , default     , default     , block_64  , block_64 
+Apps_INTSC_HEXRECT  ,       1.000 ,       0.973 ,    15.716 ,    13.400
+
+
+Max Runtime Report (sec.)  ,  ,  ,  , 
+Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning              , default     , default     , block_64  , block_64 
+Apps_INTSC_HEXRECT  ,    0.011382 ,    0.011695 ,  0.000724 ,  0.000849
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
+Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning              , default     , default     , block_64  , block_64 
+Apps_INTSC_HEXRECT  ,       1.000 ,       0.973 ,    15.716 ,    13.400
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  , 
+Kernel              , Base_OpenMP-default,         , RAJA_OpenMP-default,         , Base_CUDA-block_64 ,         , RAJA_CUDA-block_64 ,        
+Apps_INTSC_HEXRECT  , 0.00               ,base_ref , 0.03               ,         , 0.00               ,base_ref , 0.17               ,OVER_TOL
+                    ,                    ,         ,                    ,         ,                    ,         ,                    ,        
+Col Min             , 0.00               ,         , 0.03               ,         , 0.00               ,         , 0.17               ,        
+Col Max             , 0.00               ,         , 0.03               ,         , 0.00               ,         , 0.17               ,        
+Col Avg             , 0.00               ,         , 0.03               ,         , 0.00               ,         , 0.17               ,        
+Col Std Dev         , 0.00               ,         , 0.00               ,         , 0.00               ,         , 0.00               ,        

@@ -1,0 +1,3 @@
+Kernels run on 4 MPI ranks
+Kernel        ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
+Apps_ENERGY   ,          213334 ,     130 ,           1280004 ,           6 ,          46080144 ,     11733370 ,            40960128 ,         37546784 ,             8533360 ,                   5120016 ,                               0 ,              25600080 , ConsistentPerVariantTuning   , O(N)                   

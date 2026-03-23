@@ -1,0 +1,76 @@
+Kernels run on 4 MPI ranks
+Kernel                 ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
+Apps_MASS3DPA_ATOMIC   ,         1442897 ,      50 ,           1580544 ,           1 ,         162478072 ,    327875072 ,           150934896 ,        139391720 ,                   0 ,                         0 ,                        11543176 ,             150934896 , ConsistentPerVariantTuning   , O(N)                   
+
+
+Kernels run on 4 MPI ranks
+Kernel                 , Variant       , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MASS3DPA_ATOMIC   , Base_OpenMP   , default    ,         1442897 , PASSED     ,                  0.00250983 ,                          60.2908 ,                           130.636
+Apps_MASS3DPA_ATOMIC   , RAJA_OpenMP   , default    ,         1442897 , PASSED     ,                  0.00240292 ,                          62.9732 ,                           136.449
+Apps_MASS3DPA_ATOMIC   , Base_CUDA     , block_64   ,         1442897 , FAILED     ,                 0.000154647 ,                          978.483 ,                           2120.15
+Apps_MASS3DPA_ATOMIC   , RAJA_CUDA     , block_64   ,         1442897 , FAILED     ,                 0.000154651 ,                          978.455 ,                           2120.09
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel               
+........................................................
+Variants             Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                     (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_MASS3DPA_ATOMIC 
+........................................................
+Base_OpenMP-default  PASSED  1.0000000000000000364e-10   409669195612.52623427       0.0000000000000000000       0.0000000000000000000       
+RAJA_OpenMP-default  PASSED  1.0000000000000000364e-10   409669195612.52623427       0.0000000000000000000       0.0000000000000000000       
+Base_CUDA-block_64   FAILED  1.0000000000000000364e-10   1096101288764.9949154       1.6943258168224246282       0.016751859777216615653     
+RAJA_CUDA-block_64   FAILED  1.0000000000000000364e-10   931192192116.09493840       1.2870060719695298135       0.014409683360311179518     
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  ,  , 
+Variant               , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning                , default     , default     , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,    0.125491 ,    0.120146 ,  0.007732 ,  0.007733
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
+Variant               , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning                , default     , default     , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,       1.000 ,       1.044 ,    16.229 ,    16.229
+
+
+Min Runtime Report (sec.)  ,  ,  ,  , 
+Variant               , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning                , default     , default     , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,    0.125491 ,    0.120146 ,  0.007732 ,  0.007733
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
+Variant               , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning                , default     , default     , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,       1.000 ,       1.044 ,    16.229 ,    16.229
+
+
+Max Runtime Report (sec.)  ,  ,  ,  , 
+Variant               , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning                , default     , default     , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,    0.125491 ,    0.120146 ,  0.007732 ,  0.007733
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
+Variant               , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning                , default     , default     , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,       1.000 ,       1.044 ,    16.229 ,    16.229
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  , 
+Kernel                , Base_OpenMP-default,         , RAJA_OpenMP-default,         , Base_CUDA-block_64 ,         , RAJA_CUDA-block_64 ,        
+Apps_MASS3DPA_ATOMIC  , 0.00               ,base_ref , -0.04              ,         , 0.00               ,base_ref , 0.00               ,        
+                      ,                    ,         ,                    ,         ,                    ,         ,                    ,        
+Col Min               , 0.00               ,         , -0.04              ,         , 0.00               ,         , 0.00               ,        
+Col Max               , 0.00               ,         , -0.04              ,         , 0.00               ,         , 0.00               ,        
+Col Avg               , 0.00               ,         , -0.04              ,         , 0.00               ,         , 0.00               ,        
+Col Std Dev           , 0.00               ,         , 0.00               ,         , 0.00               ,         , 0.00               ,        

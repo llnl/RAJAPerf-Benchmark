@@ -1,0 +1,3 @@
+Kernels run on 4 MPI ranks
+Kernel          ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
+Apps_MASS3DEA   ,         9101312 ,       1 ,            142208 ,           1 ,          75032656 ,     63709184 ,            75032656 ,          2222160 ,            72810496 ,                         0 ,                               0 ,              75032656 , ConsistentPerVariantTuning   , O(N)                   

@@ -1,0 +1,4 @@
+Max Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA                         , RAJA_CUDA                         , RAJA_CUDA                  
+Tuning         , default     , default     , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  ,    0.034485 ,    0.049542 ,                          0.000642 ,                          0.000621 ,                    0.000691

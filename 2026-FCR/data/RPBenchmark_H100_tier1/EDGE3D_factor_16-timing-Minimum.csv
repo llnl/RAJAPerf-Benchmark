@@ -1,0 +1,4 @@
+Min Runtime Report (sec.)  ,  ,  ,  , 
+Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
+Tuning       , default     , default     , block_256 , block_256
+Apps_EDGE3D  ,    0.017322 ,    0.017523 ,  0.002929 ,  0.002904

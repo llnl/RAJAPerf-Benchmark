@@ -1,0 +1,6 @@
+Kernels run on 4 MPI ranks
+Kernel                 , Variant       , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MASS3DPA_ATOMIC   , Base_OpenMP   , default    ,           68921 , PASSED     ,                 0.000113989 ,                          61.0992 ,                           131.031
+Apps_MASS3DPA_ATOMIC   , RAJA_OpenMP   , default    ,           68921 , PASSED     ,                 0.000112858 ,                          61.7113 ,                           132.343
+Apps_MASS3DPA_ATOMIC   , Base_CUDA     , block_64   ,           68921 , FAILED     ,                 9.92478e-06 ,                          701.740 ,                           1504.92
+Apps_MASS3DPA_ATOMIC   , RAJA_CUDA     , block_64   ,           68921 , FAILED     ,                 9.98348e-06 ,                          697.614 ,                           1496.07
