@@ -27,6 +27,10 @@ TIER="${1:-}"
 # to use ~150MB of allocated memory, which is about 3 times the L2-cache
 # size on the H100. The L2-cache is 50 MB (50 * 1024 * 1024 = 52428800 bytes).
 #
+# IMPORTANT NOTE: Tier1 kernels, FEMSWEEP and MASS3DEA, are run over
+#                 different problem size ranges than what's described above.
+#                 These kernels do not have clear saturation points.
+#
 ############################################################################
 
 BASE_OUTDIR="RPBenchmark_H100"

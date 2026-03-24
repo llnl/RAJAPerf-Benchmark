@@ -36,9 +36,8 @@ TIER="${2:-}"
 # the MALL size.
 #
 # IMPORTANT NOTE: Tier1 kernels, FEMSWEEP and MASS3DEA, are run over
-#                 different problem size ranges than what's described above
-#                 to start and end at larger problem sizes and better
-#                 expose the saturation points in throughput curves.
+#                 different problem size ranges than what's described above.
+#                 These kernels do not have clear saturation points.
 #
 ############################################################################
 
