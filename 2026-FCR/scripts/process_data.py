@@ -560,8 +560,15 @@ def plot_kernel(
     plt.xticks(fontsize=16)
     plt.yticks(fontsize=16)
     plt.ylim((ymin-yoverhang, ymax+yoverhang))
-    plt.legend(loc="upper left", bbox_to_anchor=(1.05, 1), fontsize=14, frameon=False)
-    plt.tight_layout(rect=[0, 0, 0.75, 1])
+    plt.legend(
+        loc="upper left",
+        bbox_to_anchor=(1.02, 1),
+        fontsize=10,
+        frameon=False,
+        handlelength=1.4,
+        labelspacing=0.7,
+        borderaxespad=0.3)
+    plt.tight_layout(rect=[0, 0, 0.85, 1])
 
     if save_dir is not None:
         ensure_dir(save_dir)
@@ -667,8 +674,15 @@ def plot_kernel_bandwidth(
     plt.xticks(fontsize=16)
     plt.yticks(fontsize=16)
     plt.ylim((ymin-yoverhang, ymax+yoverhang))
-    plt.legend(loc="upper left", bbox_to_anchor=(1.05, 1), fontsize=14, frameon=False)
-    plt.tight_layout(rect=[0, 0, 0.75, 1])
+    plt.legend(
+        loc="upper left",
+        bbox_to_anchor=(1.02, 1),
+        fontsize=10,
+        frameon=False,
+        handlelength=1.4,
+        labelspacing=0.7,
+        borderaxespad=0.3)
+    plt.tight_layout(rect=[0, 0, 0.85, 1])
 
     if save_dir is not None:
         ensure_dir(save_dir)
