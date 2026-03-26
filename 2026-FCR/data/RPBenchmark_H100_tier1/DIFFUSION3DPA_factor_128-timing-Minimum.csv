@@ -1,4 +1,4 @@
-Min Runtime Report (sec.)  ,  ,  ,  , 
-Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning              , default     , default     , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,    0.001997 ,    0.002212 ,  0.000327 ,  0.000298
+Min Runtime Report (sec.)  ,  , 
+Variant             , Base_CUDA , RAJA_CUDA
+Tuning              , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,  0.000325 ,  0.000294

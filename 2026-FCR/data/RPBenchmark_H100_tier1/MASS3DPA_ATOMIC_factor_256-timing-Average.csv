@@ -1,4 +1,4 @@
-Mean Runtime Report (sec.)  ,  ,  ,  , 
-Variant               , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning                , default     , default     , block_64  , block_64 
-Apps_MASS3DPA_ATOMIC  ,    0.011032 ,    0.010718 ,  0.000811 ,  0.000812
+Mean Runtime Report (sec.)  ,  , 
+Variant               , Base_CUDA , RAJA_CUDA
+Tuning                , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,  0.000803 ,  0.000803

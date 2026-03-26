@@ -1,14 +1,12 @@
 Kernels run on 4 MPI ranks
-Kernel        ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_ENERGY   ,          426667 ,     130 ,           2560002 ,           6 ,          92160072 ,     23466685 ,            81920064 ,         75093392 ,            17066680 ,                  10240008 ,                               0 ,              51200040 , ConsistentPerVariantTuning   , O(N)                   
+Kernel        ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_ENERGY   ,          426667 ,     130 ,           2560002 ,              6 ,          92160072 ,     23466685 ,            81920064 ,         75093392 ,            17066680 ,                  10240008 ,                               0 ,              51200040 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        1
 
 
 Kernels run on 4 MPI ranks
-Kernel        , Variant       , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_ENERGY   , Base_OpenMP   , default     ,          426667 , PASSED     ,                 9.45246e-05 ,                          908.026 ,                           248.260
-Apps_ENERGY   , RAJA_OpenMP   , default     ,          426667 , PASSED     ,                 9.68448e-05 ,                          886.271 ,                           242.312
-Apps_ENERGY   , Base_CUDA     , block_256   ,          426667 , PASSED     ,                 2.73150e-05 ,                          3142.26 ,                           859.115
-Apps_ENERGY   , RAJA_CUDA     , block_256   ,          426667 , PASSED     ,                 2.72519e-05 ,                          3149.53 ,                           861.103
+Kernel        , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_ENERGY   , Base_CUDA   , block_256   ,          426667 , PASSED     ,                 2.80508e-05 ,                          3059.83 ,                           836.578
+Apps_ENERGY   , RAJA_CUDA   , block_256   ,          426667 , PASSED     ,                 2.80843e-05 ,                          3056.18 ,                           835.580
 
 
 ===================================================================================================
@@ -21,56 +19,54 @@ Variants            Result  Tolerance                   Average Checksum        
 ----------------------------------------------------------------------------------------
 Apps_ENERGY         
 ........................................................
-Base_OpenMP-default PASSED  1.0000000000000000364e-10   41774.755214506530280       0.0000000000000000000       0.0000000000000000000       
-RAJA_OpenMP-default PASSED  1.0000000000000000364e-10   41774.755214506530280       0.0000000000000000000       0.0000000000000000000       
 Base_CUDA-block_256 PASSED  1.0000000000000000364e-10   41774.755214506530280       0.0000000000000000000       0.0000000000000000000       
 RAJA_CUDA-block_256 PASSED  1.0000000000000000364e-10   41774.755214506530280       0.0000000000000000000       0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  ,  ,  , 
-Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning       , default     , default     , block_256 , block_256
-Apps_ENERGY  ,    0.012288 ,    0.012590 ,  0.003551 ,  0.003543
+Mean Runtime Report (sec.)  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,  0.003647 ,  0.003651
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
-Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning       , default     , default     , block_256 , block_256
-Apps_ENERGY  ,       1.000 ,       0.976 ,     3.461 ,     3.469
+Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,     1.000 ,     0.999
 
 
-Min Runtime Report (sec.)  ,  ,  ,  , 
-Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning       , default     , default     , block_256 , block_256
-Apps_ENERGY  ,    0.012288 ,    0.012590 ,  0.003551 ,  0.003543
+Min Runtime Report (sec.)  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,  0.003647 ,  0.003651
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
-Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning       , default     , default     , block_256 , block_256
-Apps_ENERGY  ,       1.000 ,       0.976 ,     3.461 ,     3.469
+Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,     1.000 ,     0.999
 
 
-Max Runtime Report (sec.)  ,  ,  ,  , 
-Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning       , default     , default     , block_256 , block_256
-Apps_ENERGY  ,    0.012288 ,    0.012590 ,  0.003551 ,  0.003543
+Max Runtime Report (sec.)  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,  0.003647 ,  0.003651
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
-Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning       , default     , default     , block_256 , block_256
-Apps_ENERGY  ,       1.000 ,       0.976 ,     3.461 ,     3.469
+Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,     1.000 ,     0.999
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  , 
-Kernel       , Base_OpenMP-default,         , RAJA_OpenMP-default,         , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
-Apps_ENERGY  , 0.00               ,base_ref , 0.02               ,         , 0.00               ,base_ref , -0.00              ,        
-             ,                    ,         ,                    ,         ,                    ,         ,                    ,        
-Col Min      , 0.00               ,         , 0.02               ,         , 0.00               ,         , -0.00              ,        
-Col Max      , 0.00               ,         , 0.02               ,         , 0.00               ,         , -0.00              ,        
-Col Avg      , 0.00               ,         , 0.02               ,         , 0.00               ,         , -0.00              ,        
-Col Std Dev  , 0.00               ,         , 0.00               ,         , 0.00               ,         , 0.00               ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
+Kernel       , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
+Apps_ENERGY  , 0.00               ,base_ref , 0.00               ,        
+             ,                    ,         ,                    ,        
+Col Min      , 0.00               ,         , 0.00               ,        
+Col Max      , 0.00               ,         , 0.00               ,        
+Col Avg      , 0.00               ,         , 0.00               ,        
+Col Std Dev  , 0.00               ,         , 0.00               ,        

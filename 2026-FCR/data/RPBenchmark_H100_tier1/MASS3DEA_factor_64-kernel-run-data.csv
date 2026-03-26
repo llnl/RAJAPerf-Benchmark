@@ -1,7 +1,5 @@
 Kernels run on 4 MPI ranks
-Kernel          , Variant       , Tuning                              ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASS3DEA   , Base_OpenMP   , default                             ,          389120 , PASSED     ,                  0.00122952 ,                          2.43004 ,                           2.21536
-Apps_MASS3DEA   , RAJA_OpenMP   , default                             ,          389120 , PASSED     ,                 0.000871066 ,                          3.43004 ,                           3.12702
-Apps_MASS3DEA   , Base_CUDA     , compile_time_block_stride_loop_64   ,          389120 , PASSED     ,                 0.000113503 ,                          26.3235 ,                           23.9980
-Apps_MASS3DEA   , RAJA_CUDA     , compile_time_block_stride_loop_64   ,          389120 , PASSED     ,                 7.43950e-05 ,                          40.1612 ,                           36.6132
-Apps_MASS3DEA   , RAJA_CUDA     , cached_block_stride_loop_64         ,          389120 , PASSED     ,                 7.89070e-05 ,                          37.8648 ,                           34.5196
+Kernel          , Variant     , Tuning                              ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MASS3DEA   , Base_CUDA   , compile_time_block_stride_loop_64   ,          389120 , PASSED     ,                 0.000112576 ,                          26.5402 ,                           24.1956
+Apps_MASS3DEA   , RAJA_CUDA   , compile_time_block_stride_loop_64   ,          389120 , PASSED     ,                 7.55920e-05 ,                          39.5253 ,                           36.0334
+Apps_MASS3DEA   , RAJA_CUDA   , cached_block_stride_loop_64         ,          389120 , PASSED     ,                 7.99870e-05 ,                          37.3535 ,                           34.0535

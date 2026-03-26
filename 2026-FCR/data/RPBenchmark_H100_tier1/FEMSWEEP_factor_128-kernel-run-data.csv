@@ -1,6 +1,4 @@
 Kernels run on 4 MPI ranks
-Kernel          , Variant       , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_FEMSWEEP   , Base_OpenMP   , default     ,           73728 , PASSED     ,                  0.00265872 ,                          4.34505 ,                           23.5433
-Apps_FEMSWEEP   , RAJA_OpenMP   , default     ,           73728 , PASSED     ,                 0.000975014 ,                          11.8483 ,                           64.1992
-Apps_FEMSWEEP   , Base_CUDA     , block_128   ,           73728 , PASSED     ,                 0.000471860 ,                          24.4824 ,                           132.656
-Apps_FEMSWEEP   , RAJA_CUDA     , block_128   ,           73728 , PASSED     ,                 0.000710897 ,                          16.2503 ,                           88.0508
+Kernel          , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_FEMSWEEP   , Base_CUDA   , block_128   ,           73728 , PASSED     ,                 0.000472426 ,                          24.4531 ,                           132.497
+Apps_FEMSWEEP   , RAJA_CUDA   , block_128   ,           73728 , PASSED     ,                 0.000709257 ,                          16.2878 ,                           88.2544

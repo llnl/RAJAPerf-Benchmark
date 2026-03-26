@@ -1,7 +1,5 @@
 Kernels run on 4 MPI ranks
-Kernel          , Variant       , Tuning                              ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASS3DEA   , Base_OpenMP   , default                             ,        36392960 , PASSED     ,                   0.0862160 ,                          3.24097 ,                           2.95480
-Apps_MASS3DEA   , RAJA_OpenMP   , default                             ,        36392960 , PASSED     ,                   0.0680917 ,                          4.10364 ,                           3.74129
-Apps_MASS3DEA   , Base_CUDA     , compile_time_block_stride_loop_64   ,        36392960 , PASSED     ,                  0.00122193 ,                          228.675 ,                           208.483
-Apps_MASS3DEA   , RAJA_CUDA     , compile_time_block_stride_loop_64   ,        36392960 , PASSED     ,                  0.00126980 ,                          220.053 ,                           200.623
-Apps_MASS3DEA   , RAJA_CUDA     , cached_block_stride_loop_64         ,        36392960 , PASSED     ,                  0.00150775 ,                          185.325 ,                           168.961
+Kernel          , Variant     , Tuning                              ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MASS3DEA   , Base_CUDA   , compile_time_block_stride_loop_64   ,        36392960 , PASSED     ,                  0.00123933 ,                          225.464 ,                           205.556
+Apps_MASS3DEA   , RAJA_CUDA   , compile_time_block_stride_loop_64   ,        36392960 , PASSED     ,                  0.00136240 ,                          205.096 ,                           186.986
+Apps_MASS3DEA   , RAJA_CUDA   , cached_block_stride_loop_64         ,        36392960 , PASSED     ,                  0.00133947 ,                          208.608 ,                           190.188

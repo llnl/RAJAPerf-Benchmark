@@ -1,4 +1,4 @@
-Max Runtime Report (sec.)  ,  ,  ,  , 
-Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning       , default     , default     , block_256 , block_256
-Apps_ENERGY  ,    0.000596 ,    0.000653 ,  0.001713 ,  0.001712
+Max Runtime Report (sec.)  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,  0.001731 ,  0.001729

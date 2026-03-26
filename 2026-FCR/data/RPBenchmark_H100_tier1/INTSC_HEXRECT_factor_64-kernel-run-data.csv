@@ -1,6 +1,4 @@
 Kernels run on 4 MPI ranks
-Kernel               , Variant       , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_INTSC_HEXRECT   , Base_OpenMP   , default    ,           74088 , PASSED     ,                  0.00305174 ,                          1.07283 ,                           87.3983
-Apps_INTSC_HEXRECT   , RAJA_OpenMP   , default    ,           74088 , PASSED     ,                  0.00300178 ,                          1.09068 ,                           88.8529
-Apps_INTSC_HEXRECT   , Base_CUDA     , block_64   ,           74088 , PASSED     ,                 0.000213763 ,                          15.3160 ,                           1247.72
-Apps_INTSC_HEXRECT   , RAJA_CUDA     , block_64   ,           74088 , PASSED     ,                 0.000290672 ,                          11.2635 ,                           917.587
+Kernel               , Variant     , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_INTSC_HEXRECT   , Base_CUDA   , block_64   ,           74088 , PASSED     ,                 0.000211604 ,                          15.4723 ,                           1260.45
+Apps_INTSC_HEXRECT   , RAJA_CUDA   , block_64   ,           74088 , PASSED     ,                 0.000292842 ,                          11.1801 ,                           910.787

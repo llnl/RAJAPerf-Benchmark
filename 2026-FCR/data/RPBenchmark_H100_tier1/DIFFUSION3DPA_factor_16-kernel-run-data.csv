@@ -1,6 +1,4 @@
 Kernels run on 4 MPI ranks
-Kernel               , Variant       , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_DIFFUSION3DPA   , Base_OpenMP   , default    ,            6183 , PASSED     ,                 1.16693e-05 ,                          68.0033 ,                           102.026
-Apps_DIFFUSION3DPA   , RAJA_OpenMP   , default    ,            6183 , PASSED     ,                 1.52903e-05 ,                          51.8990 ,                           77.8643
-Apps_DIFFUSION3DPA   , Base_CUDA     , block_64   ,            6183 , PASSED     ,                 4.46122e-06 ,                          177.878 ,                           266.871
-Apps_DIFFUSION3DPA   , RAJA_CUDA     , block_64   ,            6183 , PASSED     ,                 4.23030e-06 ,                          187.588 ,                           281.439
+Kernel               , Variant     , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_DIFFUSION3DPA   , Base_CUDA   , block_64   ,            6183 , PASSED     ,                 4.37384e-06 ,                          181.432 ,                           272.203
+Apps_DIFFUSION3DPA   , RAJA_CUDA   , block_64   ,            6183 , PASSED     ,                 4.17132e-06 ,                          190.240 ,                           285.418

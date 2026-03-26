@@ -1,4 +1,4 @@
-Mean Runtime Report (sec.)  ,  ,  ,  ,  , 
-Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA                         , RAJA_CUDA                         , RAJA_CUDA                  
-Tuning         , default     , default     , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
-Apps_MASS3DEA  ,    0.057066 ,    0.056960 ,                          0.001050 ,                          0.001190 ,                    0.001145
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_CUDA                         , RAJA_CUDA                         , RAJA_CUDA                  
+Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  ,                          0.001046 ,                          0.001027 ,                    0.001148

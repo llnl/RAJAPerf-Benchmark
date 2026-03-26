@@ -1,4 +1,4 @@
-Min Runtime Report (sec.)  ,  ,  ,  , 
-Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning         , default     , default     , block_128 , block_128
-Apps_FEMSWEEP  ,    0.002659 ,    0.000975 ,  0.000472 ,  0.000711
+Min Runtime Report (sec.)  ,  , 
+Variant        , Base_CUDA , RAJA_CUDA
+Tuning         , block_128 , block_128
+Apps_FEMSWEEP  ,  0.000472 ,  0.000709

@@ -1,76 +1,72 @@
 Kernels run on 4 MPI ranks
-Kernel               ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_DIFFUSION3DPA   ,           12339 ,      50 ,             12339 ,           1 ,           1700232 ,      2375943 ,             1601520 ,          1601520 ,               98712 ,                     98712 ,                               0 ,               1601520 , ConsistentPerVariantTuning   , O(N)                   
+Kernel               ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_DIFFUSION3DPA   ,           12339 ,      50 ,             12339 ,              1 ,           1700232 ,      2375943 ,             1601520 ,          1601520 ,               98712 ,                     98712 ,                               0 ,               1601520 , ConsistentPerVariantTuning   , O(N)                    ,                           3 ,                        3
 
 
 Kernels run on 4 MPI ranks
-Kernel               , Variant       , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_DIFFUSION3DPA   , Base_OpenMP   , default    ,           12339 , PASSED     ,                 1.32344e-05 ,                          119.648 ,                           179.528
-Apps_DIFFUSION3DPA   , RAJA_OpenMP   , default    ,           12339 , PASSED     ,                 1.72666e-05 ,                          91.7068 ,                           137.603
-Apps_DIFFUSION3DPA   , Base_CUDA     , block_64   ,           12339 , PASSED     ,                 4.54986e-06 ,                          348.025 ,                           522.201
-Apps_DIFFUSION3DPA   , RAJA_CUDA     , block_64   ,           12339 , PASSED     ,                 4.31204e-06 ,                          367.219 ,                           551.002
+Kernel               , Variant     , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_DIFFUSION3DPA   , Base_CUDA   , block_64   ,           12339 , PASSED     ,                 4.52188e-06 ,                          350.178 ,                           525.433
+Apps_DIFFUSION3DPA   , RAJA_CUDA   , block_64   ,           12339 , PASSED     ,                 4.33764e-06 ,                          365.052 ,                           547.750
 
 
 ===================================================================================================
 Checksum Report for 4 MPI ranks 
 ===================================================================================================
-Kernel              
+Kernel             
 ........................................................
-Variants            Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
-                                                                                    (vs. first variant listed)                              
+Variants           Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                   (vs. first variant listed)                              
 ----------------------------------------------------------------------------------------
-Apps_DIFFUSION3DPA  
+Apps_DIFFUSION3DPA 
 ........................................................
-Base_OpenMP-default PASSED  1.0000000000000000364e-10   9582349470.7551066149       0.0000000000000000000       0.0000000000000000000       
-RAJA_OpenMP-default PASSED  1.0000000000000000364e-10   9582349470.7551066149       0.0000000000000000000       0.0000000000000000000       
-Base_CUDA-block_64  PASSED  1.0000000000000000364e-10   9582349470.7551066149       0.0000000000000000000       0.0000000000000000000       
-RAJA_CUDA-block_64  PASSED  1.0000000000000000364e-10   9582349470.7551066149       0.0000000000000000000       0.0000000000000000000       
+Base_CUDA-block_64 PASSED  1.0000000000000000364e-10   9582349470.7551066149       0.0000000000000000000       0.0000000000000000000       
+RAJA_CUDA-block_64 PASSED  1.0000000000000000364e-10   9582349470.7551066149       0.0000000000000000000       0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  ,  ,  , 
-Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning              , default     , default     , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,    0.000662 ,    0.000863 ,  0.000227 ,  0.000216
+Mean Runtime Report (sec.)  ,  , 
+Variant             , Base_CUDA , RAJA_CUDA
+Tuning              , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,  0.000226 ,  0.000217
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
-Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning              , default     , default     , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,       1.000 ,       0.766 ,     2.909 ,     3.069
+Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant             , Base_CUDA , RAJA_CUDA
+Tuning              , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,     1.000 ,     1.042
 
 
-Min Runtime Report (sec.)  ,  ,  ,  , 
-Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning              , default     , default     , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,    0.000662 ,    0.000863 ,  0.000227 ,  0.000216
+Min Runtime Report (sec.)  ,  , 
+Variant             , Base_CUDA , RAJA_CUDA
+Tuning              , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,  0.000226 ,  0.000217
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
-Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning              , default     , default     , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,       1.000 ,       0.766 ,     2.909 ,     3.069
+Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant             , Base_CUDA , RAJA_CUDA
+Tuning              , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,     1.000 ,     1.042
 
 
-Max Runtime Report (sec.)  ,  ,  ,  , 
-Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning              , default     , default     , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,    0.000662 ,    0.000863 ,  0.000227 ,  0.000216
+Max Runtime Report (sec.)  ,  , 
+Variant             , Base_CUDA , RAJA_CUDA
+Tuning              , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,  0.000226 ,  0.000217
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
-Variant             , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning              , default     , default     , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,       1.000 ,       0.766 ,     2.909 ,     3.069
+Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant             , Base_CUDA , RAJA_CUDA
+Tuning              , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,     1.000 ,     1.042
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  , 
-Kernel              , Base_OpenMP-default,         , RAJA_OpenMP-default,         , Base_CUDA-block_64 ,         , RAJA_CUDA-block_64 ,        
-Apps_DIFFUSION3DPA  , 0.00               ,base_ref , 0.30               ,OVER_TOL , 0.00               ,base_ref , -0.05              ,        
-                    ,                    ,         ,                    ,         ,                    ,         ,                    ,        
-Col Min             , 0.00               ,         , 0.30               ,         , 0.00               ,         , -0.05              ,        
-Col Max             , 0.00               ,         , 0.30               ,         , 0.00               ,         , -0.05              ,        
-Col Avg             , 0.00               ,         , 0.30               ,         , 0.00               ,         , -0.05              ,        
-Col Std Dev         , 0.00               ,         , 0.00               ,         , 0.00               ,         , 0.00               ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
+Kernel              , Base_CUDA-block_64,         , RAJA_CUDA-block_64,        
+Apps_DIFFUSION3DPA  , 0.00              ,base_ref , -0.04             ,        
+                    ,                   ,         ,                   ,        
+Col Min             , 0.00              ,         , -0.04             ,        
+Col Max             , 0.00              ,         , -0.04             ,        
+Col Avg             , 0.00              ,         , -0.04             ,        
+Col Std Dev         , 0.00              ,         , 0.00              ,        

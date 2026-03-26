@@ -1,14 +1,12 @@
 Kernels run on 4 MPI ranks
-Kernel        ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,     FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_EDGE3D   ,         2146689 ,      10 ,           2316991 ,           1 ,          74571464 ,   30616719074 ,            74571464 ,         56035536 ,            18535928 ,                         0 ,                               0 ,              75284384 , ConsistentPerVariantTuning   , O(N)                   
+Kernel        ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,     FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_EDGE3D   ,         2146689 ,      10 ,           2316991 ,              1 ,          74571464 ,   30616719074 ,            74571464 ,         56035536 ,            18535928 ,                         0 ,                               0 ,              75284384 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        3
 
 
 Kernels run on 4 MPI ranks
-Kernel        , Variant       , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_EDGE3D   , Base_OpenMP   , default     ,         2146689 , PASSED     ,                    0.154835 ,                         0.448542 ,                           197.737
-Apps_EDGE3D   , RAJA_OpenMP   , default     ,         2146689 , PASSED     ,                    0.160629 ,                         0.432364 ,                           190.606
-Apps_EDGE3D   , Base_CUDA     , block_256   ,         2146689 , PASSED     ,                   0.0188831 ,                          3.67790 ,                           1621.38
-Apps_EDGE3D   , RAJA_CUDA     , block_256   ,         2146689 , PASSED     ,                   0.0189400 ,                          3.66685 ,                           1616.51
+Kernel        , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_EDGE3D   , Base_CUDA   , block_256   ,         2146689 , PASSED     ,                   0.0189029 ,                          3.67405 ,                           1619.69
+Apps_EDGE3D   , RAJA_CUDA   , block_256   ,         2146689 , PASSED     ,                   0.0189559 ,                          3.66378 ,                           1615.16
 
 
 ===================================================================================================
@@ -21,56 +19,54 @@ Variants            Result  Tolerance                   Average Checksum        
 ----------------------------------------------------------------------------------------
 Apps_EDGE3D         
 ........................................................
-Base_OpenMP-default PASSED  1.0000000000000000364e-10   4451395.8986068214540       0.0000000000000000000       0.0000000000000000000       
-RAJA_OpenMP-default PASSED  1.0000000000000000364e-10   4451395.8986068214540       0.0000000000000000000       0.0000000000000000000       
-Base_CUDA-block_256 PASSED  1.0000000000000000364e-10   4451395.8986068227778       2.9738301615562989765e-16   0.0000000000000000000       
-RAJA_CUDA-block_256 PASSED  1.0000000000000000364e-10   4451395.8986068227778       2.9738301615562989765e-16   0.0000000000000000000       
+Base_CUDA-block_256 PASSED  1.0000000000000000364e-10   4451395.8986068227778       0.0000000000000000000       0.0000000000000000000       
+RAJA_CUDA-block_256 PASSED  1.0000000000000000364e-10   4451395.8986068227778       0.0000000000000000000       0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  ,  ,  , 
-Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning       , default     , default     , block_256 , block_256
-Apps_EDGE3D  ,    1.548354 ,    1.606287 ,  0.188831 ,  0.189400
+Mean Runtime Report (sec.)  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_EDGE3D  ,  0.189029 ,  0.189559
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
-Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning       , default     , default     , block_256 , block_256
-Apps_EDGE3D  ,       1.000 ,       0.964 ,     8.200 ,     8.175
+Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_EDGE3D  ,     1.000 ,     0.997
 
 
-Min Runtime Report (sec.)  ,  ,  ,  , 
-Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning       , default     , default     , block_256 , block_256
-Apps_EDGE3D  ,    1.548354 ,    1.606287 ,  0.188831 ,  0.189400
+Min Runtime Report (sec.)  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_EDGE3D  ,  0.189029 ,  0.189559
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
-Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning       , default     , default     , block_256 , block_256
-Apps_EDGE3D  ,       1.000 ,       0.964 ,     8.200 ,     8.175
+Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_EDGE3D  ,     1.000 ,     0.997
 
 
-Max Runtime Report (sec.)  ,  ,  ,  , 
-Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning       , default     , default     , block_256 , block_256
-Apps_EDGE3D  ,    1.548354 ,    1.606287 ,  0.188831 ,  0.189400
+Max Runtime Report (sec.)  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_EDGE3D  ,  0.189029 ,  0.189559
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
-Variant      , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning       , default     , default     , block_256 , block_256
-Apps_EDGE3D  ,       1.000 ,       0.964 ,     8.200 ,     8.175
+Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_EDGE3D  ,     1.000 ,     0.997
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  , 
-Kernel       , Base_OpenMP-default,         , RAJA_OpenMP-default,         , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
-Apps_EDGE3D  , 0.00               ,base_ref , 0.04               ,         , 0.00               ,base_ref , 0.00               ,        
-             ,                    ,         ,                    ,         ,                    ,         ,                    ,        
-Col Min      , 0.00               ,         , 0.04               ,         , 0.00               ,         , 0.00               ,        
-Col Max      , 0.00               ,         , 0.04               ,         , 0.00               ,         , 0.00               ,        
-Col Avg      , 0.00               ,         , 0.04               ,         , 0.00               ,         , 0.00               ,        
-Col Std Dev  , 0.00               ,         , 0.00               ,         , 0.00               ,         , 0.00               ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
+Kernel       , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
+Apps_EDGE3D  , 0.00               ,base_ref , 0.00               ,        
+             ,                    ,         ,                    ,        
+Col Min      , 0.00               ,         , 0.00               ,        
+Col Max      , 0.00               ,         , 0.00               ,        
+Col Avg      , 0.00               ,         , 0.00               ,        
+Col Std Dev  , 0.00               ,         , 0.00               ,        

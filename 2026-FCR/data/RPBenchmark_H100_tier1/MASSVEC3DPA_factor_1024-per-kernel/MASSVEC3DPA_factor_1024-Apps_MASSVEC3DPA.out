@@ -1,17 +1,15 @@
 Kernels run on 4 MPI ranks
-Kernel             ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_MASSVEC3DPA   ,         5437248 ,      50 ,           5437248 ,           1 ,          51200848 ,    156320880 ,            51200848 ,         32850136 ,            18350712 ,                         0 ,                               0 ,              51200848 , ConsistentPerVariantTuning   , O(N)                   
+Kernel             ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_MASSVEC3DPA   ,         5437248 ,      50 ,           5437248 ,              1 ,          51200848 ,    156320880 ,            51200848 ,         32850136 ,            18350712 ,                         0 ,                               0 ,              51200848 , ConsistentPerVariantTuning   , O(N)                    ,                           3 ,                        3
 
 
 Kernels run on 4 MPI ranks
-Kernel             , Variant       , Tuning                         ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASSVEC3DPA   , Base_OpenMP   , default                        ,         5437248 , PASSED     ,                 0.000560902 ,                          85.0140 ,                           278.696
-Apps_MASSVEC3DPA   , RAJA_OpenMP   , default                        ,         5437248 , PASSED     ,                 0.000473327 ,                          100.743 ,                           330.260
-Apps_MASSVEC3DPA   , Base_CUDA     , runtime_block_stride_loop_64   ,         5437248 , PASSED     ,                 9.12838e-05 ,                          522.376 ,                           1712.47
-Apps_MASSVEC3DPA   , Base_CUDA     , direct_64                      ,         5437248 , PASSED     ,                 6.26994e-05 ,                          760.526 ,                           2493.18
-Apps_MASSVEC3DPA   , RAJA_CUDA     , runtime_block_stride_loop_64   ,         5437248 , PASSED     ,                 9.67035e-05 ,                          493.100 ,                           1616.50
-Apps_MASSVEC3DPA   , RAJA_CUDA     , direct_64                      ,         5437248 , PASSED     ,                 6.36301e-05 ,                          749.401 ,                           2456.71
-Apps_MASSVEC3DPA   , RAJA_CUDA     , cached_block_stride_loop_64    ,         5437248 , PASSED     ,                 9.67335e-05 ,                          492.947 ,                           1616.00
+Kernel             , Variant     , Tuning                         ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MASSVEC3DPA   , Base_CUDA   , runtime_block_stride_loop_64   ,         5437248 , PASSED     ,                 9.13083e-05 ,                          522.236 ,                           1712.01
+Apps_MASSVEC3DPA   , Base_CUDA   , direct_64                      ,         5437248 , PASSED     ,                 6.28003e-05 ,                          759.304 ,                           2489.17
+Apps_MASSVEC3DPA   , RAJA_CUDA   , runtime_block_stride_loop_64   ,         5437248 , PASSED     ,                 9.68140e-05 ,                          492.537 ,                           1614.65
+Apps_MASSVEC3DPA   , RAJA_CUDA   , direct_64                      ,         5437248 , PASSED     ,                 6.36671e-05 ,                          748.966 ,                           2455.29
+Apps_MASSVEC3DPA   , RAJA_CUDA   , cached_block_stride_loop_64    ,         5437248 , PASSED     ,                 9.68621e-05 ,                          492.293 ,                           1613.85
 
 
 ===================================================================================================
@@ -24,8 +22,6 @@ Variants                               Result  Tolerance                   Avera
 ----------------------------------------------------------------------------------------
 Apps_MASSVEC3DPA                       
 ........................................................
-Base_OpenMP-default                    PASSED  1.0000000000000000364e-10   3963750350.4420453918       0.0000000000000000000       0.0000000000000000000       
-RAJA_OpenMP-default                    PASSED  1.0000000000000000364e-10   3963750350.4420453918       0.0000000000000000000       0.0000000000000000000       
 Base_CUDA-runtime_block_stride_loop_64 PASSED  1.0000000000000000364e-10   3963750350.4420453918       0.0000000000000000000       0.0000000000000000000       
 Base_CUDA-direct_64                    PASSED  1.0000000000000000364e-10   3963750350.4420453918       0.0000000000000000000       0.0000000000000000000       
 RAJA_CUDA-runtime_block_stride_loop_64 PASSED  1.0000000000000000364e-10   3963750350.4420453918       0.0000000000000000000       0.0000000000000000000       
@@ -35,48 +31,48 @@ RAJA_CUDA-cached_block_stride_loop_64  PASSED  1.0000000000000000364e-10   39637
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  ,  ,  ,  ,  ,  , 
-Variant           , Base_OpenMP , RAJA_OpenMP , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
-Tuning            , default     , default     , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,    0.028045 ,    0.023666 ,                     0.004564 ,  0.003135 ,                     0.004835 ,  0.003182 ,                    0.004837
+Mean Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant           , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
+Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
+Apps_MASSVEC3DPA  ,                     0.004565 ,  0.003140 ,                     0.004841 ,  0.003183 ,                    0.004843
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  ,  ,  ,  , 
-Variant           , Base_OpenMP , RAJA_OpenMP , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
-Tuning            , default     , default     , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,       1.000 ,       1.185 ,                        6.145 ,     8.946 ,                        5.800 ,     8.815 ,                       5.798
+Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  ,  ,  ,  , 
+Variant           , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
+Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
+Apps_MASSVEC3DPA  ,                        1.000 ,     1.454 ,                        0.943 ,     1.434 ,                       0.943
 
 
-Min Runtime Report (sec.)  ,  ,  ,  ,  ,  ,  , 
-Variant           , Base_OpenMP , RAJA_OpenMP , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
-Tuning            , default     , default     , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,    0.028045 ,    0.023666 ,                     0.004564 ,  0.003135 ,                     0.004835 ,  0.003182 ,                    0.004837
+Min Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant           , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
+Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
+Apps_MASSVEC3DPA  ,                     0.004565 ,  0.003140 ,                     0.004841 ,  0.003183 ,                    0.004843
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  ,  ,  ,  , 
-Variant           , Base_OpenMP , RAJA_OpenMP , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
-Tuning            , default     , default     , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,       1.000 ,       1.185 ,                        6.145 ,     8.946 ,                        5.800 ,     8.815 ,                       5.798
+Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  ,  ,  ,  , 
+Variant           , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
+Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
+Apps_MASSVEC3DPA  ,                        1.000 ,     1.454 ,                        0.943 ,     1.434 ,                       0.943
 
 
-Max Runtime Report (sec.)  ,  ,  ,  ,  ,  ,  , 
-Variant           , Base_OpenMP , RAJA_OpenMP , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
-Tuning            , default     , default     , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,    0.028045 ,    0.023666 ,                     0.004564 ,  0.003135 ,                     0.004835 ,  0.003182 ,                    0.004837
+Max Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant           , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
+Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
+Apps_MASSVEC3DPA  ,                     0.004565 ,  0.003140 ,                     0.004841 ,  0.003183 ,                    0.004843
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  ,  ,  ,  , 
-Variant           , Base_OpenMP , RAJA_OpenMP , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
-Tuning            , default     , default     , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,       1.000 ,       1.185 ,                        6.145 ,     8.946 ,                        5.800 ,     8.815 ,                       5.798
+Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  ,  ,  ,  , 
+Variant           , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
+Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
+Apps_MASSVEC3DPA  ,                        1.000 ,     1.454 ,                        0.943 ,     1.434 ,                       0.943
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
-Kernel            , Base_OpenMP-default                   ,         , RAJA_OpenMP-default                   ,         , Base_CUDA-runtime_block_stride_loop_64,         , Base_CUDA-direct_64                   ,         , RAJA_CUDA-runtime_block_stride_loop_64,         , RAJA_CUDA-direct_64                   ,         , RAJA_CUDA-cached_block_stride_loop_64 ,        
-Apps_MASSVEC3DPA  , 0.00                                  ,base_ref , -0.16                                 ,         , 0.00                                  ,base_ref , -0.31                                 ,         , 0.06                                  ,         , -0.30                                 ,         , 0.06                                  ,        
-                  ,                                       ,         ,                                       ,         ,                                       ,         ,                                       ,         ,                                       ,         ,                                       ,         ,                                       ,        
-Col Min           , 0.00                                  ,         , -0.16                                 ,         , 0.00                                  ,         , -0.31                                 ,         , 0.06                                  ,         , -0.30                                 ,         , 0.06                                  ,        
-Col Max           , 0.00                                  ,         , -0.16                                 ,         , 0.00                                  ,         , -0.31                                 ,         , 0.06                                  ,         , -0.30                                 ,         , 0.06                                  ,        
-Col Avg           , 0.00                                  ,         , -0.16                                 ,         , 0.00                                  ,         , -0.31                                 ,         , 0.06                                  ,         , -0.30                                 ,         , 0.06                                  ,        
-Col Std Dev       , 0.00                                  ,         , 0.00                                  ,         , 0.00                                  ,         , 0.00                                  ,         , 0.00                                  ,         , 0.00                                  ,         , 0.00                                  ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Kernel            , Base_CUDA-runtime_block_stride_loop_64,         , Base_CUDA-direct_64                   ,         , RAJA_CUDA-runtime_block_stride_loop_64,         , RAJA_CUDA-direct_64                   ,         , RAJA_CUDA-cached_block_stride_loop_64 ,        
+Apps_MASSVEC3DPA  , 0.00                                  ,base_ref , -0.31                                 ,         , 0.06                                  ,         , -0.30                                 ,         , 0.06                                  ,        
+                  ,                                       ,         ,                                       ,         ,                                       ,         ,                                       ,         ,                                       ,        
+Col Min           , 0.00                                  ,         , -0.31                                 ,         , 0.06                                  ,         , -0.30                                 ,         , 0.06                                  ,        
+Col Max           , 0.00                                  ,         , -0.31                                 ,         , 0.06                                  ,         , -0.30                                 ,         , 0.06                                  ,        
+Col Avg           , 0.00                                  ,         , -0.31                                 ,         , 0.06                                  ,         , -0.30                                 ,         , 0.06                                  ,        
+Col Std Dev       , 0.00                                  ,         , 0.00                                  ,         , 0.00                                  ,         , 0.00                                  ,         , 0.00                                  ,        

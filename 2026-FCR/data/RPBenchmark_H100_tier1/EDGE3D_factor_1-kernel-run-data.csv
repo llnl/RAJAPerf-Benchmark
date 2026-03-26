@@ -1,6 +1,4 @@
 Kernels run on 4 MPI ranks
-Kernel        , Variant       , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_EDGE3D   , Base_OpenMP   , default     ,             512 , PASSED     ,                 0.000104805 ,                         0.435566 ,                           178.279
-Apps_EDGE3D   , RAJA_OpenMP   , default     ,             512 , PASSED     ,                 0.000108127 ,                         0.422187 ,                           172.803
-Apps_EDGE3D   , Base_CUDA     , block_256   ,             512 , PASSED     ,                 0.000228675 ,                         0.199627 ,                           81.7080
-Apps_EDGE3D   , RAJA_CUDA     , block_256   ,             512 , PASSED     ,                 0.000229979 ,                         0.198495 ,                           81.2449
+Kernel        , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_EDGE3D   , Base_CUDA   , block_256   ,             512 , PASSED     ,                 0.000230027 ,                         0.198454 ,                           81.2278
+Apps_EDGE3D   , RAJA_CUDA   , block_256   ,             512 , PASSED     ,                 0.000233364 ,                         0.195616 ,                           80.0663

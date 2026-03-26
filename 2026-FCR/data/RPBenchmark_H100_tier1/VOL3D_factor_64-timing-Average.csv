@@ -1,4 +1,4 @@
-Mean Runtime Report (sec.)  ,  ,  ,  , 
-Variant     , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning      , default     , default     , block_256 , block_256
-Apps_VOL3D  ,    0.004071 ,    0.004237 ,  0.000375 ,  0.000357
+Mean Runtime Report (sec.)  ,  , 
+Variant     , Base_CUDA , RAJA_CUDA
+Tuning      , block_256 , block_256
+Apps_VOL3D  ,  0.000361 ,  0.000342

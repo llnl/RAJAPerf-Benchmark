@@ -1,4 +1,4 @@
-Min Runtime Report (sec.)  ,  ,  ,  ,  ,  ,  , 
-Variant           , Base_OpenMP , RAJA_OpenMP , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
-Tuning            , default     , default     , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,    0.093960 ,    0.081908 ,                     0.012679 ,  0.008696 ,                     0.013472 ,  0.008793 ,                    0.013479
+Min Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant           , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
+Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
+Apps_MASSVEC3DPA  ,                     0.012766 ,  0.008764 ,                     0.013573 ,  0.008858 ,                    0.013576

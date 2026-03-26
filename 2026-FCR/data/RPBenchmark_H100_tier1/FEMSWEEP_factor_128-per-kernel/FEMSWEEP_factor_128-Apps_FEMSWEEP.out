@@ -1,14 +1,12 @@
 Kernels run on 4 MPI ranks
-Kernel          ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_FEMSWEEP   ,           73728 ,       1 ,                 1 ,           1 ,          12404144 ,     62595072 ,            10347136 ,          7685552 ,             4718592 ,                   2057008 ,                               0 ,              10347136 , ConsistentPerVariantTuning   , O(N)                   
+Kernel          ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_FEMSWEEP   ,           73728 ,       1 ,                 1 ,              1 ,          12404144 ,     62595072 ,            10347136 ,          7685552 ,             4718592 ,                   2057008 ,                               0 ,              10347136 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        3
 
 
 Kernels run on 4 MPI ranks
-Kernel          , Variant       , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_FEMSWEEP   , Base_OpenMP   , default     ,           73728 , PASSED     ,                  0.00265872 ,                          4.34505 ,                           23.5433
-Apps_FEMSWEEP   , RAJA_OpenMP   , default     ,           73728 , PASSED     ,                 0.000975014 ,                          11.8483 ,                           64.1992
-Apps_FEMSWEEP   , Base_CUDA     , block_128   ,           73728 , PASSED     ,                 0.000471860 ,                          24.4824 ,                           132.656
-Apps_FEMSWEEP   , RAJA_CUDA     , block_128   ,           73728 , PASSED     ,                 0.000710897 ,                          16.2503 ,                           88.0508
+Kernel          , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_FEMSWEEP   , Base_CUDA   , block_128   ,           73728 , PASSED     ,                 0.000472426 ,                          24.4531 ,                           132.497
+Apps_FEMSWEEP   , RAJA_CUDA   , block_128   ,           73728 , PASSED     ,                 0.000709257 ,                          16.2878 ,                           88.2544
 
 
 ===================================================================================================
@@ -21,56 +19,54 @@ Variants            Result  Tolerance                   Average Checksum        
 ----------------------------------------------------------------------------------------
 Apps_FEMSWEEP       
 ........................................................
-Base_OpenMP-default PASSED  5.0000000000000004090e-06   4037653.2385780267252       0.0000000000000000000       0.0000000000000000000       
-RAJA_OpenMP-default PASSED  5.0000000000000004090e-06   4037653.2385780267252       0.0000000000000000000       0.0000000000000000000       
-Base_CUDA-block_128 PASSED  5.0000000000000004090e-06   4037653.2386094961628       7.7939921249432778496e-12   0.0000000000000000000       
-RAJA_CUDA-block_128 PASSED  5.0000000000000004090e-06   4037653.2386094961628       7.7939921249432778496e-12   0.0000000000000000000       
+Base_CUDA-block_128 PASSED  5.0000000000000004090e-06   4037653.2386094961628       0.0000000000000000000       0.0000000000000000000       
+RAJA_CUDA-block_128 PASSED  5.0000000000000004090e-06   4037653.2386094961628       0.0000000000000000000       0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  ,  ,  , 
-Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning         , default     , default     , block_128 , block_128
-Apps_FEMSWEEP  ,    0.002659 ,    0.000975 ,  0.000472 ,  0.000711
+Mean Runtime Report (sec.)  ,  , 
+Variant        , Base_CUDA , RAJA_CUDA
+Tuning         , block_128 , block_128
+Apps_FEMSWEEP  ,  0.000472 ,  0.000709
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
-Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning         , default     , default     , block_128 , block_128
-Apps_FEMSWEEP  ,       1.000 ,       2.727 ,     5.635 ,     3.740
+Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant        , Base_CUDA , RAJA_CUDA
+Tuning         , block_128 , block_128
+Apps_FEMSWEEP  ,     1.000 ,     0.666
 
 
-Min Runtime Report (sec.)  ,  ,  ,  , 
-Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning         , default     , default     , block_128 , block_128
-Apps_FEMSWEEP  ,    0.002659 ,    0.000975 ,  0.000472 ,  0.000711
+Min Runtime Report (sec.)  ,  , 
+Variant        , Base_CUDA , RAJA_CUDA
+Tuning         , block_128 , block_128
+Apps_FEMSWEEP  ,  0.000472 ,  0.000709
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
-Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning         , default     , default     , block_128 , block_128
-Apps_FEMSWEEP  ,       1.000 ,       2.727 ,     5.635 ,     3.740
+Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant        , Base_CUDA , RAJA_CUDA
+Tuning         , block_128 , block_128
+Apps_FEMSWEEP  ,     1.000 ,     0.666
 
 
-Max Runtime Report (sec.)  ,  ,  ,  , 
-Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning         , default     , default     , block_128 , block_128
-Apps_FEMSWEEP  ,    0.002659 ,    0.000975 ,  0.000472 ,  0.000711
+Max Runtime Report (sec.)  ,  , 
+Variant        , Base_CUDA , RAJA_CUDA
+Tuning         , block_128 , block_128
+Apps_FEMSWEEP  ,  0.000472 ,  0.000709
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_OpenMP  ,  ,  ,  , 
-Variant        , Base_OpenMP , RAJA_OpenMP , Base_CUDA , RAJA_CUDA
-Tuning         , default     , default     , block_128 , block_128
-Apps_FEMSWEEP  ,       1.000 ,       2.727 ,     5.635 ,     3.740
+Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant        , Base_CUDA , RAJA_CUDA
+Tuning         , block_128 , block_128
+Apps_FEMSWEEP  ,     1.000 ,     0.666
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  , 
-Kernel         , Base_OpenMP-default,         , RAJA_OpenMP-default,         , Base_CUDA-block_128,         , RAJA_CUDA-block_128,        
-Apps_FEMSWEEP  , 0.00               ,base_ref , -0.63              ,         , 0.00               ,base_ref , 0.51               ,OVER_TOL
-               ,                    ,         ,                    ,         ,                    ,         ,                    ,        
-Col Min        , 0.00               ,         , -0.63              ,         , 0.00               ,         , 0.51               ,        
-Col Max        , 0.00               ,         , -0.63              ,         , 0.00               ,         , 0.51               ,        
-Col Avg        , 0.00               ,         , -0.63              ,         , 0.00               ,         , 0.51               ,        
-Col Std Dev    , 0.00               ,         , 0.00               ,         , 0.00               ,         , 0.00               ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
+Kernel         , Base_CUDA-block_128,         , RAJA_CUDA-block_128,        
+Apps_FEMSWEEP  , 0.00               ,base_ref , 0.50               ,OVER_TOL
+               ,                    ,         ,                    ,        
+Col Min        , 0.00               ,         , 0.50               ,        
+Col Max        , 0.00               ,         , 0.50               ,        
+Col Avg        , 0.00               ,         , 0.50               ,        
+Col Std Dev    , 0.00               ,         , 0.00               ,        
