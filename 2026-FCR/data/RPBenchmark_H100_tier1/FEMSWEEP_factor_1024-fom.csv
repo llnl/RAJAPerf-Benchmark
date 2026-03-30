@@ -1,9 +1,9 @@
 FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
 'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
 Kernel         , Base_CUDA-block_128,         , RAJA_CUDA-block_128,        
-Apps_FEMSWEEP  , 0                  ,base_ref , 0.28               ,OVER_TOL
+Apps_FEMSWEEP  , 0                  ,base_ref , 0.27               ,OVER_TOL
                ,                    ,         ,                    ,        
-Col Min        , 0                  ,         , 0.28               ,        
-Col Max        , 0                  ,         , 0.28               ,        
-Col Avg        , 0                  ,         , 0.28               ,        
+Col Min        , 0                  ,         , 0.27               ,        
+Col Max        , 0                  ,         , 0.27               ,        
+Col Avg        , 0                  ,         , 0.27               ,        
 Col Std Dev    , 0                  ,         , 0                  ,        

@@ -1,4 +1,4 @@
 Mean Runtime Report (sec.)  ,  , 
 Variant      , Base_CUDA , RAJA_CUDA
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.189029 ,  0.189559
+Apps_EDGE3D  ,  0.188707 ,  0.189294

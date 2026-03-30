@@ -1,4 +1,4 @@
 Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
 Variant               , Base_CUDA , RAJA_CUDA
 Tuning                , block_64  , block_64 
-Apps_MASS3DPA_ATOMIC  ,     1.000 ,     0.999
+Apps_MASS3DPA_ATOMIC  ,     1.000 ,     0.991

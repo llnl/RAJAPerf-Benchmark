@@ -5,8 +5,8 @@ Apps_NODAL_ACCUMULATION_3D   ,         2985984 ,     100 ,           2985984 ,  
 
 Kernels run on 4 MPI ranks
 Kernel                       , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_NODAL_ACCUMULATION_3D   , Base_CUDA   , block_256   ,         2985984 , PASSED     ,                 0.000101752 ,                          883.744 ,                           264.112
-Apps_NODAL_ACCUMULATION_3D   , RAJA_CUDA   , block_256   ,         2985984 , PASSED     ,                 0.000101723 ,                          883.993 ,                           264.186
+Apps_NODAL_ACCUMULATION_3D   , Base_CUDA   , block_256   ,         2985984 , PASSED     ,                 0.000101815 ,                          883.199 ,                           263.948
+Apps_NODAL_ACCUMULATION_3D   , RAJA_CUDA   , block_256   ,         2985984 , PASSED     ,                 0.000101790 ,                          883.413 ,                           264.012
 
 
 ===================================================================================================
@@ -28,7 +28,7 @@ RAJA_CUDA-block_256        PASSED  1.0000000000000000364e-10   298599644.5573593
 Mean Runtime Report (sec.)  ,  , 
 Variant                     , Base_CUDA , RAJA_CUDA
 Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,  0.010175 ,  0.010172
+Apps_NODAL_ACCUMULATION_3D  ,  0.010181 ,  0.010179
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
@@ -40,7 +40,7 @@ Apps_NODAL_ACCUMULATION_3D  ,     1.000 ,     1.000
 Min Runtime Report (sec.)  ,  , 
 Variant                     , Base_CUDA , RAJA_CUDA
 Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,  0.010175 ,  0.010172
+Apps_NODAL_ACCUMULATION_3D  ,  0.010181 ,  0.010179
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
@@ -52,7 +52,7 @@ Apps_NODAL_ACCUMULATION_3D  ,     1.000 ,     1.000
 Max Runtime Report (sec.)  ,  , 
 Variant                     , Base_CUDA , RAJA_CUDA
 Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,  0.010175 ,  0.010172
+Apps_NODAL_ACCUMULATION_3D  ,  0.010181 ,  0.010179
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 

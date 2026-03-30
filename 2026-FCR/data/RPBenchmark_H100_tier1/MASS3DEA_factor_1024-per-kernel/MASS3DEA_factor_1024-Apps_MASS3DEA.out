@@ -5,9 +5,9 @@ Apps_MASS3DEA   ,         6213632 ,       1 ,             97088 ,              1
 
 Kernels run on 4 MPI ranks
 Kernel          , Variant     , Tuning                              ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASS3DEA   , Base_CUDA   , compile_time_block_stride_loop_64   ,         6213632 , PASSED     ,                 0.000258296 ,                          184.703 ,                           168.394
-Apps_MASS3DEA   , RAJA_CUDA   , compile_time_block_stride_loop_64   ,         6213632 , PASSED     ,                 0.000242986 ,                          196.341 ,                           179.004
-Apps_MASS3DEA   , RAJA_CUDA   , cached_block_stride_loop_64         ,         6213632 , PASSED     ,                 0.000268412 ,                          177.742 ,                           162.047
+Apps_MASS3DEA   , Base_CUDA   , compile_time_block_stride_loop_64   ,         6213632 , PASSED     ,                 0.000258119 ,                          184.830 ,                           168.509
+Apps_MASS3DEA   , RAJA_CUDA   , compile_time_block_stride_loop_64   ,         6213632 , PASSED     ,                 0.000243387 ,                          196.018 ,                           178.709
+Apps_MASS3DEA   , RAJA_CUDA   , cached_block_stride_loop_64         ,         6213632 , PASSED     ,                 0.000267649 ,                          178.249 ,                           162.509
 
 
 ===================================================================================================
@@ -36,7 +36,7 @@ Apps_MASS3DEA  ,                          0.000258 ,                          0.
 Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  ,  , 
 Variant        , Base_CUDA                         , RAJA_CUDA                         , RAJA_CUDA                  
 Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
-Apps_MASS3DEA  ,                             1.000 ,                             1.063 ,                       0.962
+Apps_MASS3DEA  ,                             1.000 ,                             1.061 ,                       0.964
 
 
 Min Runtime Report (sec.)  ,  ,  , 
@@ -48,7 +48,7 @@ Apps_MASS3DEA  ,                          0.000258 ,                          0.
 Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  ,  , 
 Variant        , Base_CUDA                         , RAJA_CUDA                         , RAJA_CUDA                  
 Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
-Apps_MASS3DEA  ,                             1.000 ,                             1.063 ,                       0.962
+Apps_MASS3DEA  ,                             1.000 ,                             1.061 ,                       0.964
 
 
 Max Runtime Report (sec.)  ,  ,  , 
@@ -60,7 +60,7 @@ Apps_MASS3DEA  ,                          0.000258 ,                          0.
 Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  ,  , 
 Variant        , Base_CUDA                         , RAJA_CUDA                         , RAJA_CUDA                  
 Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
-Apps_MASS3DEA  ,                             1.000 ,                             1.063 ,                       0.962
+Apps_MASS3DEA  ,                             1.000 ,                             1.061 ,                       0.964
 
 
 FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 

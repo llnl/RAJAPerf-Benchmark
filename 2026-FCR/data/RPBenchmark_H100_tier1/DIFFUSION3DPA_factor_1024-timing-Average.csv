@@ -1,4 +1,4 @@
 Mean Runtime Report (sec.)  ,  , 
 Variant             , Base_CUDA , RAJA_CUDA
 Tuning              , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,  0.001561 ,  0.001524
+Apps_DIFFUSION3DPA  ,  0.001560 ,  0.001516

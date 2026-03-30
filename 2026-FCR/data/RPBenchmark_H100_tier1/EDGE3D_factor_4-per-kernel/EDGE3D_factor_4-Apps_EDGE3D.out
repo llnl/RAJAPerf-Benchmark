@@ -5,8 +5,8 @@ Apps_EDGE3D   ,            3375 ,      10 ,              6097 ,              1 ,
 
 Kernels run on 4 MPI ranks
 Kernel        , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_EDGE3D   , Base_CUDA   , block_256   ,            3375 , PASSED     ,                 0.000236627 ,                         0.803883 ,                           340.475
-Apps_EDGE3D   , RAJA_CUDA   , block_256   ,            3375 , PASSED     ,                 0.000237244 ,                         0.801794 ,                           339.590
+Apps_EDGE3D   , Base_CUDA   , block_256   ,            3375 , PASSED     ,                 0.000238587 ,                         0.797279 ,                           337.678
+Apps_EDGE3D   , RAJA_CUDA   , block_256   ,            3375 , PASSED     ,                 0.000237992 ,                         0.799274 ,                           338.523
 
 
 ===================================================================================================
@@ -28,45 +28,45 @@ RAJA_CUDA-block_256 PASSED  1.0000000000000000364e-10   10525.428787557878395   
 Mean Runtime Report (sec.)  ,  , 
 Variant      , Base_CUDA , RAJA_CUDA
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.002366 ,  0.002372
+Apps_EDGE3D  ,  0.002386 ,  0.002380
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
 Variant      , Base_CUDA , RAJA_CUDA
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,     1.000 ,     0.997
+Apps_EDGE3D  ,     1.000 ,     1.003
 
 
 Min Runtime Report (sec.)  ,  , 
 Variant      , Base_CUDA , RAJA_CUDA
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.002366 ,  0.002372
+Apps_EDGE3D  ,  0.002386 ,  0.002380
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
 Variant      , Base_CUDA , RAJA_CUDA
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,     1.000 ,     0.997
+Apps_EDGE3D  ,     1.000 ,     1.003
 
 
 Max Runtime Report (sec.)  ,  , 
 Variant      , Base_CUDA , RAJA_CUDA
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.002366 ,  0.002372
+Apps_EDGE3D  ,  0.002386 ,  0.002380
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
 Variant      , Base_CUDA , RAJA_CUDA
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,     1.000 ,     0.997
+Apps_EDGE3D  ,     1.000 ,     1.003
 
 
 FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
 'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
 Kernel       , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
-Apps_EDGE3D  , 0.00               ,base_ref , 0.00               ,        
+Apps_EDGE3D  , 0.00               ,base_ref , -0.00              ,        
              ,                    ,         ,                    ,        
-Col Min      , 0.00               ,         , 0.00               ,        
-Col Max      , 0.00               ,         , 0.00               ,        
-Col Avg      , 0.00               ,         , 0.00               ,        
+Col Min      , 0.00               ,         , -0.00              ,        
+Col Max      , 0.00               ,         , -0.00              ,        
+Col Avg      , 0.00               ,         , -0.00              ,        
 Col Std Dev  , 0.00               ,         , 0.00               ,        

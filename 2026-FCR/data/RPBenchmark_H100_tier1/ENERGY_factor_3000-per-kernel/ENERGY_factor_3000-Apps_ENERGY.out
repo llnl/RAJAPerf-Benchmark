@@ -5,8 +5,8 @@ Apps_ENERGY   ,         1250000 ,     130 ,           7500000 ,              6 ,
 
 Kernels run on 4 MPI ranks
 Kernel        , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_ENERGY   , Base_CUDA   , block_256   ,         1250000 , PASSED     ,                 9.51404e-05 ,                          2643.01 ,                           722.616
-Apps_ENERGY   , RAJA_CUDA   , block_256   ,         1250000 , PASSED     ,                 9.50306e-05 ,                          2646.06 ,                           723.451
+Apps_ENERGY   , Base_CUDA   , block_256   ,         1250000 , PASSED     ,                 9.52629e-05 ,                          2639.61 ,                           721.687
+Apps_ENERGY   , RAJA_CUDA   , block_256   ,         1250000 , PASSED     ,                 9.51726e-05 ,                          2642.12 ,                           722.372
 
 
 ===================================================================================================
@@ -28,7 +28,7 @@ RAJA_CUDA-block_256 PASSED  1.0000000000000000364e-10   122390.63081370959043   
 Mean Runtime Report (sec.)  ,  , 
 Variant      , Base_CUDA , RAJA_CUDA
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,  0.012368 ,  0.012354
+Apps_ENERGY  ,  0.012384 ,  0.012372
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
@@ -40,7 +40,7 @@ Apps_ENERGY  ,     1.000 ,     1.001
 Min Runtime Report (sec.)  ,  , 
 Variant      , Base_CUDA , RAJA_CUDA
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,  0.012368 ,  0.012354
+Apps_ENERGY  ,  0.012384 ,  0.012372
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
@@ -52,7 +52,7 @@ Apps_ENERGY  ,     1.000 ,     1.001
 Max Runtime Report (sec.)  ,  , 
 Variant      , Base_CUDA , RAJA_CUDA
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,  0.012368 ,  0.012354
+Apps_ENERGY  ,  0.012384 ,  0.012372
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 

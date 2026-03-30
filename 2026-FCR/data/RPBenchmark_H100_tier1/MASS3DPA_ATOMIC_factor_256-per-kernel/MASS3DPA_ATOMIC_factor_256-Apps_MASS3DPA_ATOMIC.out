@@ -5,8 +5,8 @@ Apps_MASS3DPA_ATOMIC   ,          132651 ,      50 ,            140625 ,        
 
 Kernels run on 4 MPI ranks
 Kernel                 , Variant     , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASS3DPA_ATOMIC   , Base_CUDA   , block_64   ,          132651 , PASSED     ,                 1.60569e-05 ,                          844.425 ,                           1816.78
-Apps_MASS3DPA_ATOMIC   , RAJA_CUDA   , block_64   ,          132651 , FAILED     ,                 1.60563e-05 ,                          844.459 ,                           1816.85
+Apps_MASS3DPA_ATOMIC   , Base_CUDA   , block_64   ,          132651 , PASSED     ,                 1.80460e-05 ,                          751.350 ,                           1616.53
+Apps_MASS3DPA_ATOMIC   , RAJA_CUDA   , block_64   ,          132651 , PASSED     ,                 1.80429e-05 ,                          751.480 ,                           1616.81
 
 
 ===================================================================================================
@@ -19,8 +19,8 @@ Variants             Result  Tolerance                   Average Checksum       
 ----------------------------------------------------------------------------------------
 Apps_MASS3DPA_ATOMIC 
 ........................................................
-Base_CUDA-block_64   PASSED  1.0000000000000000364e-10   10527974450868.344667       0.0000000000000000000       0.0000000000000000000       
-RAJA_CUDA-block_64   FAILED  1.0000000000000000364e-10   7027309783653.0459814       2.6615168363320115389       0.96147588722197113595      
+Base_CUDA-block_64   PASSED  1.0000000000000000364e-10   36440536101.395470574       0.0000000000000000000       0.0000000000000000000       
+RAJA_CUDA-block_64   PASSED  1.0000000000000000364e-10   36440536101.395470574       0.0000000000000000000       0.0000000000000000000       
 
 -------------------------------------------------------
 
@@ -28,7 +28,7 @@ RAJA_CUDA-block_64   FAILED  1.0000000000000000364e-10   7027309783653.0459814  
 Mean Runtime Report (sec.)  ,  , 
 Variant               , Base_CUDA , RAJA_CUDA
 Tuning                , block_64  , block_64 
-Apps_MASS3DPA_ATOMIC  ,  0.000803 ,  0.000803
+Apps_MASS3DPA_ATOMIC  ,  0.000902 ,  0.000902
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
@@ -40,7 +40,7 @@ Apps_MASS3DPA_ATOMIC  ,     1.000 ,     1.000
 Min Runtime Report (sec.)  ,  , 
 Variant               , Base_CUDA , RAJA_CUDA
 Tuning                , block_64  , block_64 
-Apps_MASS3DPA_ATOMIC  ,  0.000803 ,  0.000803
+Apps_MASS3DPA_ATOMIC  ,  0.000902 ,  0.000902
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
@@ -52,7 +52,7 @@ Apps_MASS3DPA_ATOMIC  ,     1.000 ,     1.000
 Max Runtime Report (sec.)  ,  , 
 Variant               , Base_CUDA , RAJA_CUDA
 Tuning                , block_64  , block_64 
-Apps_MASS3DPA_ATOMIC  ,  0.000803 ,  0.000803
+Apps_MASS3DPA_ATOMIC  ,  0.000902 ,  0.000902
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 

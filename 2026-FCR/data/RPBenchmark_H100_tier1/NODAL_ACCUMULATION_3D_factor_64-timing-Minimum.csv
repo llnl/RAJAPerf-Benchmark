@@ -1,4 +1,4 @@
 Min Runtime Report (sec.)  ,  , 
 Variant                     , Base_CUDA , RAJA_CUDA
 Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,  0.000592 ,  0.000592
+Apps_NODAL_ACCUMULATION_3D  ,  0.000584 ,  0.000583

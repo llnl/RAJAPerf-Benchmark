@@ -5,8 +5,8 @@ Apps_INTSC_HEXRECT   ,          551368 ,       1 ,            551368 ,          
 
 Kernels run on 4 MPI ranks
 Kernel               , Variant     , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_INTSC_HEXRECT   , Base_CUDA   , block_64   ,          551368 , PASSED     ,                  0.00127534 ,                          19.0146 ,                           1556.39
-Apps_INTSC_HEXRECT   , RAJA_CUDA   , block_64   ,          551368 , PASSED     ,                  0.00153194 ,                          15.8297 ,                           1295.69
+Apps_INTSC_HEXRECT   , Base_CUDA   , block_64   ,          551368 , PASSED     ,                  0.00127372 ,                          19.0387 ,                           1558.36
+Apps_INTSC_HEXRECT   , RAJA_CUDA   , block_64   ,          551368 , PASSED     ,                  0.00152314 ,                          15.9211 ,                           1303.18
 
 
 ===================================================================================================
@@ -28,37 +28,37 @@ RAJA_CUDA-block_64 PASSED  1.0000000000000000364e-10   429.37942824718660481    
 Mean Runtime Report (sec.)  ,  , 
 Variant             , Base_CUDA , RAJA_CUDA
 Tuning              , block_64  , block_64 
-Apps_INTSC_HEXRECT  ,  0.001275 ,  0.001532
+Apps_INTSC_HEXRECT  ,  0.001274 ,  0.001523
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
 Variant             , Base_CUDA , RAJA_CUDA
 Tuning              , block_64  , block_64 
-Apps_INTSC_HEXRECT  ,     1.000 ,     0.833
+Apps_INTSC_HEXRECT  ,     1.000 ,     0.836
 
 
 Min Runtime Report (sec.)  ,  , 
 Variant             , Base_CUDA , RAJA_CUDA
 Tuning              , block_64  , block_64 
-Apps_INTSC_HEXRECT  ,  0.001275 ,  0.001532
+Apps_INTSC_HEXRECT  ,  0.001274 ,  0.001523
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
 Variant             , Base_CUDA , RAJA_CUDA
 Tuning              , block_64  , block_64 
-Apps_INTSC_HEXRECT  ,     1.000 ,     0.833
+Apps_INTSC_HEXRECT  ,     1.000 ,     0.836
 
 
 Max Runtime Report (sec.)  ,  , 
 Variant             , Base_CUDA , RAJA_CUDA
 Tuning              , block_64  , block_64 
-Apps_INTSC_HEXRECT  ,  0.001275 ,  0.001532
+Apps_INTSC_HEXRECT  ,  0.001274 ,  0.001523
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
 Variant             , Base_CUDA , RAJA_CUDA
 Tuning              , block_64  , block_64 
-Apps_INTSC_HEXRECT  ,     1.000 ,     0.833
+Apps_INTSC_HEXRECT  ,     1.000 ,     0.836
 
 
 FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 

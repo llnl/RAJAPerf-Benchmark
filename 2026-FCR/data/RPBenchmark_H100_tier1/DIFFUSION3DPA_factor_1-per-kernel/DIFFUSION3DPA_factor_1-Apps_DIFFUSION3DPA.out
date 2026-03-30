@@ -5,8 +5,8 @@ Apps_DIFFUSION3DPA   ,             405 ,      50 ,               405 ,          
 
 Kernels run on 4 MPI ranks
 Kernel               , Variant     , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_DIFFUSION3DPA   , Base_CUDA   , block_64   ,             405 , PASSED     ,                 4.30818e-06 ,                          12.1041 ,                           18.1016
-Apps_DIFFUSION3DPA   , RAJA_CUDA   , block_64   ,             405 , PASSED     ,                 4.02040e-06 ,                          12.9705 ,                           19.3973
+Apps_DIFFUSION3DPA   , Base_CUDA   , block_64   ,             405 , PASSED     ,                 4.18338e-06 ,                          12.4652 ,                           18.6416
+Apps_DIFFUSION3DPA   , RAJA_CUDA   , block_64   ,             405 , PASSED     ,                 3.90352e-06 ,                          13.3589 ,                           19.9781
 
 
 ===================================================================================================
@@ -28,7 +28,7 @@ RAJA_CUDA-block_64 PASSED  1.0000000000000000364e-10   314420454.72603346177    
 Mean Runtime Report (sec.)  ,  , 
 Variant             , Base_CUDA , RAJA_CUDA
 Tuning              , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,  0.000215 ,  0.000201
+Apps_DIFFUSION3DPA  ,  0.000209 ,  0.000195
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
@@ -40,7 +40,7 @@ Apps_DIFFUSION3DPA  ,     1.000 ,     1.072
 Min Runtime Report (sec.)  ,  , 
 Variant             , Base_CUDA , RAJA_CUDA
 Tuning              , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,  0.000215 ,  0.000201
+Apps_DIFFUSION3DPA  ,  0.000209 ,  0.000195
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
@@ -52,7 +52,7 @@ Apps_DIFFUSION3DPA  ,     1.000 ,     1.072
 Max Runtime Report (sec.)  ,  , 
 Variant             , Base_CUDA , RAJA_CUDA
 Tuning              , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,  0.000215 ,  0.000201
+Apps_DIFFUSION3DPA  ,  0.000209 ,  0.000195
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 

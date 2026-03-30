@@ -1,7 +1,7 @@
 Kernels run on 4 MPI ranks
 Kernel             , Variant     , Tuning                         ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASSVEC3DPA   , Base_CUDA   , runtime_block_stride_loop_64   ,           85056 , PASSED     ,                 7.77984e-06 ,                          95.8923 ,                           314.320
-Apps_MASSVEC3DPA   , Base_CUDA   , direct_64                      ,           85056 , PASSED     ,                 4.84770e-06 ,                          153.893 ,                           504.437
-Apps_MASSVEC3DPA   , RAJA_CUDA   , runtime_block_stride_loop_64   ,           85056 , PASSED     ,                 7.46222e-06 ,                          99.9738 ,                           327.699
-Apps_MASSVEC3DPA   , RAJA_CUDA   , direct_64                      ,           85056 , PASSED     ,                 4.60658e-06 ,                          161.948 ,                           530.841
-Apps_MASSVEC3DPA   , RAJA_CUDA   , cached_block_stride_loop_64    ,           85056 , PASSED     ,                 7.48106e-06 ,                          99.7220 ,                           326.873
+Apps_MASSVEC3DPA   , Base_CUDA   , runtime_block_stride_loop_64   ,           85056 , PASSED     ,                 7.78896e-06 ,                          95.7800 ,                           313.952
+Apps_MASSVEC3DPA   , Base_CUDA   , direct_64                      ,           85056 , PASSED     ,                 4.82614e-06 ,                          154.580 ,                           506.691
+Apps_MASSVEC3DPA   , RAJA_CUDA   , runtime_block_stride_loop_64   ,           85056 , PASSED     ,                 7.37824e-06 ,                          101.112 ,                           331.429
+Apps_MASSVEC3DPA   , RAJA_CUDA   , direct_64                      ,           85056 , PASSED     ,                 4.59230e-06 ,                          162.452 ,                           532.491
+Apps_MASSVEC3DPA   , RAJA_CUDA   , cached_block_stride_loop_64    ,           85056 , PASSED     ,                 7.45282e-06 ,                          100.100 ,                           328.112

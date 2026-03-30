@@ -5,8 +5,8 @@ Apps_INTSC_HEXRECT   ,         3241792 ,       1 ,           3241792 ,          
 
 Kernels run on 4 MPI ranks
 Kernel               , Variant     , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_INTSC_HEXRECT   , Base_CUDA   , block_64   ,         3241792 , PASSED     ,                  0.00694552 ,                          20.4841 ,                           1680.28
-Apps_INTSC_HEXRECT   , RAJA_CUDA   , block_64   ,         3241792 , PASSED     ,                  0.00839824 ,                          16.9407 ,                           1389.63
+Apps_INTSC_HEXRECT   , Base_CUDA   , block_64   ,         3241792 , PASSED     ,                  0.00694550 ,                          20.4841 ,                           1680.29
+Apps_INTSC_HEXRECT   , RAJA_CUDA   , block_64   ,         3241792 , PASSED     ,                  0.00839911 ,                          16.9390 ,                           1389.49
 
 
 ===================================================================================================
@@ -28,7 +28,7 @@ RAJA_CUDA-block_64 PASSED  1.0000000000000000364e-10   4337.3929093440923599    
 Mean Runtime Report (sec.)  ,  , 
 Variant             , Base_CUDA , RAJA_CUDA
 Tuning              , block_64  , block_64 
-Apps_INTSC_HEXRECT  ,  0.006946 ,  0.008398
+Apps_INTSC_HEXRECT  ,  0.006946 ,  0.008399
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
@@ -40,7 +40,7 @@ Apps_INTSC_HEXRECT  ,     1.000 ,     0.827
 Min Runtime Report (sec.)  ,  , 
 Variant             , Base_CUDA , RAJA_CUDA
 Tuning              , block_64  , block_64 
-Apps_INTSC_HEXRECT  ,  0.006946 ,  0.008398
+Apps_INTSC_HEXRECT  ,  0.006946 ,  0.008399
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
@@ -52,7 +52,7 @@ Apps_INTSC_HEXRECT  ,     1.000 ,     0.827
 Max Runtime Report (sec.)  ,  , 
 Variant             , Base_CUDA , RAJA_CUDA
 Tuning              , block_64  , block_64 
-Apps_INTSC_HEXRECT  ,  0.006946 ,  0.008398
+Apps_INTSC_HEXRECT  ,  0.006946 ,  0.008399
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 

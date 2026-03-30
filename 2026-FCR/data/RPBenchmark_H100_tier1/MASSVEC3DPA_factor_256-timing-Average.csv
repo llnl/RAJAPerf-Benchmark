@@ -1,4 +1,4 @@
 Mean Runtime Report (sec.)  ,  ,  ,  ,  , 
 Variant           , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
 Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,                     0.001281 ,  0.000863 ,                     0.001297 ,  0.000875 ,                    0.001297
+Apps_MASSVEC3DPA  ,                     0.001286 ,  0.000868 ,                     0.001302 ,  0.000880 ,                    0.001300

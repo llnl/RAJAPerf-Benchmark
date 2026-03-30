@@ -1,4 +1,4 @@
 Min Runtime Report (sec.)  ,  , 
 Variant             , Base_CUDA , RAJA_CUDA
 Tuning              , block_64  , block_64 
-Apps_INTSC_HEXRECT  ,  0.000176 ,  0.000172
+Apps_INTSC_HEXRECT  ,  0.000177 ,  0.000172

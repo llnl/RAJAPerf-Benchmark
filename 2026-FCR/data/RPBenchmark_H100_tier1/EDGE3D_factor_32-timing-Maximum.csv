@@ -1,4 +1,4 @@
 Max Runtime Report (sec.)  ,  , 
 Variant      , Base_CUDA , RAJA_CUDA
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.005332 ,  0.005337
+Apps_EDGE3D  ,  0.005279 ,  0.005307

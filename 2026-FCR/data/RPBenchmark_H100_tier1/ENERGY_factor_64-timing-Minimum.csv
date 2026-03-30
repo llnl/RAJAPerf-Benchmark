@@ -1,4 +1,4 @@
 Min Runtime Report (sec.)  ,  , 
 Variant      , Base_CUDA , RAJA_CUDA
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,  0.001836 ,  0.001838
+Apps_ENERGY  ,  0.001696 ,  0.001706
