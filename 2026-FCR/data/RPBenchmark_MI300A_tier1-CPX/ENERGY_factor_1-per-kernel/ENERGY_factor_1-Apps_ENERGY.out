@@ -1,12 +1,12 @@
 Kernels run on 24 MPI ranks
-Kernel        ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_ENERGY   ,             417 ,     130 ,              2502 ,           6 ,             90072 ,        22935 ,               80064 ,            73392 ,               16680 ,                     10008 ,                               0 ,                 50040 , ConsistentPerVariantTuning   , O(N)                   
+Kernel        ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_ENERGY   ,             417 ,     130 ,              2502 ,              6 ,             90072 ,        22935 ,               80064 ,            73392 ,               16680 ,                     10008 ,                               0 ,                 50040 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        1
 
 
 Kernels run on 24 MPI ranks
 Kernel        , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_ENERGY   , Base_HIP   , block_256   ,             417 , PASSED     ,                 1.43830e-05 ,                          5.83232 ,                           1.59460
-Apps_ENERGY   , RAJA_HIP   , block_256   ,             417 , PASSED     ,                 1.22375e-05 ,                          6.85484 ,                           1.87416
+Apps_ENERGY   , Base_HIP   , block_256   ,             417 , PASSED     ,                 1.48404e-05 ,                          5.65254 ,                           1.54544
+Apps_ENERGY   , RAJA_HIP   , block_256   ,             417 , PASSED     ,                 9.14306e-06 ,                          9.17484 ,                           2.50846
 
 
 ===================================================================================================
@@ -28,45 +28,45 @@ RAJA_HIP-block_256 PASSED  1.0000000000000000364e-10   40.747488685166330508    
 Mean Runtime Report (sec.)  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,  0.001870 ,  0.001591
+Apps_ENERGY  ,  0.001929 ,  0.001189
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,     1.000 ,     1.175
+Apps_ENERGY  ,     1.000 ,     1.623
 
 
 Min Runtime Report (sec.)  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,  0.001870 ,  0.001591
+Apps_ENERGY  ,  0.001929 ,  0.001189
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,     1.000 ,     1.175
+Apps_ENERGY  ,     1.000 ,     1.623
 
 
 Max Runtime Report (sec.)  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,  0.001870 ,  0.001591
+Apps_ENERGY  ,  0.001929 ,  0.001189
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,     1.000 ,     1.175
+Apps_ENERGY  ,     1.000 ,     1.623
 
 
 FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
 'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
 Kernel       , Base_HIP-block_256,         , RAJA_HIP-block_256,        
-Apps_ENERGY  , 0.00              ,base_ref , -0.15             ,        
+Apps_ENERGY  , 0.00              ,base_ref , -0.38             ,        
              ,                   ,         ,                   ,        
-Col Min      , 0.00              ,         , -0.15             ,        
-Col Max      , 0.00              ,         , -0.15             ,        
-Col Avg      , 0.00              ,         , -0.15             ,        
+Col Min      , 0.00              ,         , -0.38             ,        
+Col Max      , 0.00              ,         , -0.38             ,        
+Col Avg      , 0.00              ,         , -0.38             ,        
 Col Std Dev  , 0.00              ,         , 0.00              ,        

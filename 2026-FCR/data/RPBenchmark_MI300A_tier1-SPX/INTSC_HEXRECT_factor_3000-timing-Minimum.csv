@@ -1,4 +1,4 @@
 Min Runtime Report (sec.)  ,  , 
 Variant             , Base_HIP , RAJA_HIP
 Tuning              , block_64 , block_64
-Apps_INTSC_HEXRECT  , 0.024745 , 0.024937
+Apps_INTSC_HEXRECT  , 0.024977 , 0.024979

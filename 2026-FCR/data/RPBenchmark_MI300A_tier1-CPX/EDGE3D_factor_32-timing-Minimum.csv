@@ -1,4 +1,4 @@
 Min Runtime Report (sec.)  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.001388 ,  0.001355
+Apps_EDGE3D  ,  0.001438 ,  0.001385

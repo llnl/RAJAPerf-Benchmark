@@ -1,12 +1,12 @@
 Kernels run on 24 MPI ranks
-Kernel                 ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_MASS3DPA_ATOMIC   ,          132651 ,      50 ,            140625 ,           1 ,          14558720 ,     29171875 ,            13497512 ,         12436304 ,                   0 ,                         0 ,                         1061208 ,              13497512 , ConsistentPerVariantTuning   , O(N)                   
+Kernel                 ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency   , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_MASS3DPA_ATOMIC   ,          132651 ,      50 ,            140625 ,              1 ,          14558720 ,     29171875 ,            13497512 ,         12436304 ,                   0 ,                         0 ,                         1061208 ,              13497512 , Inconsistent          , O(N)                    ,                           3 ,                        3
 
 
 Kernels run on 24 MPI ranks
 Kernel                 , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASS3DPA_ATOMIC   , Base_HIP   , block_64   ,          132651 , PASSED     ,                 6.39684e-05 ,                          211.962 ,                           456.036
-Apps_MASS3DPA_ATOMIC   , RAJA_HIP   , block_64   ,          132651 , PASSED     ,                 6.43898e-05 ,                          210.575 ,                           453.051
+Apps_MASS3DPA_ATOMIC   , Base_HIP   , block_64   ,          132651 , PASSED     ,                 6.43051e-05 ,                          210.852 ,                           453.648
+Apps_MASS3DPA_ATOMIC   , RAJA_HIP   , block_64   ,          132651 , PASSED     ,                 6.49137e-05 ,                          208.875 ,                           449.394
 
 
 ===================================================================================================
@@ -28,37 +28,37 @@ RAJA_HIP-block_64    PASSED  1.0000000000000000364e-10   36440536101.395470574  
 Mean Runtime Report (sec.)  ,  , 
 Variant               , Base_HIP , RAJA_HIP
 Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  , 0.003198 , 0.003219
+Apps_MASS3DPA_ATOMIC  , 0.003215 , 0.003246
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant               , Base_HIP , RAJA_HIP
 Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  ,    1.000 ,    0.993
+Apps_MASS3DPA_ATOMIC  ,    1.000 ,    0.991
 
 
 Min Runtime Report (sec.)  ,  , 
 Variant               , Base_HIP , RAJA_HIP
 Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  , 0.003198 , 0.003219
+Apps_MASS3DPA_ATOMIC  , 0.003215 , 0.003246
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant               , Base_HIP , RAJA_HIP
 Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  ,    1.000 ,    0.993
+Apps_MASS3DPA_ATOMIC  ,    1.000 ,    0.991
 
 
 Max Runtime Report (sec.)  ,  , 
 Variant               , Base_HIP , RAJA_HIP
 Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  , 0.003198 , 0.003219
+Apps_MASS3DPA_ATOMIC  , 0.003215 , 0.003246
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant               , Base_HIP , RAJA_HIP
 Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  ,    1.000 ,    0.993
+Apps_MASS3DPA_ATOMIC  ,    1.000 ,    0.991
 
 
 FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 

@@ -1,4 +1,4 @@
 Mean Runtime Report (sec.)  ,  , 
 Variant             , Base_HIP , RAJA_HIP
 Tuning              , block_64 , block_64
-Apps_DIFFUSION3DPA  , 0.000235 , 0.000226
+Apps_DIFFUSION3DPA  , 0.000236 , 0.000227

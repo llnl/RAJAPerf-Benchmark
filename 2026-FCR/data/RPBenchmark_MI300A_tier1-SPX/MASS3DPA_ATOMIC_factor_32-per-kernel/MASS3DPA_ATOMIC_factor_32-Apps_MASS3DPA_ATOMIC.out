@@ -1,12 +1,12 @@
 Kernels run on 4 MPI ranks
-Kernel                 ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_MASS3DPA_ATOMIC   ,           35937 ,      50 ,             36864 ,           1 ,           3844472 ,      7647232 ,             3556976 ,          3269480 ,                   0 ,                         0 ,                          287496 ,               3556976 , ConsistentPerVariantTuning   , O(N)                   
+Kernel                 ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency   , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_MASS3DPA_ATOMIC   ,           35937 ,      50 ,             36864 ,              1 ,           3844472 ,      7647232 ,             3556976 ,          3269480 ,                   0 ,                         0 ,                          287496 ,               3556976 , Inconsistent          , O(N)                    ,                           3 ,                        3
 
 
 Kernels run on 4 MPI ranks
 Kernel                 , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASS3DPA_ATOMIC   , Base_HIP   , block_64   ,           35937 , PASSED     ,                 6.09284e-06 ,                          587.648 ,                           1255.12
-Apps_MASS3DPA_ATOMIC   , RAJA_HIP   , block_64   ,           35937 , PASSED     ,                 6.02964e-06 ,                          593.807 ,                           1268.27
+Apps_MASS3DPA_ATOMIC   , Base_HIP   , block_64   ,           35937 , PASSED     ,                 6.15280e-06 ,                          581.921 ,                           1242.89
+Apps_MASS3DPA_ATOMIC   , RAJA_HIP   , block_64   ,           35937 , PASSED     ,                 6.22100e-06 ,                          575.541 ,                           1229.26
 
 
 ===================================================================================================
@@ -28,45 +28,45 @@ RAJA_HIP-block_64    PASSED  1.0000000000000000364e-10   9551300212.4029366048  
 Mean Runtime Report (sec.)  ,  , 
 Variant               , Base_HIP , RAJA_HIP
 Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  , 0.000305 , 0.000301
+Apps_MASS3DPA_ATOMIC  , 0.000308 , 0.000311
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant               , Base_HIP , RAJA_HIP
 Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  ,    1.000 ,    1.010
+Apps_MASS3DPA_ATOMIC  ,    1.000 ,    0.989
 
 
 Min Runtime Report (sec.)  ,  , 
 Variant               , Base_HIP , RAJA_HIP
 Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  , 0.000305 , 0.000301
+Apps_MASS3DPA_ATOMIC  , 0.000308 , 0.000311
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant               , Base_HIP , RAJA_HIP
 Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  ,    1.000 ,    1.010
+Apps_MASS3DPA_ATOMIC  ,    1.000 ,    0.989
 
 
 Max Runtime Report (sec.)  ,  , 
 Variant               , Base_HIP , RAJA_HIP
 Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  , 0.000305 , 0.000301
+Apps_MASS3DPA_ATOMIC  , 0.000308 , 0.000311
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant               , Base_HIP , RAJA_HIP
 Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  ,    1.000 ,    1.010
+Apps_MASS3DPA_ATOMIC  ,    1.000 ,    0.989
 
 
 FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
 'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
 Kernel                , Base_HIP-block_64,         , RAJA_HIP-block_64,        
-Apps_MASS3DPA_ATOMIC  , 0.00             ,base_ref , -0.01            ,        
+Apps_MASS3DPA_ATOMIC  , 0.00             ,base_ref , 0.01             ,        
                       ,                  ,         ,                  ,        
-Col Min               , 0.00             ,         , -0.01            ,        
-Col Max               , 0.00             ,         , -0.01            ,        
-Col Avg               , 0.00             ,         , -0.01            ,        
+Col Min               , 0.00             ,         , 0.01             ,        
+Col Max               , 0.00             ,         , 0.01             ,        
+Col Avg               , 0.00             ,         , 0.01             ,        
 Col Std Dev           , 0.00             ,         , 0.00             ,        

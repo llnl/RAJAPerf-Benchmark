@@ -1,4 +1,4 @@
 Max Runtime Report (sec.)  ,  ,  ,  ,  , 
 Variant           , Base_HIP                     , Base_HIP  , RAJA_HIP                     , RAJA_HIP  , RAJA_HIP                   
 Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,                     0.001604 ,  0.001238 ,                     0.002272 ,  0.001241 ,                    0.001546
+Apps_MASSVEC3DPA  ,                     0.001666 ,  0.001242 ,                     0.002332 ,  0.001253 ,                    0.001662

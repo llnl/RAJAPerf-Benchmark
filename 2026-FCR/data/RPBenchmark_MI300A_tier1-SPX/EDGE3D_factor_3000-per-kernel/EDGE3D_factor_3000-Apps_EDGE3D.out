@@ -1,12 +1,12 @@
 Kernels run on 4 MPI ranks
-Kernel        ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,      FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_EDGE3D   ,         8869743 ,      10 ,           9304465 ,           1 ,         298816472 ,   108108578835 ,           298816472 ,        224380752 ,            74435720 ,                         0 ,                               0 ,             300605792 , ConsistentPerVariantTuning   , O(N)                   
+Kernel        ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,      FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_EDGE3D   ,         8869743 ,      10 ,           9304465 ,              1 ,         298816472 ,   122949200510 ,           298816472 ,        224380752 ,            74435720 ,                         0 ,                               0 ,             300605792 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        3
 
 
 Kernels run on 4 MPI ranks
 Kernel        , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_EDGE3D   , Base_HIP   , block_256   ,         8869743 , PASSED     ,                  0.00419390 ,                          66.3570 ,                           25777.6
-Apps_EDGE3D   , RAJA_HIP   , block_256   ,         8869743 , PASSED     ,                  0.00415814 ,                          66.9277 ,                           25999.3
+Apps_EDGE3D   , Base_HIP   , block_256   ,         8869743 , PASSED     ,                  0.00436561 ,                          63.7470 ,                           28163.1
+Apps_EDGE3D   , RAJA_HIP   , block_256   ,         8869743 , PASSED     ,                  0.00432174 ,                          64.3941 ,                           28449.0
 
 
 ===================================================================================================
@@ -28,37 +28,37 @@ RAJA_HIP-block_256 PASSED  1.0000000000000000364e-10   18062443.299410563784    
 Mean Runtime Report (sec.)  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.041939 ,  0.041581
+Apps_EDGE3D  ,  0.043656 ,  0.043217
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,     1.000 ,     1.009
+Apps_EDGE3D  ,     1.000 ,     1.010
 
 
 Min Runtime Report (sec.)  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.041939 ,  0.041581
+Apps_EDGE3D  ,  0.043656 ,  0.043217
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,     1.000 ,     1.009
+Apps_EDGE3D  ,     1.000 ,     1.010
 
 
 Max Runtime Report (sec.)  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.041939 ,  0.041581
+Apps_EDGE3D  ,  0.043656 ,  0.043217
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,     1.000 ,     1.009
+Apps_EDGE3D  ,     1.000 ,     1.010
 
 
 FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 

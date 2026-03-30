@@ -1,4 +1,4 @@
 Max Runtime Report (sec.)  ,  , 
 Variant        , Base_HIP , RAJA_HIP
 Tuning         , block_64 , block_64
-Apps_FEMSWEEP  , 0.000933 , 0.000873
+Apps_FEMSWEEP  , 0.000938 , 0.000906

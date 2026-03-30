@@ -1,12 +1,12 @@
 Kernels run on 24 MPI ranks
-Kernel                       ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency   , OperationalComplexity  
-Apps_NODAL_ACCUMULATION_3D   ,         1000000 ,     100 ,           1000000 ,           1 ,          32484816 ,      9000000 ,            24242408 ,         16000000 ,                   0 ,                         0 ,                         8242408 ,              25910456 , Inconsistent          , O(N)                   
+Kernel                       ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency   , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_NODAL_ACCUMULATION_3D   ,         1000000 ,     100 ,           1000000 ,              1 ,          32484816 ,      9000000 ,            24242408 ,         16000000 ,                   0 ,                         0 ,                         8242408 ,              25910456 , Inconsistent          , O(N)                    ,                           1 ,                        3
 
 
 Kernels run on 24 MPI ranks
 Kernel                       , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_NODAL_ACCUMULATION_3D   , Base_HIP   , block_256   ,         1000000 , PASSED     ,                 0.000246412 ,                          122.778 ,                           36.5243
-Apps_NODAL_ACCUMULATION_3D   , RAJA_HIP   , block_256   ,         1000000 , PASSED     ,                 0.000245714 ,                          123.126 ,                           36.6280
+Apps_NODAL_ACCUMULATION_3D   , Base_HIP   , block_256   ,         1000000 , PASSED     ,                 0.000244820 ,                          123.576 ,                           36.7617
+Apps_NODAL_ACCUMULATION_3D   , RAJA_HIP   , block_256   ,         1000000 , PASSED     ,                 0.000244701 ,                          123.636 ,                           36.7796
 
 
 ===================================================================================================
@@ -28,37 +28,37 @@ RAJA_HIP-block_256         PASSED  1.0000000000000000364e-10   99999632.14470071
 Mean Runtime Report (sec.)  ,  , 
 Variant                     , Base_HIP  , RAJA_HIP 
 Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,  0.024641 ,  0.024571
+Apps_NODAL_ACCUMULATION_3D  ,  0.024482 ,  0.024470
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant                     , Base_HIP  , RAJA_HIP 
 Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,     1.000 ,     1.003
+Apps_NODAL_ACCUMULATION_3D  ,     1.000 ,     1.000
 
 
 Min Runtime Report (sec.)  ,  , 
 Variant                     , Base_HIP  , RAJA_HIP 
 Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,  0.024641 ,  0.024571
+Apps_NODAL_ACCUMULATION_3D  ,  0.024482 ,  0.024470
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant                     , Base_HIP  , RAJA_HIP 
 Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,     1.000 ,     1.003
+Apps_NODAL_ACCUMULATION_3D  ,     1.000 ,     1.000
 
 
 Max Runtime Report (sec.)  ,  , 
 Variant                     , Base_HIP  , RAJA_HIP 
 Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,  0.024641 ,  0.024571
+Apps_NODAL_ACCUMULATION_3D  ,  0.024482 ,  0.024470
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant                     , Base_HIP  , RAJA_HIP 
 Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,     1.000 ,     1.003
+Apps_NODAL_ACCUMULATION_3D  ,     1.000 ,     1.000
 
 
 FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 

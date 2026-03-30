@@ -327,14 +327,12 @@ def find_saturation_point(x, y_smooth, eps: float = 0.1, w: int = 3):
 # Second attempt to find index of saturation point
 # =========================
     y_max = max(y_smooth)
-#    threshold = (1.0 - eps) * y_max
     threshold = eps
     run_length = 0
     run_start_idx = None
 
     for i in range(n):
         if abs( (y_smooth[i] - y_max) / y_max ) <= threshold:
-#        if y_smooth[i] >= threshold:
             if run_length == 0:
                 run_start_idx = i
             run_length += 1
@@ -651,7 +649,7 @@ def plot_kernel_bandwidth(
             sat_idx = subdf[SAT_IDX_COL].astype(int).values[0]
 
             sat_x = x[sat_idx]
-            sat_y = y_bw[sat_idx]
+            sat_y = y_bw_smooth[sat_idx]
 
             plt.plot(
                 [sat_x], [sat_y], "-",

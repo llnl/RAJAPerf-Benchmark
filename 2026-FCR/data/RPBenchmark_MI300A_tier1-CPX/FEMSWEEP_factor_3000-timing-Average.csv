@@ -1,4 +1,4 @@
 Mean Runtime Report (sec.)  ,  , 
 Variant        , Base_HIP , RAJA_HIP
 Tuning         , block_64 , block_64
-Apps_FEMSWEEP  , 0.004410 , 0.004110
+Apps_FEMSWEEP  , 0.004473 , 0.004096

@@ -1,4 +1,4 @@
 Max Runtime Report (sec.)  ,  , 
 Variant               , Base_HIP , RAJA_HIP
 Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  , 0.015005 , 0.015162
+Apps_MASS3DPA_ATOMIC  , 0.015258 , 0.015230

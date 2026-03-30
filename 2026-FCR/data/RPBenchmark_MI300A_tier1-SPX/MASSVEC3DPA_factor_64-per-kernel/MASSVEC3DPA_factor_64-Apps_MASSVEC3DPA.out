@@ -1,15 +1,15 @@
 Kernels run on 4 MPI ranks
-Kernel             ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_MASSVEC3DPA   ,          679680 ,      50 ,            679680 ,           1 ,           6400416 ,     19540800 ,             6400416 ,          4106496 ,             2293920 ,                         0 ,                               0 ,               6400416 , ConsistentPerVariantTuning   , O(N)                   
+Kernel             ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_MASSVEC3DPA   ,          679680 ,      50 ,            679680 ,              1 ,           6400416 ,     19540800 ,             6400416 ,          4106496 ,             2293920 ,                         0 ,                               0 ,               6400416 , ConsistentPerVariantTuning   , O(N)                    ,                           3 ,                        3
 
 
 Kernels run on 4 MPI ranks
 Kernel             , Variant    , Tuning                         ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASSVEC3DPA   , Base_HIP   , runtime_block_stride_loop_64   ,          679680 , PASSED     ,                 1.65797e-05 ,                          359.527 ,                           1178.60
-Apps_MASSVEC3DPA   , Base_HIP   , direct_64                      ,          679680 , PASSED     ,                 1.18537e-05 ,                          502.869 ,                           1648.50
-Apps_MASSVEC3DPA   , RAJA_HIP   , runtime_block_stride_loop_64   ,          679680 , PASSED     ,                 1.67009e-05 ,                          356.918 ,                           1170.04
-Apps_MASSVEC3DPA   , RAJA_HIP   , direct_64                      ,          679680 , PASSED     ,                 1.19437e-05 ,                          499.080 ,                           1636.08
-Apps_MASSVEC3DPA   , RAJA_HIP   , cached_block_stride_loop_64    ,          679680 , PASSED     ,                 1.34733e-05 ,                          442.420 ,                           1450.34
+Apps_MASSVEC3DPA   , Base_HIP   , runtime_block_stride_loop_64   ,          679680 , PASSED     ,                 1.66182e-05 ,                          358.694 ,                           1175.87
+Apps_MASSVEC3DPA   , Base_HIP   , direct_64                      ,          679680 , PASSED     ,                 1.18762e-05 ,                          501.916 ,                           1645.37
+Apps_MASSVEC3DPA   , RAJA_HIP   , runtime_block_stride_loop_64   ,          679680 , PASSED     ,                 1.67292e-05 ,                          356.314 ,                           1168.07
+Apps_MASSVEC3DPA   , RAJA_HIP   , direct_64                      ,          679680 , PASSED     ,                 1.19364e-05 ,                          499.385 ,                           1637.08
+Apps_MASSVEC3DPA   , RAJA_HIP   , cached_block_stride_loop_64    ,          679680 , PASSED     ,                 1.34784e-05 ,                          442.252 ,                           1449.79
 
 
 ===================================================================================================
@@ -34,37 +34,37 @@ RAJA_HIP-cached_block_stride_loop_64  PASSED  1.0000000000000000364e-10   495439
 Mean Runtime Report (sec.)  ,  ,  ,  ,  , 
 Variant           , Base_HIP                     , Base_HIP  , RAJA_HIP                     , RAJA_HIP  , RAJA_HIP                   
 Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,                     0.000829 ,  0.000593 ,                     0.000835 ,  0.000597 ,                    0.000674
+Apps_MASSVEC3DPA  ,                     0.000831 ,  0.000594 ,                     0.000836 ,  0.000597 ,                    0.000674
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  ,  ,  ,  , 
 Variant           , Base_HIP                     , Base_HIP  , RAJA_HIP                     , RAJA_HIP  , RAJA_HIP                   
 Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,                        1.000 ,     1.399 ,                        0.993 ,     1.388 ,                       1.231
+Apps_MASSVEC3DPA  ,                        1.000 ,     1.399 ,                        0.993 ,     1.392 ,                       1.233
 
 
 Min Runtime Report (sec.)  ,  ,  ,  ,  , 
 Variant           , Base_HIP                     , Base_HIP  , RAJA_HIP                     , RAJA_HIP  , RAJA_HIP                   
 Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,                     0.000829 ,  0.000593 ,                     0.000835 ,  0.000597 ,                    0.000674
+Apps_MASSVEC3DPA  ,                     0.000831 ,  0.000594 ,                     0.000836 ,  0.000597 ,                    0.000674
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  ,  ,  ,  , 
 Variant           , Base_HIP                     , Base_HIP  , RAJA_HIP                     , RAJA_HIP  , RAJA_HIP                   
 Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,                        1.000 ,     1.399 ,                        0.993 ,     1.388 ,                       1.231
+Apps_MASSVEC3DPA  ,                        1.000 ,     1.399 ,                        0.993 ,     1.392 ,                       1.233
 
 
 Max Runtime Report (sec.)  ,  ,  ,  ,  , 
 Variant           , Base_HIP                     , Base_HIP  , RAJA_HIP                     , RAJA_HIP  , RAJA_HIP                   
 Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,                     0.000829 ,  0.000593 ,                     0.000835 ,  0.000597 ,                    0.000674
+Apps_MASSVEC3DPA  ,                     0.000831 ,  0.000594 ,                     0.000836 ,  0.000597 ,                    0.000674
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  ,  ,  ,  , 
 Variant           , Base_HIP                     , Base_HIP  , RAJA_HIP                     , RAJA_HIP  , RAJA_HIP                   
 Tuning            , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  ,                        1.000 ,     1.399 ,                        0.993 ,     1.388 ,                       1.231
+Apps_MASSVEC3DPA  ,                        1.000 ,     1.399 ,                        0.993 ,     1.392 ,                       1.233
 
 
 FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  ,  ,  , 

@@ -1,12 +1,12 @@
 Kernels run on 4 MPI ranks
-Kernel          ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_FEMSWEEP   ,          248832 ,       1 ,                 1 ,           1 ,          43620768 ,    214493184 ,            35906976 ,         27695520 ,            15925248 ,                   7713792 ,                               0 ,              35906976 , ConsistentPerVariantTuning   , O(N)                   
+Kernel          ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_FEMSWEEP   ,          248832 ,       1 ,                 1 ,              1 ,          43620768 ,    214493184 ,            35906976 ,         27695520 ,            15925248 ,                   7713792 ,                               0 ,              35906976 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        3
 
 
 Kernels run on 4 MPI ranks
 Kernel          , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_FEMSWEEP   , Base_HIP   , block_64   ,          248832 , PASSED     ,                 0.000293571 ,                          138.382 ,                           730.635
-Apps_FEMSWEEP   , RAJA_HIP   , block_64   ,          248832 , PASSED     ,                 0.000273621 ,                          148.472 ,                           783.906
+Apps_FEMSWEEP   , Base_HIP   , block_64   ,          248832 , PASSED     ,                 0.000295430 ,                          137.511 ,                           726.037
+Apps_FEMSWEEP   , RAJA_HIP   , block_64   ,          248832 , PASSED     ,                 0.000270170 ,                          150.368 ,                           793.919
 
 
 ===================================================================================================
@@ -28,45 +28,45 @@ RAJA_HIP-block_64 PASSED  5.0000000000000004090e-06   12010079.970788182462     
 Mean Runtime Report (sec.)  ,  , 
 Variant        , Base_HIP , RAJA_HIP
 Tuning         , block_64 , block_64
-Apps_FEMSWEEP  , 0.000294 , 0.000274
+Apps_FEMSWEEP  , 0.000295 , 0.000270
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant        , Base_HIP , RAJA_HIP
 Tuning         , block_64 , block_64
-Apps_FEMSWEEP  ,    1.000 ,    1.073
+Apps_FEMSWEEP  ,    1.000 ,    1.093
 
 
 Min Runtime Report (sec.)  ,  , 
 Variant        , Base_HIP , RAJA_HIP
 Tuning         , block_64 , block_64
-Apps_FEMSWEEP  , 0.000294 , 0.000274
+Apps_FEMSWEEP  , 0.000295 , 0.000270
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant        , Base_HIP , RAJA_HIP
 Tuning         , block_64 , block_64
-Apps_FEMSWEEP  ,    1.000 ,    1.073
+Apps_FEMSWEEP  ,    1.000 ,    1.093
 
 
 Max Runtime Report (sec.)  ,  , 
 Variant        , Base_HIP , RAJA_HIP
 Tuning         , block_64 , block_64
-Apps_FEMSWEEP  , 0.000294 , 0.000274
+Apps_FEMSWEEP  , 0.000295 , 0.000270
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant        , Base_HIP , RAJA_HIP
 Tuning         , block_64 , block_64
-Apps_FEMSWEEP  ,    1.000 ,    1.073
+Apps_FEMSWEEP  ,    1.000 ,    1.093
 
 
 FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
 'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
 Kernel         , Base_HIP-block_64,         , RAJA_HIP-block_64,        
-Apps_FEMSWEEP  , 0.00             ,base_ref , -0.07            ,        
+Apps_FEMSWEEP  , 0.00             ,base_ref , -0.09            ,        
                ,                  ,         ,                  ,        
-Col Min        , 0.00             ,         , -0.07            ,        
-Col Max        , 0.00             ,         , -0.07            ,        
-Col Avg        , 0.00             ,         , -0.07            ,        
+Col Min        , 0.00             ,         , -0.09            ,        
+Col Max        , 0.00             ,         , -0.09            ,        
+Col Avg        , 0.00             ,         , -0.09            ,        
 Col Std Dev    , 0.00             ,         , 0.00             ,        

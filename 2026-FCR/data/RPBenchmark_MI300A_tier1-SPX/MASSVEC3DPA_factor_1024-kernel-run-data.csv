@@ -1,7 +1,7 @@
 Kernels run on 4 MPI ranks
 Kernel             , Variant    , Tuning                         ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASSVEC3DPA   , Base_HIP   , runtime_block_stride_loop_64   ,        10874496 , PASSED     ,                 0.000121311 ,                          786.153 ,                           2577.20
-Apps_MASSVEC3DPA   , Base_HIP   , direct_64                      ,        10874496 , PASSED     ,                 9.18416e-05 ,                          1038.41 ,                           3404.14
-Apps_MASSVEC3DPA   , RAJA_HIP   , runtime_block_stride_loop_64   ,        10874496 , PASSED     ,                 0.000167444 ,                          569.556 ,                           1867.14
-Apps_MASSVEC3DPA   , RAJA_HIP   , direct_64                      ,        10874496 , PASSED     ,                 9.25188e-05 ,                          1030.81 ,                           3379.22
-Apps_MASSVEC3DPA   , RAJA_HIP   , cached_block_stride_loop_64    ,        10874496 , PASSED     ,                 0.000115885 ,                          822.963 ,                           2697.87
+Apps_MASSVEC3DPA   , Base_HIP   , runtime_block_stride_loop_64   ,        10874496 , PASSED     ,                 0.000129809 ,                          734.688 ,                           2408.48
+Apps_MASSVEC3DPA   , Base_HIP   , direct_64                      ,        10874496 , PASSED     ,                 9.72740e-05 ,                          980.416 ,                           3214.03
+Apps_MASSVEC3DPA   , RAJA_HIP   , runtime_block_stride_loop_64   ,        10874496 , PASSED     ,                 0.000177633 ,                          536.886 ,                           1760.04
+Apps_MASSVEC3DPA   , RAJA_HIP   , direct_64                      ,        10874496 , PASSED     ,                 9.87209e-05 ,                          966.046 ,                           3166.92
+Apps_MASSVEC3DPA   , RAJA_HIP   , cached_block_stride_loop_64    ,        10874496 , PASSED     ,                 0.000124449 ,                          766.330 ,                           2512.21

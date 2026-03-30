@@ -1,12 +1,12 @@
 Kernels run on 24 MPI ranks
-Kernel        ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_EDGE3D   ,            3375 ,      10 ,              6097 ,           1 ,            204248 ,     70841043 ,              204248 ,           155472 ,               48776 ,                         0 ,                               0 ,                219488 , ConsistentPerVariantTuning   , O(N)                   
+Kernel        ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_EDGE3D   ,            3375 ,      10 ,              6097 ,              1 ,            204248 ,     80565758 ,              204248 ,           155472 ,               48776 ,                         0 ,                               0 ,                219488 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        3
 
 
 Kernels run on 24 MPI ranks
 Kernel        , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_EDGE3D   , Base_HIP   , block_256   ,            3375 , PASSED     ,                 2.63570e-05 ,                          7.21709 ,                           2687.75
-Apps_EDGE3D   , RAJA_HIP   , block_256   ,            3375 , PASSED     ,                 2.47161e-05 ,                          7.69623 ,                           2866.19
+Apps_EDGE3D   , Base_HIP   , block_256   ,            3375 , PASSED     ,                 2.65822e-05 ,                          7.15595 ,                           3030.82
+Apps_EDGE3D   , RAJA_HIP   , block_256   ,            3375 , PASSED     ,                 2.47092e-05 ,                          7.69838 ,                           3260.56
 
 
 ===================================================================================================
@@ -28,45 +28,45 @@ RAJA_HIP-block_256 PASSED  1.0000000000000000364e-10   10525.428787557881514    
 Mean Runtime Report (sec.)  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.000264 ,  0.000247
+Apps_EDGE3D  ,  0.000266 ,  0.000247
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,     1.000 ,     1.066
+Apps_EDGE3D  ,     1.000 ,     1.076
 
 
 Min Runtime Report (sec.)  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.000264 ,  0.000247
+Apps_EDGE3D  ,  0.000266 ,  0.000247
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,     1.000 ,     1.066
+Apps_EDGE3D  ,     1.000 ,     1.076
 
 
 Max Runtime Report (sec.)  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.000264 ,  0.000247
+Apps_EDGE3D  ,  0.000266 ,  0.000247
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_EDGE3D  ,     1.000 ,     1.066
+Apps_EDGE3D  ,     1.000 ,     1.076
 
 
 FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
 'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
 Kernel       , Base_HIP-block_256,         , RAJA_HIP-block_256,        
-Apps_EDGE3D  , 0.00              ,base_ref , -0.06             ,        
+Apps_EDGE3D  , 0.00              ,base_ref , -0.07             ,        
              ,                   ,         ,                   ,        
-Col Min      , 0.00              ,         , -0.06             ,        
-Col Max      , 0.00              ,         , -0.06             ,        
-Col Avg      , 0.00              ,         , -0.06             ,        
+Col Min      , 0.00              ,         , -0.07             ,        
+Col Max      , 0.00              ,         , -0.07             ,        
+Col Avg      , 0.00              ,         , -0.07             ,        
 Col Std Dev  , 0.00              ,         , 0.00              ,        

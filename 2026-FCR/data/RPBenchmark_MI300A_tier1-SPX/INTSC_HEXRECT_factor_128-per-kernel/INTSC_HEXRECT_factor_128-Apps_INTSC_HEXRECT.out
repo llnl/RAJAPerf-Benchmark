@@ -1,12 +1,12 @@
 Kernels run on 4 MPI ranks
-Kernel               ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_INTSC_HEXRECT   ,          287496 ,       1 ,            287496 ,           1 ,          13593120 ,   1034985600 ,            13593120 ,          4393248 ,             9199872 ,                         0 ,                               0 ,              13594000 , ConsistentPerVariantTuning   , O(N)                   
+Kernel               ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_INTSC_HEXRECT   ,          287496 ,       1 ,            287496 ,              1 ,          13593120 ,   1034985600 ,            13593120 ,          4393248 ,             9199872 ,                         0 ,                               0 ,              13594000 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        3
 
 
 Kernels run on 4 MPI ranks
 Kernel               , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_INTSC_HEXRECT   , Base_HIP   , block_64   ,          287496 , PASSED     ,                  0.00120993 ,                          10.4631 ,                           855.410
-Apps_INTSC_HEXRECT   , RAJA_HIP   , block_64   ,          287496 , PASSED     ,                  0.00120495 ,                          10.5063 ,                           858.945
+Apps_INTSC_HEXRECT   , Base_HIP   , block_64   ,          287496 , PASSED     ,                  0.00129982 ,                          9.73950 ,                           796.254
+Apps_INTSC_HEXRECT   , RAJA_HIP   , block_64   ,          287496 , PASSED     ,                  0.00122434 ,                          10.3399 ,                           845.342
 
 
 ===================================================================================================
@@ -28,45 +28,45 @@ RAJA_HIP-block_64  PASSED  1.0000000000000000364e-10   189.94854612524920590    
 Mean Runtime Report (sec.)  ,  , 
 Variant             , Base_HIP , RAJA_HIP
 Tuning              , block_64 , block_64
-Apps_INTSC_HEXRECT  , 0.001210 , 0.001205
+Apps_INTSC_HEXRECT  , 0.001300 , 0.001224
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant             , Base_HIP , RAJA_HIP
 Tuning              , block_64 , block_64
-Apps_INTSC_HEXRECT  ,    1.000 ,    1.004
+Apps_INTSC_HEXRECT  ,    1.000 ,    1.062
 
 
 Min Runtime Report (sec.)  ,  , 
 Variant             , Base_HIP , RAJA_HIP
 Tuning              , block_64 , block_64
-Apps_INTSC_HEXRECT  , 0.001210 , 0.001205
+Apps_INTSC_HEXRECT  , 0.001300 , 0.001224
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant             , Base_HIP , RAJA_HIP
 Tuning              , block_64 , block_64
-Apps_INTSC_HEXRECT  ,    1.000 ,    1.004
+Apps_INTSC_HEXRECT  ,    1.000 ,    1.062
 
 
 Max Runtime Report (sec.)  ,  , 
 Variant             , Base_HIP , RAJA_HIP
 Tuning              , block_64 , block_64
-Apps_INTSC_HEXRECT  , 0.001210 , 0.001205
+Apps_INTSC_HEXRECT  , 0.001300 , 0.001224
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant             , Base_HIP , RAJA_HIP
 Tuning              , block_64 , block_64
-Apps_INTSC_HEXRECT  ,    1.000 ,    1.004
+Apps_INTSC_HEXRECT  ,    1.000 ,    1.062
 
 
 FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
 'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
 Kernel              , Base_HIP-block_64,         , RAJA_HIP-block_64,        
-Apps_INTSC_HEXRECT  , 0.00             ,base_ref , -0.00            ,        
+Apps_INTSC_HEXRECT  , 0.00             ,base_ref , -0.06            ,        
                     ,                  ,         ,                  ,        
-Col Min             , 0.00             ,         , -0.00            ,        
-Col Max             , 0.00             ,         , -0.00            ,        
-Col Avg             , 0.00             ,         , -0.00            ,        
+Col Min             , 0.00             ,         , -0.06            ,        
+Col Max             , 0.00             ,         , -0.06            ,        
+Col Avg             , 0.00             ,         , -0.06            ,        
 Col Std Dev         , 0.00             ,         , 0.00             ,        

@@ -1,12 +1,12 @@
 Kernels run on 24 MPI ranks
-Kernel        ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_ENERGY   ,            1667 ,     130 ,             10002 ,           6 ,            360072 ,        91685 ,              320064 ,           293392 ,               66680 ,                     40008 ,                               0 ,                200040 , ConsistentPerVariantTuning   , O(N)                   
+Kernel        ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_ENERGY   ,            1667 ,     130 ,             10002 ,              6 ,            360072 ,        91685 ,              320064 ,           293392 ,               66680 ,                     40008 ,                               0 ,                200040 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        1
 
 
 Kernels run on 24 MPI ranks
 Kernel        , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_ENERGY   , Base_HIP   , block_256   ,            1667 , PASSED     ,                 1.42500e-05 ,                          23.5328 ,                           6.43402
-Apps_ENERGY   , RAJA_HIP   , block_256   ,            1667 , PASSED     ,                 8.97148e-06 ,                          37.3788 ,                           10.2196
+Apps_ENERGY   , Base_HIP   , block_256   ,            1667 , PASSED     ,                 1.44019e-05 ,                          23.2847 ,                           6.36619
+Apps_ENERGY   , RAJA_HIP   , block_256   ,            1667 , PASSED     ,                 9.06084e-06 ,                          37.0102 ,                           10.1188
 
 
 ===================================================================================================
@@ -28,37 +28,37 @@ RAJA_HIP-block_256 PASSED  1.0000000000000000364e-10   162.90045290942809884    
 Mean Runtime Report (sec.)  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,  0.001853 ,  0.001166
+Apps_ENERGY  ,  0.001872 ,  0.001178
 
 
 Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,     1.000 ,     1.588
+Apps_ENERGY  ,     1.000 ,     1.589
 
 
 Min Runtime Report (sec.)  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,  0.001853 ,  0.001166
+Apps_ENERGY  ,  0.001872 ,  0.001178
 
 
 Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,     1.000 ,     1.588
+Apps_ENERGY  ,     1.000 ,     1.589
 
 
 Max Runtime Report (sec.)  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,  0.001853 ,  0.001166
+Apps_ENERGY  ,  0.001872 ,  0.001178
 
 
 Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
 Variant      , Base_HIP  , RAJA_HIP 
 Tuning       , block_256 , block_256
-Apps_ENERGY  ,     1.000 ,     1.588
+Apps_ENERGY  ,     1.000 ,     1.589
 
 
 FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 

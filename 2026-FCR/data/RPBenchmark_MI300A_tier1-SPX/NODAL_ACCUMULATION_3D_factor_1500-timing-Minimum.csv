@@ -1,4 +1,4 @@
 Min Runtime Report (sec.)  ,  , 
 Variant                     , Base_HIP  , RAJA_HIP 
 Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,  0.024407 ,  0.024360
+Apps_NODAL_ACCUMULATION_3D  ,  0.024340 ,  0.024262

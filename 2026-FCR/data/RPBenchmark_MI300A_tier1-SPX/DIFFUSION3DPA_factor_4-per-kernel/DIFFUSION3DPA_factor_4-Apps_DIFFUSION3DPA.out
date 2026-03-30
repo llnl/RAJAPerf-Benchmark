@@ -1,12 +1,12 @@
 Kernels run on 4 MPI ranks
-Kernel               ,    Problem size ,    Reps ,    Iterations/rep , Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity  
-Apps_DIFFUSION3DPA   ,            3105 ,      50 ,              3105 ,           1 ,            427992 ,       597885 ,              403152 ,           403152 ,               24840 ,                     24840 ,                               0 ,                403152 , ConsistentPerVariantTuning   , O(N)                   
+Kernel               ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_DIFFUSION3DPA   ,            3105 ,      50 ,              3105 ,              1 ,            427992 ,       597885 ,              403152 ,           403152 ,               24840 ,                     24840 ,                               0 ,                403152 , ConsistentPerVariantTuning   , O(N)                    ,                           3 ,                        3
 
 
 Kernels run on 4 MPI ranks
 Kernel               , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_DIFFUSION3DPA   , Base_HIP   , block_64   ,            3105 , PASSED     ,                 4.13602e-06 ,                          96.3725 ,                           144.556
-Apps_DIFFUSION3DPA   , RAJA_HIP   , block_64   ,            3105 , PASSED     ,                 3.89524e-06 ,                          102.330 ,                           153.491
+Apps_DIFFUSION3DPA   , Base_HIP   , block_64   ,            3105 , PASSED     ,                 4.14280e-06 ,                          96.2148 ,                           144.319
+Apps_DIFFUSION3DPA   , RAJA_HIP   , block_64   ,            3105 , PASSED     ,                 3.90260e-06 ,                          102.137 ,                           153.202
 
 
 ===================================================================================================

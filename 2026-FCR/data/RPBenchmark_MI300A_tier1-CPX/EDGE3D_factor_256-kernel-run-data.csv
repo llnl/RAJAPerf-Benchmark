@@ -1,4 +1,4 @@
 Kernels run on 24 MPI ranks
 Kernel        , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_EDGE3D   , Base_HIP   , block_256   ,          343000 , PASSED     ,                  0.00113630 ,                          10.4461 ,                           4030.02
-Apps_EDGE3D   , RAJA_HIP   , block_256   ,          343000 , PASSED     ,                  0.00112511 ,                          10.5499 ,                           4070.10
+Apps_EDGE3D   , Base_HIP   , block_256   ,          343000 , PASSED     ,                  0.00113664 ,                          10.4429 ,                           4581.85
+Apps_EDGE3D   , RAJA_HIP   , block_256   ,          343000 , PASSED     ,                  0.00112238 ,                          10.5755 ,                           4640.06

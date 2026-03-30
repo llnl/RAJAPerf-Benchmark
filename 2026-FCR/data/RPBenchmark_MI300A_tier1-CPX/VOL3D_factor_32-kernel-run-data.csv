@@ -1,4 +1,4 @@
 Kernels run on 24 MPI ranks
 Kernel       , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_VOL3D   , Base_HIP   , block_256   ,           35937 , PASSED     ,                 5.72892e-06 ,                          254.352 ,                           601.232
-Apps_VOL3D   , RAJA_HIP   , block_256   ,           35937 , PASSED     ,                 5.58322e-06 ,                          260.990 ,                           616.921
+Apps_VOL3D   , Base_HIP   , block_256   ,           35937 , PASSED     ,                 5.76594e-06 ,                          252.719 ,                           597.371
+Apps_VOL3D   , RAJA_HIP   , block_256   ,           35937 , PASSED     ,                 5.62494e-06 ,                          259.054 ,                           612.346
