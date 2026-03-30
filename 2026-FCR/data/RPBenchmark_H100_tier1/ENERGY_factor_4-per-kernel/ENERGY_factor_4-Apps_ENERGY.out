@@ -1,0 +1,72 @@
+Kernels run on 4 MPI ranks
+Kernel        ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_ENERGY   ,            1667 ,     130 ,             10002 ,              6 ,            360072 ,        91685 ,              320064 ,           293392 ,               66680 ,                     40008 ,                               0 ,                200040 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        1
+
+
+Kernels run on 4 MPI ranks
+Kernel        , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_ENERGY   , Base_CUDA   , block_256   ,            1667 , PASSED     ,                 1.30936e-05 ,                          25.6112 ,                           7.00227
+Apps_ENERGY   , RAJA_CUDA   , block_256   ,            1667 , PASSED     ,                 1.33243e-05 ,                          25.1678 ,                           6.88104
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel              
+........................................................
+Variants            Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                    (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_ENERGY         
+........................................................
+Base_CUDA-block_256 PASSED  1.0000000000000000364e-10   162.90045290942809884       0.0000000000000000000       0.0000000000000000000       
+RAJA_CUDA-block_256 PASSED  1.0000000000000000364e-10   162.90045290942809884       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,  0.001702 ,  0.001732
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,     1.000 ,     0.983
+
+
+Min Runtime Report (sec.)  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,  0.001702 ,  0.001732
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,     1.000 ,     0.983
+
+
+Max Runtime Report (sec.)  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,  0.001702 ,  0.001732
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant      , Base_CUDA , RAJA_CUDA
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,     1.000 ,     0.983
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
+Kernel       , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
+Apps_ENERGY  , 0.00               ,base_ref , 0.02               ,        
+             ,                    ,         ,                    ,        
+Col Min      , 0.00               ,         , 0.02               ,        
+Col Max      , 0.00               ,         , 0.02               ,        
+Col Avg      , 0.00               ,         , 0.02               ,        
+Col Std Dev  , 0.00               ,         , 0.00               ,        

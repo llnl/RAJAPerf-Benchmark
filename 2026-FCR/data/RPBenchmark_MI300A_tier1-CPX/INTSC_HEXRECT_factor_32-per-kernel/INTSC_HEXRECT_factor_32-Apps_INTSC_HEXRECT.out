@@ -1,0 +1,72 @@
+Kernels run on 24 MPI ranks
+Kernel               ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_INTSC_HEXRECT   ,           39304 ,       1 ,             39304 ,              1 ,           1869344 ,    141494400 ,             1869344 ,           611616 ,             1257728 ,                         0 ,                               0 ,               1869840 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        3
+
+
+Kernels run on 24 MPI ranks
+Kernel               , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_INTSC_HEXRECT   , Base_HIP   , block_64   ,           39304 , PASSED     ,                  0.00114215 ,                          1.52429 ,                           123.884
+Apps_INTSC_HEXRECT   , RAJA_HIP   , block_64   ,           39304 , PASSED     ,                  0.00112575 ,                          1.54649 ,                           125.689
+
+
+===================================================================================================
+Checksum Report for 24 MPI ranks 
+===================================================================================================
+Kernel             
+........................................................
+Variants           Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                   (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_INTSC_HEXRECT 
+........................................................
+Base_HIP-block_64  PASSED  1.0000000000000000364e-10   19.893144237870415907       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-block_64  PASSED  1.0000000000000000364e-10   19.893144237870415907       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  , 
+Variant             , Base_HIP , RAJA_HIP
+Tuning              , block_64 , block_64
+Apps_INTSC_HEXRECT  , 0.001142 , 0.001126
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant             , Base_HIP , RAJA_HIP
+Tuning              , block_64 , block_64
+Apps_INTSC_HEXRECT  ,    1.000 ,    1.015
+
+
+Min Runtime Report (sec.)  ,  , 
+Variant             , Base_HIP , RAJA_HIP
+Tuning              , block_64 , block_64
+Apps_INTSC_HEXRECT  , 0.001142 , 0.001126
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant             , Base_HIP , RAJA_HIP
+Tuning              , block_64 , block_64
+Apps_INTSC_HEXRECT  ,    1.000 ,    1.015
+
+
+Max Runtime Report (sec.)  ,  , 
+Variant             , Base_HIP , RAJA_HIP
+Tuning              , block_64 , block_64
+Apps_INTSC_HEXRECT  , 0.001142 , 0.001126
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant             , Base_HIP , RAJA_HIP
+Tuning              , block_64 , block_64
+Apps_INTSC_HEXRECT  ,    1.000 ,    1.015
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
+Kernel              , Base_HIP-block_64,         , RAJA_HIP-block_64,        
+Apps_INTSC_HEXRECT  , 0.00             ,base_ref , -0.01            ,        
+                    ,                  ,         ,                  ,        
+Col Min             , 0.00             ,         , -0.01            ,        
+Col Max             , 0.00             ,         , -0.01            ,        
+Col Avg             , 0.00             ,         , -0.01            ,        
+Col Std Dev         , 0.00             ,         , 0.00             ,        

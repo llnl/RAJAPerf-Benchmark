@@ -1,0 +1,74 @@
+Kernels run on 4 MPI ranks
+Kernel          ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_MASS3DEA   ,        18198528 ,       1 ,            284352 ,              1 ,         150031384 ,    127389696 ,           150031384 ,          4443160 ,           145588224 ,                         0 ,                               0 ,             150031384 , ConsistentPerVariantTuning   , O(N)                    ,                           3 ,                        3
+
+
+Kernels run on 4 MPI ranks
+Kernel          , Variant     , Tuning                              ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MASS3DEA   , Base_CUDA   , compile_time_block_stride_loop_64   ,        18198528 , PASSED     ,                 0.000633647 ,                          220.513 ,                           201.042
+Apps_MASS3DEA   , RAJA_CUDA   , compile_time_block_stride_loop_64   ,        18198528 , PASSED     ,                 0.000614922 ,                          227.228 ,                           207.164
+Apps_MASS3DEA   , RAJA_CUDA   , cached_block_stride_loop_64         ,        18198528 , PASSED     ,                 0.000689389 ,                          202.683 ,                           184.786
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel                                      
+........................................................
+Variants                                    Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                                            (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_MASS3DEA                               
+........................................................
+Base_CUDA-compile_time_block_stride_loop_64 PASSED  1.0000000000000000364e-10   2274811333.5577283730       0.0000000000000000000       0.0000000000000000000       
+RAJA_CUDA-compile_time_block_stride_loop_64 PASSED  1.0000000000000000364e-10   2274811333.5577283730       0.0000000000000000000       0.0000000000000000000       
+RAJA_CUDA-cached_block_stride_loop_64       PASSED  1.0000000000000000364e-10   2274811333.5577283730       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_CUDA                         , RAJA_CUDA                         , RAJA_CUDA                  
+Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  ,                          0.000634 ,                          0.000615 ,                    0.000689
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  ,  , 
+Variant        , Base_CUDA                         , RAJA_CUDA                         , RAJA_CUDA                  
+Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  ,                             1.000 ,                             1.030 ,                       0.919
+
+
+Min Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_CUDA                         , RAJA_CUDA                         , RAJA_CUDA                  
+Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  ,                          0.000634 ,                          0.000615 ,                    0.000689
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  ,  , 
+Variant        , Base_CUDA                         , RAJA_CUDA                         , RAJA_CUDA                  
+Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  ,                             1.000 ,                             1.030 ,                       0.919
+
+
+Max Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_CUDA                         , RAJA_CUDA                         , RAJA_CUDA                  
+Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  ,                          0.000634 ,                          0.000615 ,                    0.000689
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  ,  , 
+Variant        , Base_CUDA                         , RAJA_CUDA                         , RAJA_CUDA                  
+Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  ,                             1.000 ,                             1.030 ,                       0.919
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel         , Base_CUDA-compile_time_block_stride_loop_64,         , RAJA_CUDA-compile_time_block_stride_loop_64,         , RAJA_CUDA-cached_block_stride_loop_64      ,        
+Apps_MASS3DEA  , 0.00                                       ,base_ref , -0.03                                      ,         , 0.09                                       ,        
+               ,                                            ,         ,                                            ,         ,                                            ,        
+Col Min        , 0.00                                       ,         , -0.03                                      ,         , 0.09                                       ,        
+Col Max        , 0.00                                       ,         , -0.03                                      ,         , 0.09                                       ,        
+Col Avg        , 0.00                                       ,         , -0.03                                      ,         , 0.09                                       ,        
+Col Std Dev    , 0.00                                       ,         , 0.00                                       ,         , 0.00                                       ,        

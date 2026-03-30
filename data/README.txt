@@ -1,3 +1,0 @@
-This directory has subdirectories containing data from RAJA Perf benchmarking
-activities...
-

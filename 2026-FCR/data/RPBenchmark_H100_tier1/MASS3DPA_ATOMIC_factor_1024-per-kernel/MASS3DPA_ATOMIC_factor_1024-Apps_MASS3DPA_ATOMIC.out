@@ -1,0 +1,72 @@
+Kernels run on 4 MPI ranks
+Kernel                 ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency   , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_MASS3DPA_ATOMIC   ,          531441 ,      50 ,            576000 ,              1 ,          59346680 ,    119488000 ,            55095152 ,         50843624 ,                   0 ,                         0 ,                         4251528 ,              55095152 , Inconsistent          , O(N)                    ,                           3 ,                        3
+
+
+Kernels run on 4 MPI ranks
+Kernel                 , Variant     , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MASS3DPA_ATOMIC   , Base_CUDA   , block_64   ,          531441 , PASSED     ,                 6.71110e-05 ,                          823.574 ,                           1780.45
+Apps_MASS3DPA_ATOMIC   , RAJA_CUDA   , block_64   ,          531441 , PASSED     ,                 6.72286e-05 ,                          822.134 ,                           1777.34
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel               
+........................................................
+Variants             Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                     (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_MASS3DPA_ATOMIC 
+........................................................
+Base_CUDA-block_64   PASSED  1.0000000000000000364e-10   149297191993.49232540       0.0000000000000000000       0.0000000000000000000       
+RAJA_CUDA-block_64   PASSED  1.0000000000000000364e-10   149297191993.49232540       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  , 
+Variant               , Base_CUDA , RAJA_CUDA
+Tuning                , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,  0.003356 ,  0.003361
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant               , Base_CUDA , RAJA_CUDA
+Tuning                , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,     1.000 ,     0.998
+
+
+Min Runtime Report (sec.)  ,  , 
+Variant               , Base_CUDA , RAJA_CUDA
+Tuning                , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,  0.003356 ,  0.003361
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant               , Base_CUDA , RAJA_CUDA
+Tuning                , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,     1.000 ,     0.998
+
+
+Max Runtime Report (sec.)  ,  , 
+Variant               , Base_CUDA , RAJA_CUDA
+Tuning                , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,  0.003356 ,  0.003361
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
+Variant               , Base_CUDA , RAJA_CUDA
+Tuning                , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,     1.000 ,     0.998
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
+Kernel                , Base_CUDA-block_64,         , RAJA_CUDA-block_64,        
+Apps_MASS3DPA_ATOMIC  , 0.00              ,base_ref , 0.00              ,        
+                      ,                   ,         ,                   ,        
+Col Min               , 0.00              ,         , 0.00              ,        
+Col Max               , 0.00              ,         , 0.00              ,        
+Col Avg               , 0.00              ,         , 0.00              ,        
+Col Std Dev           , 0.00              ,         , 0.00              ,        

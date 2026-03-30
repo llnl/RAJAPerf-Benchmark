@@ -1,0 +1,7 @@
+Kernels run on 4 MPI ranks
+Kernel             , Variant    , Tuning                         ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MASSVEC3DPA   , Base_HIP   , runtime_block_stride_loop_64   ,         5437248 , PASSED     ,                 6.58562e-05 ,                          724.070 ,                           2373.67
+Apps_MASSVEC3DPA   , Base_HIP   , direct_64                      ,         5437248 , PASSED     ,                 4.70750e-05 ,                          1012.95 ,                           3320.68
+Apps_MASSVEC3DPA   , RAJA_HIP   , runtime_block_stride_loop_64   ,         5437248 , PASSED     ,                 8.99776e-05 ,                          529.960 ,                           1737.33
+Apps_MASSVEC3DPA   , RAJA_HIP   , direct_64                      ,         5437248 , PASSED     ,                 4.82092e-05 ,                          989.117 ,                           3242.55
+Apps_MASSVEC3DPA   , RAJA_HIP   , cached_block_stride_loop_64    ,         5437248 , PASSED     ,                 6.31866e-05 ,                          754.662 ,                           2473.96

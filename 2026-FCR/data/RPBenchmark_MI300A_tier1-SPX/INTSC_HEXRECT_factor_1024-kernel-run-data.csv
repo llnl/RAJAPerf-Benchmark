@@ -1,0 +1,4 @@
+Kernels run on 4 MPI ranks
+Kernel               , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_INTSC_HEXRECT   , Base_HIP   , block_64   ,         2197000 , PASSED     ,                  0.00869785 ,                          11.0895 ,                           909.328
+Apps_INTSC_HEXRECT   , RAJA_HIP   , block_64   ,         2197000 , PASSED     ,                  0.00877026 ,                          10.9980 ,                           901.821

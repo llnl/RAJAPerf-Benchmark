@@ -1,0 +1,72 @@
+Kernels run on 4 MPI ranks
+Kernel          ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_FEMSWEEP   ,          839808 ,       1 ,                 1 ,              1 ,         151182544 ,    731192832 ,           123412896 ,         97434832 ,            53747712 ,                  27769648 ,                               0 ,             123412896 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        3
+
+
+Kernels run on 4 MPI ranks
+Kernel          , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_FEMSWEEP   , Base_HIP   , block_64   ,          839808 , PASSED     ,                 0.000698860 ,                          201.471 ,                           1046.27
+Apps_FEMSWEEP   , RAJA_HIP   , block_64   ,          839808 , PASSED     ,                 0.000654070 ,                          215.267 ,                           1117.91
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel            
+........................................................
+Variants          Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                  (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_FEMSWEEP     
+........................................................
+Base_HIP-block_64 PASSED  5.0000000000000004090e-06   176157956.66605556148       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-block_64 PASSED  5.0000000000000004090e-06   176157956.66605556148       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  , 
+Variant        , Base_HIP , RAJA_HIP
+Tuning         , block_64 , block_64
+Apps_FEMSWEEP  , 0.000699 , 0.000654
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant        , Base_HIP , RAJA_HIP
+Tuning         , block_64 , block_64
+Apps_FEMSWEEP  ,    1.000 ,    1.068
+
+
+Min Runtime Report (sec.)  ,  , 
+Variant        , Base_HIP , RAJA_HIP
+Tuning         , block_64 , block_64
+Apps_FEMSWEEP  , 0.000699 , 0.000654
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant        , Base_HIP , RAJA_HIP
+Tuning         , block_64 , block_64
+Apps_FEMSWEEP  ,    1.000 ,    1.068
+
+
+Max Runtime Report (sec.)  ,  , 
+Variant        , Base_HIP , RAJA_HIP
+Tuning         , block_64 , block_64
+Apps_FEMSWEEP  , 0.000699 , 0.000654
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
+Variant        , Base_HIP , RAJA_HIP
+Tuning         , block_64 , block_64
+Apps_FEMSWEEP  ,    1.000 ,    1.068
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
+Kernel         , Base_HIP-block_64,         , RAJA_HIP-block_64,        
+Apps_FEMSWEEP  , 0.00             ,base_ref , -0.06            ,        
+               ,                  ,         ,                  ,        
+Col Min        , 0.00             ,         , -0.06            ,        
+Col Max        , 0.00             ,         , -0.06            ,        
+Col Avg        , 0.00             ,         , -0.06            ,        
+Col Std Dev    , 0.00             ,         , 0.00             ,        

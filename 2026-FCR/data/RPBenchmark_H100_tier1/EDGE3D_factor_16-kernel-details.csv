@@ -1,0 +1,3 @@
+Kernels run on 4 MPI ranks
+Kernel        ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_EDGE3D   ,           17576 ,      10 ,             25138 ,              1 ,            826760 ,    332173532 ,              826760 ,           625656 ,              201104 ,                         0 ,                               0 ,                864000 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        3

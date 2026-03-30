@@ -1,0 +1,4 @@
+Max Runtime Report (sec.)  ,  , 
+Variant      , Base_HIP  , RAJA_HIP 
+Tuning       , block_256 , block_256
+Apps_ENERGY  ,  0.001632 ,  0.001631

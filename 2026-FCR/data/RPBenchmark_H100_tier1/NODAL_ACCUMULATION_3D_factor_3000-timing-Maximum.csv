@@ -1,0 +1,4 @@
+Max Runtime Report (sec.)  ,  , 
+Variant                     , Base_CUDA , RAJA_CUDA
+Tuning                      , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  ,  0.019847 ,  0.019844
