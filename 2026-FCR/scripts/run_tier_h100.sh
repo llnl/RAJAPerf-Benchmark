@@ -31,6 +31,13 @@ TIER="${1:-}"
 #                 different problem size ranges than what's described above.
 #                 These kernels do not have clear saturation points.
 #
+# IMPORTANT NOTES: Tier2 kernels, INDEXLIST_3LOOP and HALO_PACKING_FUSED,
+#                  do not perform any floating point operations. So we
+#                  recommend looking at bandwidth plots for those. Also,
+#                  they are run over different problem size ranges than
+#                  what's described above to better expose their bandwidth
+#                  behavior.
+#
 ############################################################################
 
 BASE_OUTDIR="RPBenchmark_H100"
@@ -78,15 +85,16 @@ salloc ${ALLOC_ARGS} bash -lc '
                           "MASS3DEA")
      ;;
     tier2)
-      KERNELS=("CONVECTION3DPA"
-               "DEL_DOT_VEC_2D"
-               "INTSC_HEXHEX"
-               "LTIMES"
-               "MASS3DPA"
-               "MULTI_REDUCEC"
-               "REDUCE_STRUCT"
-               "INDEXLIST_3LOOP"
-               "HALO_PACKING_FUSED")
+       KERNELS=("CONVECTION3DPA"
+                "DEL_DOT_VEC_2D"
+                "INTSC_HEXHEX"
+                "LTIMES"
+                "MASS3DPA"
+                "MATVEC_3D_STENCIL"
+                "MULTI_REDUCE"
+                "REDUCE_STRUCT")
+       KERNELS_DIFFRANGE=("INDEXLIST_3LOOP"
+                          "HALO_PACKING_FUSED")
       ;;
     *)
       echo "Error: unknown kernel set: ${TIER}"
@@ -111,11 +119,11 @@ salloc ${ALLOC_ARGS} bash -lc '
         --outfile "${KERNEL_NAME}_factor_${factor}" \
         --memory-allocated "${mem}" \
         --warmup-perfrun-same \
-        -ev Seq Lambda
+        -ev RAJA_Seq Lambda
     done
   done
 
-  if [[ -n "$KERNELS_DIFFRANGE" ]]; then
+  if [[ -n "${KERNELS_DIFFRANGE:-}" ]]; then
 
     for KERNEL_NAME in "${KERNELS_DIFFRANGE[@]}"; do
       echo "Running kernel: ${KERNEL_NAME}"
@@ -131,7 +139,7 @@ salloc ${ALLOC_ARGS} bash -lc '
           --outfile "${KERNEL_NAME}_factor_${factor}" \
           --memory-allocated "${mem}" \
           --warmup-perfrun-same \
-          -ev Seq Lambda
+          -ev RAJA_Seq Lambda
       done
     done
 
