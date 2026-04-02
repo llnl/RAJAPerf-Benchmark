@@ -312,7 +312,6 @@ def find_saturation_point(x, y_smooth, eps: float = 0.1, w: int = 3):
     run_start_idx = None
 
     for i in range(n):
-#        if abs( (y_smooth[i] - y_end) / y_end ) <= threshold:
         if abs(y_smooth[i] - y_end) <= abs(threshold * y_end):
             if run_length == 0:
                 run_start_idx = i
@@ -333,7 +332,6 @@ def find_saturation_point(x, y_smooth, eps: float = 0.1, w: int = 3):
     run_start_idx = None
 
     for i in range(n):
-#        if abs( (y_smooth[i] - y_max) / y_max ) <= threshold:
         if abs(y_smooth[i] - y_max) <= abs(threshold * y_max):
             if run_length == 0:
                 run_start_idx = i
@@ -355,7 +353,6 @@ def find_saturation_point(x, y_smooth, eps: float = 0.1, w: int = 3):
     run_start_idx = None
 
     for i in range(n):
-#        if abs( (y_smooth[i] - y_end) / y_end ) <= threshold:
         if abs(y_smooth[i] - y_end) <= abs(threshold * y_end):
             if sat_idx is None:
                 sat_idx = i
@@ -478,12 +475,26 @@ def plot_kernel(
     eps: float = 0.1,
     w: int = 3,
     save_dir: Optional[str] = None,
+    exclude_plot_variants: Optional[List[str]] = None,
 ):
     if RAW_FLOPS_COL not in df.columns:
         print(f"[INFO] No '{RAW_FLOPS_COL}' column for kernel '{kernel}', skipping flops plot.")
         return
 
-    variants = df[VARIANT_TUNING_COL].unique()
+    if exclude_plot_variants is None:
+        exclude_plot_variants = []
+
+    exclude_plot_variants_set = {str(v).strip() for v in exclude_plot_variants}
+
+    plot_df = df.copy()
+    if exclude_plot_variants_set:
+        plot_df = plot_df[~plot_df["Variant"].astype(str).str.strip().isin(exclude_plot_variants_set)]
+
+    if plot_df.empty:
+        print(f"[INFO] All variants excluded from FLOPs plot for kernel '{kernel}', skipping plot.")
+        return
+
+    variants = plot_df[VARIANT_TUNING_COL].unique()
 
     plt.figure(figsize=(18, 7))
     colors = plt.cm.tab10.colors
@@ -492,7 +503,7 @@ def plot_kernel(
     ymax = -1e99
 
     for idx, variant in enumerate(variants):
-        subdf = df[df[VARIANT_TUNING_COL] == variant].copy()
+        subdf = plot_df[plot_df[VARIANT_TUNING_COL] == variant].copy()
         subdf = subdf.sort_values(PROBLEM_SIZE_COL)
         x = subdf[PROBLEM_SIZE_COL].astype(float).values
         y = subdf[RAW_FLOPS_COL].astype(float).values
@@ -534,7 +545,7 @@ def plot_kernel(
             markersize=10
         )
 
-        if SAT_IDX_COL in subdf.columns:
+        if SAT_IDX_COL in subdf.columns and pd.notna(subdf[SAT_IDX_COL].iloc[0]):
             sat_idx = subdf[SAT_IDX_COL].astype(int).values[0]
 
             sat_x = x[sat_idx]
@@ -592,12 +603,26 @@ def plot_kernel_bandwidth(
     eps: float = 0.1,
     w: int = 3,
     save_dir: Optional[str] = None,
+    exclude_plot_variants: Optional[List[str]] = None,
 ):
     if BANDWIDTH_COL not in df.columns:
         print(f"[INFO] No '{BANDWIDTH_COL}' column for kernel '{kernel}', skipping bandwidth plot.")
         return
 
-    variants = df[VARIANT_TUNING_COL].unique()
+    if exclude_plot_variants is None:
+        exclude_plot_variants = []
+
+    exclude_plot_variants_set = {str(v).strip() for v in exclude_plot_variants}
+
+    plot_df = df.copy()
+    if exclude_plot_variants_set:
+        plot_df = plot_df[~plot_df["Variant"].astype(str).str.strip().isin(exclude_plot_variants_set)]
+
+    if plot_df.empty:
+        print(f"[INFO] All variants excluded from bandwidth plot for kernel '{kernel}', skipping plot.")
+        return
+
+    variants = plot_df[VARIANT_TUNING_COL].unique()
 
     plt.figure(figsize=(18, 7))
     colors = plt.cm.tab10.colors
@@ -606,7 +631,7 @@ def plot_kernel_bandwidth(
     ymax = -1e99
 
     for idx, variant in enumerate(variants):
-        subdf = df[df[VARIANT_TUNING_COL] == variant].copy()
+        subdf = plot_df[plot_df[VARIANT_TUNING_COL] == variant].copy()
         subdf = subdf.sort_values(PROBLEM_SIZE_COL)
         x = subdf[PROBLEM_SIZE_COL].astype(float).values
         y_bw = subdf[BANDWIDTH_COL].astype(float).values
@@ -648,7 +673,7 @@ def plot_kernel_bandwidth(
             markersize=10
         )
 
-        if SAT_IDX_COL in subdf.columns:
+        if SAT_IDX_COL in subdf.columns and pd.notna(subdf[SAT_IDX_COL].iloc[0]):
             sat_idx = subdf[SAT_IDX_COL].astype(int).values[0]
 
             sat_x = x[sat_idx]
@@ -705,6 +730,7 @@ def smooth_and_plot_all_kernels(
     eps: float = 0.1,
     w: int = 3,
     save_dir: Optional[str] = None,
+    exclude_plot_variants: Optional[List[str]] = None,
 ) -> pd.DataFrame:
     df = df.dropna(subset=[KERNEL_COL, PROBLEM_SIZE_COL, RAW_FLOPS_COL, VARIANT_TUNING_COL]).copy()
     df[SMOOTH_FLOPS_COL] = np.nan
@@ -724,10 +750,26 @@ def smooth_and_plot_all_kernels(
         if SMOOTH_BW_COL in tmp.columns:
             df.loc[df[KERNEL_COL] == kernel, SMOOTH_BW_COL] = tmp[SMOOTH_BW_COL]
 
-        plot_kernel(tmp, kernel, k=k, eps=eps, w=w, save_dir=save_dir)
+        plot_kernel(
+            tmp,
+            kernel,
+            k=k,
+            eps=eps,
+            w=w,
+            save_dir=save_dir,
+            exclude_plot_variants=exclude_plot_variants,
+        )
 
         if BANDWIDTH_COL in df.columns:
-            plot_kernel_bandwidth(tmp, kernel, k=k, eps=eps, w=w, save_dir=save_dir)
+            plot_kernel_bandwidth(
+                tmp,
+                kernel,
+                k=k,
+                eps=eps,
+                w=w,
+                save_dir=save_dir,
+                exclude_plot_variants=exclude_plot_variants,
+            )
 
     return df
 
@@ -939,6 +981,7 @@ def run_pipeline(
     smooth_window: int = 5,
     saturation_eps: float = 0.1,
     saturation_w: int = 3,
+    exclude_plot_variants: Optional[List[str]] = None,
 ) -> Optional[pd.DataFrame]:
     if glob_patterns is None:
         glob_patterns = ["**/*factor*kernel-run-data.csv"]
@@ -967,6 +1010,7 @@ def run_pipeline(
         eps=saturation_eps,
         w=saturation_w,
         save_dir=fig_dir,
+        exclude_plot_variants=exclude_plot_variants,
     )
 
     output_variant_tuning_path = os.path.join(output_dir, "output_with_variant_tuning.csv")
@@ -1006,6 +1050,13 @@ def main_cli():
     parser.add_argument("--smooth-window", type=int, default=5, help="Moving median window size (default: '5')")
     parser.add_argument("--saturation-eps", type=float, default=0.1, help="Epsilon for saturation threshold (default: '0.1')")
     parser.add_argument("--saturation-w", type=int, default=3, help="Consecutive points needed for saturation (default: '3')")
+    parser.add_argument(
+        "--exclude-plot-variant",
+        action="append",
+        default=None,
+        help="Variant name to exclude from generated plots. Can be repeated, for example: "
+             "--exclude-plot-variant Base_Seq --exclude-plot-variant CUDA",
+    )
 
     args = parser.parse_args()
 
@@ -1017,6 +1068,7 @@ def main_cli():
         smooth_window=args.smooth_window,
         saturation_eps=args.saturation_eps,
         saturation_w=args.saturation_w,
+        exclude_plot_variants=args.exclude_plot_variant,
     )
 
 # =========================
@@ -1031,6 +1083,7 @@ def main_notebook(
     smooth_window: int = 5,
     saturation_eps: float = 0.1,
     saturation_w: int = 3,
+    exclude_plot_variants: Optional[List[str]] = None,
 ):
     return run_pipeline(
         root_dir=root_dir,
@@ -1040,6 +1093,7 @@ def main_notebook(
         smooth_window=smooth_window,
         saturation_eps=saturation_eps,
         saturation_w=saturation_w,
+        exclude_plot_variants=exclude_plot_variants,
     )
 
 if __name__ == "__main__":
