@@ -1,0 +1,4 @@
+Min Runtime Report (sec.)  ,  ,  , 
+Variant                 , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  , 8.221068 ,  0.020522 ,  0.020451

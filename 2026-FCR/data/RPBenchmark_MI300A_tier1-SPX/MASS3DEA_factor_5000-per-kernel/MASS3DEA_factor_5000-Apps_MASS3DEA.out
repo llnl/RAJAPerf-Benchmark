@@ -5,9 +5,10 @@ Apps_MASS3DEA   ,        60649472 ,       1 ,            947648 ,              1
 
 Kernels run on 4 MPI ranks
 Kernel          , Variant    , Tuning                              ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASS3DEA   , Base_HIP   , compile_time_block_stride_loop_64   ,        60649472 , PASSED     ,                  0.00227094 ,                          205.054 ,                           186.947
-Apps_MASS3DEA   , RAJA_HIP   , compile_time_block_stride_loop_64   ,        60649472 , PASSED     ,                   0.0108432 ,                          42.9453 ,                           39.1533
-Apps_MASS3DEA   , RAJA_HIP   , cached_block_stride_loop_64         ,        60649472 , PASSED     ,                  0.00172260 ,                          270.326 ,                           246.457
+Apps_MASS3DEA   , Base_Seq   , default                             ,        60649472 , PASSED     ,                     5.27048 ,                        0.0883532 ,                         0.0805517
+Apps_MASS3DEA   , Base_HIP   , compile_time_block_stride_loop_64   ,        60649472 , PASSED     ,                  0.00225322 ,                          206.666 ,                           188.417
+Apps_MASS3DEA   , RAJA_HIP   , compile_time_block_stride_loop_64   ,        60649472 , PASSED     ,                   0.0108113 ,                          43.0718 ,                           39.2686
+Apps_MASS3DEA   , RAJA_HIP   , cached_block_stride_loop_64         ,        60649472 , PASSED     ,                  0.00165346 ,                          281.630 ,                           256.763
 
 
 ===================================================================================================
@@ -20,6 +21,7 @@ Variants                                   Result  Tolerance                   A
 ----------------------------------------------------------------------------------------
 Apps_MASS3DEA                              
 ........................................................
+Base_Seq-default                           PASSED  1.0000000000000000364e-10   7581182785.3166164574       0.0000000000000000000       0.0000000000000000000       
 Base_HIP-compile_time_block_stride_loop_64 PASSED  1.0000000000000000364e-10   7581182785.3166164574       0.0000000000000000000       0.0000000000000000000       
 RAJA_HIP-compile_time_block_stride_loop_64 PASSED  1.0000000000000000364e-10   7581182785.3166164574       0.0000000000000000000       0.0000000000000000000       
 RAJA_HIP-cached_block_stride_loop_64       PASSED  1.0000000000000000364e-10   7581182785.3166164574       0.0000000000000000000       0.0000000000000000000       
@@ -27,48 +29,48 @@ RAJA_HIP-cached_block_stride_loop_64       PASSED  1.0000000000000000364e-10   7
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  ,  , 
-Variant        , Base_HIP                          , RAJA_HIP                          , RAJA_HIP                   
-Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
-Apps_MASS3DEA  ,                          0.002271 ,                          0.010843 ,                    0.001723
+Mean Runtime Report (sec.)  ,  ,  ,  , 
+Variant        , Base_Seq , Base_HIP                          , RAJA_HIP                          , RAJA_HIP                   
+Tuning         , default  , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  , 5.270482 ,                          0.002253 ,                          0.010811 ,                    0.001653
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  ,  , 
-Variant        , Base_HIP                          , RAJA_HIP                          , RAJA_HIP                   
-Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
-Apps_MASS3DEA  ,                             1.000 ,                             0.209 ,                       1.318
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  , 
+Variant        , Base_Seq , Base_HIP                          , RAJA_HIP                          , RAJA_HIP                   
+Tuning         , default  , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  ,    1.000 ,                          2339.086 ,                           487.496 ,                    3187.549
 
 
-Min Runtime Report (sec.)  ,  ,  , 
-Variant        , Base_HIP                          , RAJA_HIP                          , RAJA_HIP                   
-Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
-Apps_MASS3DEA  ,                          0.002271 ,                          0.010843 ,                    0.001723
+Min Runtime Report (sec.)  ,  ,  ,  , 
+Variant        , Base_Seq , Base_HIP                          , RAJA_HIP                          , RAJA_HIP                   
+Tuning         , default  , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  , 5.270482 ,                          0.002253 ,                          0.010811 ,                    0.001653
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  ,  , 
-Variant        , Base_HIP                          , RAJA_HIP                          , RAJA_HIP                   
-Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
-Apps_MASS3DEA  ,                             1.000 ,                             0.209 ,                       1.318
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  , 
+Variant        , Base_Seq , Base_HIP                          , RAJA_HIP                          , RAJA_HIP                   
+Tuning         , default  , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  ,    1.000 ,                          2339.086 ,                           487.496 ,                    3187.549
 
 
-Max Runtime Report (sec.)  ,  ,  , 
-Variant        , Base_HIP                          , RAJA_HIP                          , RAJA_HIP                   
-Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
-Apps_MASS3DEA  ,                          0.002271 ,                          0.010843 ,                    0.001723
+Max Runtime Report (sec.)  ,  ,  ,  , 
+Variant        , Base_Seq , Base_HIP                          , RAJA_HIP                          , RAJA_HIP                   
+Tuning         , default  , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  , 5.270482 ,                          0.002253 ,                          0.010811 ,                    0.001653
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  ,  , 
-Variant        , Base_HIP                          , RAJA_HIP                          , RAJA_HIP                   
-Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
-Apps_MASS3DEA  ,                             1.000 ,                             0.209 ,                       1.318
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  , 
+Variant        , Base_Seq , Base_HIP                          , RAJA_HIP                          , RAJA_HIP                   
+Tuning         , default  , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  ,    1.000 ,                          2339.086 ,                           487.496 ,                    3187.549
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
-Kernel         , Base_HIP-compile_time_block_stride_loop_64,         , RAJA_HIP-compile_time_block_stride_loop_64,         , RAJA_HIP-cached_block_stride_loop_64      ,        
-Apps_MASS3DEA  , 0.00                                      ,base_ref , 3.77                                      ,OVER_TOL , -0.24                                     ,        
-               ,                                           ,         ,                                           ,         ,                                           ,        
-Col Min        , 0.00                                      ,         , 3.77                                      ,         , -0.24                                     ,        
-Col Max        , 0.00                                      ,         , 3.77                                      ,         , -0.24                                     ,        
-Col Avg        , 0.00                                      ,         , 3.77                                      ,         , -0.24                                     ,        
-Col Std Dev    , 0.00                                      ,         , 0.00                                      ,         , 0.00                                      ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  , 
+Kernel         , Base_Seq-default                          ,         , Base_HIP-compile_time_block_stride_loop_64,         , RAJA_HIP-compile_time_block_stride_loop_64,         , RAJA_HIP-cached_block_stride_loop_64      ,        
+Apps_MASS3DEA  , 0.00                                      ,base_ref , 0.00                                      ,base_ref , 3.80                                      ,OVER_TOL , -0.27                                     ,        
+               ,                                           ,         ,                                           ,         ,                                           ,         ,                                           ,        
+Col Min        , 0.00                                      ,         , 0.00                                      ,         , 3.80                                      ,         , -0.27                                     ,        
+Col Max        , 0.00                                      ,         , 0.00                                      ,         , 3.80                                      ,         , -0.27                                     ,        
+Col Avg        , 0.00                                      ,         , 0.00                                      ,         , 3.80                                      ,         , -0.27                                     ,        
+Col Std Dev    , 0.00                                      ,         , 0.00                                      ,         , 0.00                                      ,         , 0.00                                      ,        

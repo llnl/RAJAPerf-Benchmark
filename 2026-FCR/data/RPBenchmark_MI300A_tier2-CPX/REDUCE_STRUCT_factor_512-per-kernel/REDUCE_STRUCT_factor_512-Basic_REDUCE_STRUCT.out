@@ -1,0 +1,90 @@
+Kernels run on 24 MPI ranks
+Kernel                ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency   , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Basic_REDUCE_STRUCT   ,         1600000 ,      50 ,           1600000 ,              1 ,          25600000 ,      3200002 ,            25600000 ,         25600000 ,                   0 ,                         0 ,                               0 ,              25600000 , Inconsistent          , O(N)                    ,                           1 ,                        1
+
+
+Kernels run on 24 MPI ranks
+Kernel                , Variant    , Tuning                  ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Basic_REDUCE_STRUCT   , Base_Seq   , default                 ,         1600000 , PASSED     ,                  0.00138466 ,                          17.2186 ,                           2.31104
+Basic_REDUCE_STRUCT   , Base_Seq   , kahan                   ,         1600000 , PASSED     ,                  0.00521217 ,                          4.57427 ,                          0.613948
+Basic_REDUCE_STRUCT   , Base_Seq   , cascade                 ,         1600000 , PASSED     ,                  0.00254821 ,                          9.35630 ,                           1.25578
+Basic_REDUCE_STRUCT   , Base_HIP   , blkatm_direct_256       ,         1600000 , PASSED     ,                  0.00309166 ,                          7.71168 ,                           1.03504
+Basic_REDUCE_STRUCT   , Base_HIP   , blkatm_occgs_256        ,         1600000 , PASSED     ,                 0.000137386 ,                          173.540 ,                           23.2921
+Basic_REDUCE_STRUCT   , RAJA_HIP   , blkatm_direct_256       ,         1600000 , PASSED     ,                 0.000329293 ,                          72.4032 ,                           9.71780
+Basic_REDUCE_STRUCT   , RAJA_HIP   , blkdev_direct_256       ,         1600000 , PASSED     ,                 0.000378012 ,                          63.0717 ,                           8.46535
+Basic_REDUCE_STRUCT   , RAJA_HIP   , blkdev_direct_new_256   ,         1600000 , PASSED     ,                 0.000534626 ,                          44.5954 ,                           5.98549
+Basic_REDUCE_STRUCT   , RAJA_HIP   , blkatm_occgs_256        ,         1600000 , PASSED     ,                 6.53418e-05 ,                          364.879 ,                           48.9732
+Basic_REDUCE_STRUCT   , RAJA_HIP   , blkdev_occgs_256        ,         1600000 , PASSED     ,                 7.30097e-05 ,                          326.557 ,                           43.8298
+Basic_REDUCE_STRUCT   , RAJA_HIP   , blkdev_occgs_new_256    ,         1600000 , PASSED     ,                 7.63581e-05 ,                          312.237 ,                           41.9078
+
+
+===================================================================================================
+Checksum Report for 24 MPI ranks 
+===================================================================================================
+Kernel                         
+........................................................
+Variants                       Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                               (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Basic_REDUCE_STRUCT            
+........................................................
+Base_Seq-default               PASSED  1.0000000000000000364e-10   224.99985937499999267       4.7369545323305838758e-17   3.0092655381050560204e-36   
+Base_Seq-kahan                 PASSED  1.0000000000000000364e-10   224.99985937500000333       0.0000000000000000000       0.0000000000000000000       
+Base_Seq-cascade               PASSED  1.0000000000000000364e-10   224.99985937500000333       0.0000000000000000000       0.0000000000000000000       
+Base_HIP-blkatm_direct_256     PASSED  1.0000000000000000364e-10   224.99985937500002064       1.8947818129322335503e-16   5.6652919775185396367e-17   
+Base_HIP-blkatm_occgs_256      PASSED  1.0000000000000000364e-10   224.99985937500001058       1.4210863596991751627e-16   4.5462509802060884986e-17   
+RAJA_HIP-blkatm_direct_256     PASSED  1.0000000000000000364e-10   224.99985937500001398       4.7369545323305838758e-17   3.0092655381050560204e-36   
+RAJA_HIP-blkdev_direct_256     PASSED  1.0000000000000000364e-10   224.99985937500001398       4.7369545323305838758e-17   3.0092655381050560204e-36   
+RAJA_HIP-blkdev_direct_new_256 PASSED  1.0000000000000000364e-10   224.99985937500000333       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-blkatm_occgs_256      PASSED  1.0000000000000000364e-10   224.99985937500000317       1.5789848441101946253e-17   3.1552272042569548693e-18   
+RAJA_HIP-blkdev_occgs_256      PASSED  1.0000000000000000364e-10   224.99985937500000333       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-blkdev_occgs_new_256  PASSED  1.0000000000000000364e-10   224.99985937500000333       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Variant              , Base_Seq , Base_Seq , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP          , RAJA_HIP              , RAJA_HIP         , RAJA_HIP         , RAJA_HIP            
+Tuning               , default  , kahan    , cascade  , blkatm_direct_256 , blkatm_occgs_256 , blkatm_direct_256 , blkdev_direct_256 , blkdev_direct_new_256 , blkatm_occgs_256 , blkdev_occgs_256 , blkdev_occgs_new_256
+Basic_REDUCE_STRUCT  , 0.069233 , 0.260609 , 0.127411 ,          0.154583 ,         0.006869 ,          0.016465 ,          0.018901 ,              0.026731 ,         0.003267 ,         0.003650 ,             0.003818
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Variant              , Base_Seq , Base_Seq , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP          , RAJA_HIP              , RAJA_HIP         , RAJA_HIP         , RAJA_HIP            
+Tuning               , default  , kahan    , cascade  , blkatm_direct_256 , blkatm_occgs_256 , blkatm_direct_256 , blkdev_direct_256 , blkdev_direct_new_256 , blkatm_occgs_256 , blkdev_occgs_256 , blkdev_occgs_new_256
+Basic_REDUCE_STRUCT  ,    1.000 ,    0.266 ,    0.543 ,             0.448 ,           10.079 ,             4.205 ,             3.663 ,                 2.590 ,           21.191 ,           18.965 ,               18.134
+
+
+Min Runtime Report (sec.)  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Variant              , Base_Seq , Base_Seq , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP          , RAJA_HIP              , RAJA_HIP         , RAJA_HIP         , RAJA_HIP            
+Tuning               , default  , kahan    , cascade  , blkatm_direct_256 , blkatm_occgs_256 , blkatm_direct_256 , blkdev_direct_256 , blkdev_direct_new_256 , blkatm_occgs_256 , blkdev_occgs_256 , blkdev_occgs_new_256
+Basic_REDUCE_STRUCT  , 0.069233 , 0.260609 , 0.127411 ,          0.154583 ,         0.006869 ,          0.016465 ,          0.018901 ,              0.026731 ,         0.003267 ,         0.003650 ,             0.003818
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Variant              , Base_Seq , Base_Seq , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP          , RAJA_HIP              , RAJA_HIP         , RAJA_HIP         , RAJA_HIP            
+Tuning               , default  , kahan    , cascade  , blkatm_direct_256 , blkatm_occgs_256 , blkatm_direct_256 , blkdev_direct_256 , blkdev_direct_new_256 , blkatm_occgs_256 , blkdev_occgs_256 , blkdev_occgs_new_256
+Basic_REDUCE_STRUCT  ,    1.000 ,    0.266 ,    0.543 ,             0.448 ,           10.079 ,             4.205 ,             3.663 ,                 2.590 ,           21.191 ,           18.965 ,               18.134
+
+
+Max Runtime Report (sec.)  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Variant              , Base_Seq , Base_Seq , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP          , RAJA_HIP              , RAJA_HIP         , RAJA_HIP         , RAJA_HIP            
+Tuning               , default  , kahan    , cascade  , blkatm_direct_256 , blkatm_occgs_256 , blkatm_direct_256 , blkdev_direct_256 , blkdev_direct_new_256 , blkatm_occgs_256 , blkdev_occgs_256 , blkdev_occgs_new_256
+Basic_REDUCE_STRUCT  , 0.069233 , 0.260609 , 0.127411 ,          0.154583 ,         0.006869 ,          0.016465 ,          0.018901 ,              0.026731 ,         0.003267 ,         0.003650 ,             0.003818
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Variant              , Base_Seq , Base_Seq , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP          , RAJA_HIP              , RAJA_HIP         , RAJA_HIP         , RAJA_HIP            
+Tuning               , default  , kahan    , cascade  , blkatm_direct_256 , blkatm_occgs_256 , blkatm_direct_256 , blkdev_direct_256 , blkdev_direct_new_256 , blkatm_occgs_256 , blkdev_occgs_256 , blkdev_occgs_new_256
+Basic_REDUCE_STRUCT  ,    1.000 ,    0.266 ,    0.543 ,             0.448 ,           10.079 ,             4.205 ,             3.663 ,                 2.590 ,           21.191 ,           18.965 ,               18.134
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Kernel               , Base_Seq-default              ,         , Base_Seq-kahan                ,         , Base_Seq-cascade              ,         , Base_HIP-blkatm_direct_256    ,         , Base_HIP-blkatm_occgs_256     ,         , RAJA_HIP-blkatm_direct_256    ,         , RAJA_HIP-blkdev_direct_256    ,         , RAJA_HIP-blkdev_direct_new_256,         , RAJA_HIP-blkatm_occgs_256     ,         , RAJA_HIP-blkdev_occgs_256     ,         , RAJA_HIP-blkdev_occgs_new_256 ,        
+Basic_REDUCE_STRUCT  , 0.00                          ,base_ref , 2.76                          ,OVER_TOL , 0.84                          ,OVER_TOL , 0.00                          ,base_ref , -0.96                         ,         , -0.89                         ,         , -0.88                         ,         , -0.83                         ,         , -0.98                         ,         , -0.98                         ,         , -0.98                         ,        
+                     ,                               ,         ,                               ,         ,                               ,         ,                               ,         ,                               ,         ,                               ,         ,                               ,         ,                               ,         ,                               ,         ,                               ,         ,                               ,        
+Col Min              , 0.00                          ,         , 2.76                          ,         , 0.84                          ,         , 0.00                          ,         , -0.96                         ,         , -0.89                         ,         , -0.88                         ,         , -0.83                         ,         , -0.98                         ,         , -0.98                         ,         , -0.98                         ,        
+Col Max              , 0.00                          ,         , 2.76                          ,         , 0.84                          ,         , 0.00                          ,         , -0.96                         ,         , -0.89                         ,         , -0.88                         ,         , -0.83                         ,         , -0.98                         ,         , -0.98                         ,         , -0.98                         ,        
+Col Avg              , 0.00                          ,         , 2.76                          ,         , 0.84                          ,         , 0.00                          ,         , -0.96                         ,         , -0.89                         ,         , -0.88                         ,         , -0.83                         ,         , -0.98                         ,         , -0.98                         ,         , -0.98                         ,        
+Col Std Dev          , 0.00                          ,         , 0.00                          ,         , 0.00                          ,         , 0.00                          ,         , 0.00                          ,         , 0.00                          ,         , 0.00                          ,         , 0.00                          ,         , 0.00                          ,         , 0.00                          ,         , 0.00                          ,        

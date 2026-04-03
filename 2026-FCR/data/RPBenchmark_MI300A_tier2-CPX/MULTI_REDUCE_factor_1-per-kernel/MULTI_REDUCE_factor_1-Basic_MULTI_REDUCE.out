@@ -1,0 +1,78 @@
+Kernels run on 24 MPI ranks
+Kernel               ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency   , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Basic_MULTI_REDUCE   ,            3120 ,      50 ,              3120 ,              1 ,             50080 ,         3120 ,               50000 ,            49920 ,                   0 ,                         0 ,                              80 ,                 50000 , Inconsistent          , O(N)                    ,                           1 ,                        1
+
+
+Kernels run on 24 MPI ranks
+Kernel               , Variant    , Tuning              ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Basic_MULTI_REDUCE   , Base_Seq   , default             ,            3120 , PASSED     ,                 9.75346e-06 ,                          4.78196 ,                          0.319886
+Basic_MULTI_REDUCE   , Base_HIP   , atomic_direct_256   ,            3120 , PASSED     ,                 9.98628e-06 ,                          4.67047 ,                          0.312429
+Basic_MULTI_REDUCE   , Base_HIP   , atomic_occgs_256    ,            3120 , PASSED     ,                 1.00875e-05 ,                          4.62363 ,                          0.309295
+Basic_MULTI_REDUCE   , RAJA_HIP   , atomic_direct_256   ,            3120 , PASSED     ,                 1.07345e-05 ,                          4.34494 ,                          0.290652
+Basic_MULTI_REDUCE   , RAJA_HIP   , atomic_occgs_256    ,            3120 , PASSED     ,                 1.08837e-05 ,                          4.28538 ,                          0.286668
+
+
+===================================================================================================
+Checksum Report for 24 MPI ranks 
+===================================================================================================
+Kernel                     
+........................................................
+Variants                   Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                           (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Basic_MULTI_REDUCE         
+........................................................
+Base_Seq-default           PASSED  1.0000000000000000364e-10   1556.2529052209686656       0.0000000000000000000       0.0000000000000000000       
+Base_HIP-atomic_direct_256 PASSED  1.0000000000000000364e-10   1556.2529052209688084       1.2641359209905815161e-16   2.4195378246123082319e-17   
+Base_HIP-atomic_occgs_256  PASSED  1.0000000000000000364e-10   1556.2529052209687901       1.2641359209905815161e-16   2.7920075343642329888e-17   
+RAJA_HIP-atomic_direct_256 PASSED  1.0000000000000000364e-10   1556.2529052209688017       1.2641359209905815161e-16   2.6281674706301936312e-17   
+RAJA_HIP-atomic_occgs_256  PASSED  1.0000000000000000364e-10   1556.2529052209687800       1.2641359209905815161e-16   2.3378193597162743198e-17   
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant             , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP        
+Tuning              , default  , atomic_direct_256 , atomic_occgs_256 , atomic_direct_256 , atomic_occgs_256
+Basic_MULTI_REDUCE  , 0.000488 ,          0.000499 ,         0.000504 ,          0.000537 ,         0.000544
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  ,  , 
+Variant             , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP        
+Tuning              , default  , atomic_direct_256 , atomic_occgs_256 , atomic_direct_256 , atomic_occgs_256
+Basic_MULTI_REDUCE  ,    1.000 ,             0.977 ,            0.967 ,             0.909 ,            0.896
+
+
+Min Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant             , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP        
+Tuning              , default  , atomic_direct_256 , atomic_occgs_256 , atomic_direct_256 , atomic_occgs_256
+Basic_MULTI_REDUCE  , 0.000488 ,          0.000499 ,         0.000504 ,          0.000537 ,         0.000544
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  ,  , 
+Variant             , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP        
+Tuning              , default  , atomic_direct_256 , atomic_occgs_256 , atomic_direct_256 , atomic_occgs_256
+Basic_MULTI_REDUCE  ,    1.000 ,             0.977 ,            0.967 ,             0.909 ,            0.896
+
+
+Max Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant             , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP        
+Tuning              , default  , atomic_direct_256 , atomic_occgs_256 , atomic_direct_256 , atomic_occgs_256
+Basic_MULTI_REDUCE  , 0.000488 ,          0.000499 ,         0.000504 ,          0.000537 ,         0.000544
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  ,  , 
+Variant             , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP        
+Tuning              , default  , atomic_direct_256 , atomic_occgs_256 , atomic_direct_256 , atomic_occgs_256
+Basic_MULTI_REDUCE  ,    1.000 ,             0.977 ,            0.967 ,             0.909 ,            0.896
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Kernel              , Base_Seq-default          ,         , Base_HIP-atomic_direct_256,         , Base_HIP-atomic_occgs_256 ,         , RAJA_HIP-atomic_direct_256,         , RAJA_HIP-atomic_occgs_256 ,        
+Basic_MULTI_REDUCE  , 0.00                      ,base_ref , 0.00                      ,base_ref , 0.01                      ,         , 0.07                      ,         , 0.09                      ,        
+                    ,                           ,         ,                           ,         ,                           ,         ,                           ,         ,                           ,        
+Col Min             , 0.00                      ,         , 0.00                      ,         , 0.01                      ,         , 0.07                      ,         , 0.09                      ,        
+Col Max             , 0.00                      ,         , 0.00                      ,         , 0.01                      ,         , 0.07                      ,         , 0.09                      ,        
+Col Avg             , 0.00                      ,         , 0.00                      ,         , 0.01                      ,         , 0.07                      ,         , 0.09                      ,        
+Col Std Dev         , 0.00                      ,         , 0.00                      ,         , 0.00                      ,         , 0.00                      ,         , 0.00                      ,        

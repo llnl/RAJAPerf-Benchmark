@@ -1,0 +1,74 @@
+Kernels run on 4 MPI ranks
+Kernel                  ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency   , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Basic_INDEXLIST_3LOOP   ,        10240000 ,     100 ,          30720001 ,              3 ,         430080026 ,            0 ,           348160018 ,        245760016 ,           184320010 ,                  81920008 ,                               0 ,             204800008 , Consistent            , O(N)                    ,                           1 ,                        1
+
+
+Kernels run on 4 MPI ranks
+Kernel                  , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Basic_INDEXLIST_3LOOP   , Base_Seq   , default     ,        10240000 , PASSED     ,                   0.0438102 ,                          9.14268 ,                           0.00000
+Basic_INDEXLIST_3LOOP   , Base_HIP   , block_256   ,        10240000 , PASSED     ,                 0.000166064 ,                          2411.97 ,                           0.00000
+Basic_INDEXLIST_3LOOP   , RAJA_HIP   , block_256   ,        10240000 , PASSED     ,                 0.000165011 ,                          2427.37 ,                           0.00000
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel                
+........................................................
+Variants              Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                      (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Basic_INDEXLIST_3LOOP 
+........................................................
+Base_Seq-default      PASSED  0.0000000000000000000       26229994067133.376741       0.0000000000000000000       0.0000000000000000000       
+Base_HIP-block_256    PASSED  0.0000000000000000000       26229994067133.376741       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-block_256    PASSED  0.0000000000000000000       26229994067133.376741       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant                , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                 , default  , block_256 , block_256
+Basic_INDEXLIST_3LOOP  , 4.381024 ,  0.016606 ,  0.016501
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                 , default  , block_256 , block_256
+Basic_INDEXLIST_3LOOP  ,    1.000 ,   263.815 ,   265.498
+
+
+Min Runtime Report (sec.)  ,  ,  , 
+Variant                , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                 , default  , block_256 , block_256
+Basic_INDEXLIST_3LOOP  , 4.381024 ,  0.016606 ,  0.016501
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                 , default  , block_256 , block_256
+Basic_INDEXLIST_3LOOP  ,    1.000 ,   263.815 ,   265.498
+
+
+Max Runtime Report (sec.)  ,  ,  , 
+Variant                , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                 , default  , block_256 , block_256
+Basic_INDEXLIST_3LOOP  , 4.381024 ,  0.016606 ,  0.016501
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                 , default  , block_256 , block_256
+Basic_INDEXLIST_3LOOP  ,    1.000 ,   263.815 ,   265.498
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel                 , Base_Seq-default  ,         , Base_HIP-block_256,         , RAJA_HIP-block_256,        
+Basic_INDEXLIST_3LOOP  , 0.00              ,base_ref , 0.00              ,base_ref , -0.01             ,        
+                       ,                   ,         ,                   ,         ,                   ,        
+Col Min                , 0.00              ,         , 0.00              ,         , -0.01             ,        
+Col Max                , 0.00              ,         , 0.00              ,         , -0.01             ,        
+Col Avg                , 0.00              ,         , 0.00              ,         , -0.01             ,        
+Col Std Dev            , 0.00              ,         , 0.00              ,         , 0.00              ,        

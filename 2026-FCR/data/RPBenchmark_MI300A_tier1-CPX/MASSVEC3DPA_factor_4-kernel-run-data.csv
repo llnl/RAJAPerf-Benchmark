@@ -1,7 +1,8 @@
 Kernels run on 24 MPI ranks
 Kernel             , Variant    , Tuning                         ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASSVEC3DPA   , Base_HIP   , runtime_block_stride_loop_64   ,           21312 , PASSED     ,                 8.45724e-06 ,                          22.1106 ,                           72.4492
-Apps_MASSVEC3DPA   , Base_HIP   , direct_64                      ,           21312 , PASSED     ,                 4.12322e-06 ,                          45.3516 ,                           148.602
-Apps_MASSVEC3DPA   , RAJA_HIP   , runtime_block_stride_loop_64   ,           21312 , PASSED     ,                 1.07457e-05 ,                          17.4019 ,                           57.0202
-Apps_MASSVEC3DPA   , RAJA_HIP   , direct_64                      ,           21312 , PASSED     ,                 4.24862e-06 ,                          44.0130 ,                           144.216
-Apps_MASSVEC3DPA   , RAJA_HIP   , cached_block_stride_loop_64    ,           21312 , PASSED     ,                 7.73484e-06 ,                          24.1756 ,                           79.2156
+Apps_MASSVEC3DPA   , Base_Seq   , default                        ,           21312 , PASSED     ,                 5.56373e-05 ,                          3.36096 ,                           11.0127
+Apps_MASSVEC3DPA   , Base_HIP   , runtime_block_stride_loop_64   ,           21312 , PASSED     ,                 8.46242e-06 ,                          22.0971 ,                           72.4048
+Apps_MASSVEC3DPA   , Base_HIP   , direct_64                      ,           21312 , PASSED     ,                 4.19282e-06 ,                          44.5988 ,                           146.136
+Apps_MASSVEC3DPA   , RAJA_HIP   , runtime_block_stride_loop_64   ,           21312 , PASSED     ,                 1.08344e-05 ,                          17.2593 ,                           56.5530
+Apps_MASSVEC3DPA   , RAJA_HIP   , direct_64                      ,           21312 , PASSED     ,                 4.22742e-06 ,                          44.2338 ,                           144.939
+Apps_MASSVEC3DPA   , RAJA_HIP   , cached_block_stride_loop_64    ,           21312 , PASSED     ,                 7.61082e-06 ,                          24.5696 ,                           80.5064

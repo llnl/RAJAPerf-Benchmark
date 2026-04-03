@@ -1,0 +1,74 @@
+Kernels run on 4 MPI ranks
+Kernel          ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_MASS3DPA   ,          404736 ,      50 ,            101184 ,              1 ,          16037984 ,     32056356 ,            12800096 ,         12800096 ,             3237888 ,                   3237888 ,                               0 ,              12800096 , ConsistentPerVariantTuning   , O(N)                    ,                           2 ,                        3
+
+
+Kernels run on 4 MPI ranks
+Kernel          , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MASS3DPA   , Base_Seq   , default    ,          404736 , PASSED     ,                  0.00286180 ,                          5.21928 ,                           11.2015
+Apps_MASS3DPA   , Base_HIP   , block_25   ,          404736 , PASSED     ,                 1.80949e-05 ,                          825.456 ,                           1771.57
+Apps_MASS3DPA   , RAJA_HIP   , block_25   ,          404736 , PASSED     ,                 1.80643e-05 ,                          826.853 ,                           1774.57
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel            
+........................................................
+Variants          Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                  (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_MASS3DPA     
+........................................................
+Base_Seq-default  PASSED  1.0000000000000000364e-10   161887926129.65470381       0.0000000000000000000       0.0000000000000000000       
+Base_HIP-block_25 PASSED  1.0000000000000000364e-10   161887926129.65470381       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-block_25 PASSED  1.0000000000000000364e-10   161887926129.65470381       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_Seq , Base_HIP , RAJA_HIP
+Tuning         , default  , block_25 , block_25
+Apps_MASS3DPA  , 0.143090 , 0.000905 , 0.000903
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant        , Base_Seq , Base_HIP , RAJA_HIP
+Tuning         , default  , block_25 , block_25
+Apps_MASS3DPA  ,    1.000 ,  158.155 ,  158.423
+
+
+Min Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_Seq , Base_HIP , RAJA_HIP
+Tuning         , default  , block_25 , block_25
+Apps_MASS3DPA  , 0.143090 , 0.000905 , 0.000903
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant        , Base_Seq , Base_HIP , RAJA_HIP
+Tuning         , default  , block_25 , block_25
+Apps_MASS3DPA  ,    1.000 ,  158.155 ,  158.423
+
+
+Max Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_Seq , Base_HIP , RAJA_HIP
+Tuning         , default  , block_25 , block_25
+Apps_MASS3DPA  , 0.143090 , 0.000905 , 0.000903
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant        , Base_Seq , Base_HIP , RAJA_HIP
+Tuning         , default  , block_25 , block_25
+Apps_MASS3DPA  ,    1.000 ,  158.155 ,  158.423
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel         , Base_Seq-default ,         , Base_HIP-block_25,         , RAJA_HIP-block_25,        
+Apps_MASS3DPA  , 0.00             ,base_ref , 0.00             ,base_ref , -0.00            ,        
+               ,                  ,         ,                  ,         ,                  ,        
+Col Min        , 0.00             ,         , 0.00             ,         , -0.00            ,        
+Col Max        , 0.00             ,         , 0.00             ,         , -0.00            ,        
+Col Avg        , 0.00             ,         , 0.00             ,         , -0.00            ,        
+Col Std Dev    , 0.00             ,         , 0.00             ,         , 0.00             ,        

@@ -1,0 +1,5 @@
+Kernels run on 4 MPI ranks
+Kernel              , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_INTSC_HEXHEX   , Base_Seq   , default    ,            6859 , PASSED     ,                    0.372310 ,                        0.0768661 ,                           3.56548
+Apps_INTSC_HEXHEX   , Base_HIP   , block_64   ,            6859 , PASSED     ,                   0.0646335 ,                         0.442773 ,                           20.5383
+Apps_INTSC_HEXHEX   , RAJA_HIP   , block_64   ,            6859 , PASSED     ,                   0.0369851 ,                         0.773771 ,                           35.8919
