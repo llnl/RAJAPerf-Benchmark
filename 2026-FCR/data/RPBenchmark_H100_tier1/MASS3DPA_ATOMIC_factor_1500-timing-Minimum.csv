@@ -1,4 +1,4 @@
-Min Runtime Report (sec.)  ,  , 
-Variant               , Base_CUDA , RAJA_CUDA
-Tuning                , block_64  , block_64 
-Apps_MASS3DPA_ATOMIC  ,  0.004601 ,  0.004609
+Min Runtime Report (sec.)  ,  ,  , 
+Variant               , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                , default  , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  , 0.753490 ,  0.004610 ,  0.004612

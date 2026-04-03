@@ -5,8 +5,9 @@ Apps_FEMSWEEP   ,         1990656 ,       1 ,                 1 ,              1
 
 Kernels run on 4 MPI ranks
 Kernel          , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_FEMSWEEP   , Base_CUDA   , block_128   ,         1990656 , PASSED     ,                  0.00512735 ,                          65.9459 ,                           339.713
-Apps_FEMSWEEP   , RAJA_CUDA   , block_128   ,         1990656 , PASSED     ,                  0.00615776 ,                          54.9108 ,                           282.866
+Apps_FEMSWEEP   , Base_Seq    , default     ,         1990656 , PASSED     ,                    0.663273 ,                         0.509787 ,                           2.62611
+Apps_FEMSWEEP   , Base_CUDA   , block_128   ,         1990656 , PASSED     ,                  0.00513028 ,                          65.9083 ,                           339.519
+Apps_FEMSWEEP   , RAJA_CUDA   , block_128   ,         1990656 , PASSED     ,                  0.00613270 ,                          55.1352 ,                           284.022
 
 
 ===================================================================================================
@@ -19,54 +20,55 @@ Variants            Result  Tolerance                   Average Checksum        
 ----------------------------------------------------------------------------------------
 Apps_FEMSWEEP       
 ........................................................
-Base_CUDA-block_128 PASSED  5.0000000000000004090e-06   233799674.63192479052       0.0000000000000000000       0.0000000000000000000       
-RAJA_CUDA-block_128 PASSED  5.0000000000000004090e-06   233799674.63192479052       0.0000000000000000000       0.0000000000000000000       
+Base_Seq-default    PASSED  5.0000000000000004090e-06   233799674.62968032084       0.0000000000000000000       0.0000000000000000000       
+Base_CUDA-block_128 PASSED  5.0000000000000004090e-06   233799674.63192479052       9.5999692221369109864e-12   0.0000000000000000000       
+RAJA_CUDA-block_128 PASSED  5.0000000000000004090e-06   233799674.63192479052       9.5999692221369109864e-12   0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  , 
-Variant        , Base_CUDA , RAJA_CUDA
-Tuning         , block_128 , block_128
-Apps_FEMSWEEP  ,  0.005127 ,  0.006158
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning         , default  , block_128 , block_128
+Apps_FEMSWEEP  , 0.663273 ,  0.005130 ,  0.006133
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant        , Base_CUDA , RAJA_CUDA
-Tuning         , block_128 , block_128
-Apps_FEMSWEEP  ,     1.000 ,     0.833
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant        , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning         , default  , block_128 , block_128
+Apps_FEMSWEEP  ,    1.000 ,   129.286 ,   108.153
 
 
-Min Runtime Report (sec.)  ,  , 
-Variant        , Base_CUDA , RAJA_CUDA
-Tuning         , block_128 , block_128
-Apps_FEMSWEEP  ,  0.005127 ,  0.006158
+Min Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning         , default  , block_128 , block_128
+Apps_FEMSWEEP  , 0.663273 ,  0.005130 ,  0.006133
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant        , Base_CUDA , RAJA_CUDA
-Tuning         , block_128 , block_128
-Apps_FEMSWEEP  ,     1.000 ,     0.833
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant        , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning         , default  , block_128 , block_128
+Apps_FEMSWEEP  ,    1.000 ,   129.286 ,   108.153
 
 
-Max Runtime Report (sec.)  ,  , 
-Variant        , Base_CUDA , RAJA_CUDA
-Tuning         , block_128 , block_128
-Apps_FEMSWEEP  ,  0.005127 ,  0.006158
+Max Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning         , default  , block_128 , block_128
+Apps_FEMSWEEP  , 0.663273 ,  0.005130 ,  0.006133
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant        , Base_CUDA , RAJA_CUDA
-Tuning         , block_128 , block_128
-Apps_FEMSWEEP  ,     1.000 ,     0.833
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant        , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning         , default  , block_128 , block_128
+Apps_FEMSWEEP  ,    1.000 ,   129.286 ,   108.153
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
-Kernel         , Base_CUDA-block_128,         , RAJA_CUDA-block_128,        
-Apps_FEMSWEEP  , 0.00               ,base_ref , 0.20               ,OVER_TOL
-               ,                    ,         ,                    ,        
-Col Min        , 0.00               ,         , 0.20               ,        
-Col Max        , 0.00               ,         , 0.20               ,        
-Col Avg        , 0.00               ,         , 0.20               ,        
-Col Std Dev    , 0.00               ,         , 0.00               ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel         , Base_Seq-default   ,         , Base_CUDA-block_128,         , RAJA_CUDA-block_128,        
+Apps_FEMSWEEP  , 0.00               ,base_ref , 0.00               ,base_ref , 0.20               ,OVER_TOL
+               ,                    ,         ,                    ,         ,                    ,        
+Col Min        , 0.00               ,         , 0.00               ,         , 0.20               ,        
+Col Max        , 0.00               ,         , 0.00               ,         , 0.20               ,        
+Col Avg        , 0.00               ,         , 0.00               ,         , 0.20               ,        
+Col Std Dev    , 0.00               ,         , 0.00               ,         , 0.00               ,        

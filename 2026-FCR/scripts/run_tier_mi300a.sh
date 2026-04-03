@@ -35,16 +35,16 @@ TIER="${2:-}"
 # problem to use ~75MB of allocated memory, which is about less than 1/3
 # the MALL size.
 #
-# IMPORTANT NOTES: Tier1 kernels, FEMSWEEP and MASS3DEA, are run over
+# IMPORTANT NOTES: Tier1 kernels FEMSWEEP and MASS3DEA are run over
 #                  different problem size ranges than what's described above.
 #                  These kernels do not have clear saturation points.
 #
-# IMPORTANT NOTES: Tier2 kernels, INDEXLIST_3LOOP and HALO_PACKING_FUSED,
+# IMPORTANT NOTES: Tier2 kernels INDEXLIST_3LOOP and HALO_PACKING_FUSED
 #                  do not perform any floating point operations. So we
 #                  recommend looking at bandwidth plots for those. Also,
 #                  they are run over different problem size ranges than
 #                  what's described above to better expose their bandwidth
-#                  behavior.
+#                  scaling behavior.
 #
 ############################################################################
 

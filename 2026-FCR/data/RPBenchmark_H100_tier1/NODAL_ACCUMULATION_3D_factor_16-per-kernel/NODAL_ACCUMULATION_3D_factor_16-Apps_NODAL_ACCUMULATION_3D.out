@@ -5,8 +5,9 @@ Apps_NODAL_ACCUMULATION_3D   ,           27000 ,     100 ,             27000 ,  
 
 Kernels run on 4 MPI ranks
 Kernel                       , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_NODAL_ACCUMULATION_3D   , Base_CUDA   , block_256   ,           27000 , PASSED     ,                 3.10533e-06 ,                          272.516 ,                           78.2526
-Apps_NODAL_ACCUMULATION_3D   , RAJA_CUDA   , block_256   ,           27000 , PASSED     ,                 3.09318e-06 ,                          273.586 ,                           78.5599
+Apps_NODAL_ACCUMULATION_3D   , Base_Seq    , default     ,           27000 , PASSED     ,                 5.67901e-05 ,                          14.9014 ,                           4.27892
+Apps_NODAL_ACCUMULATION_3D   , Base_CUDA   , block_256   ,           27000 , PASSED     ,                 3.12783e-06 ,                          270.556 ,                           77.6896
+Apps_NODAL_ACCUMULATION_3D   , RAJA_CUDA   , block_256   ,           27000 , PASSED     ,                 3.11661e-06 ,                          271.530 ,                           77.9693
 
 
 ===================================================================================================
@@ -19,54 +20,55 @@ Variants                   Result  Tolerance                   Average Checksum 
 ----------------------------------------------------------------------------------------
 Apps_NODAL_ACCUMULATION_3D 
 ........................................................
+Base_Seq-default           PASSED  1.0000000000000000364e-10   2697728.7133635743999       0.0000000000000000000       0.0000000000000000000       
 Base_CUDA-block_256        PASSED  1.0000000000000000364e-10   2697728.7133635743999       0.0000000000000000000       0.0000000000000000000       
 RAJA_CUDA-block_256        PASSED  1.0000000000000000364e-10   2697728.7133635743999       0.0000000000000000000       0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  , 
-Variant                     , Base_CUDA , RAJA_CUDA
-Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,  0.000311 ,  0.000309
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant                     , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                      , default  , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  , 0.005679 ,  0.000313 ,  0.000312
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant                     , Base_CUDA , RAJA_CUDA
-Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,     1.000 ,     1.004
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                     , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                      , default  , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  ,    1.000 ,    18.156 ,    18.222
 
 
-Min Runtime Report (sec.)  ,  , 
-Variant                     , Base_CUDA , RAJA_CUDA
-Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,  0.000311 ,  0.000309
+Min Runtime Report (sec.)  ,  ,  , 
+Variant                     , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                      , default  , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  , 0.005679 ,  0.000313 ,  0.000312
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant                     , Base_CUDA , RAJA_CUDA
-Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,     1.000 ,     1.004
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                     , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                      , default  , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  ,    1.000 ,    18.156 ,    18.222
 
 
-Max Runtime Report (sec.)  ,  , 
-Variant                     , Base_CUDA , RAJA_CUDA
-Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,  0.000311 ,  0.000309
+Max Runtime Report (sec.)  ,  ,  , 
+Variant                     , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                      , default  , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  , 0.005679 ,  0.000313 ,  0.000312
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant                     , Base_CUDA , RAJA_CUDA
-Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,     1.000 ,     1.004
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                     , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                      , default  , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  ,    1.000 ,    18.156 ,    18.222
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
-Kernel                      , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
-Apps_NODAL_ACCUMULATION_3D  , 0.00               ,base_ref , -0.00              ,        
-                            ,                    ,         ,                    ,        
-Col Min                     , 0.00               ,         , -0.00              ,        
-Col Max                     , 0.00               ,         , -0.00              ,        
-Col Avg                     , 0.00               ,         , -0.00              ,        
-Col Std Dev                 , 0.00               ,         , 0.00               ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel                      , Base_Seq-default   ,         , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
+Apps_NODAL_ACCUMULATION_3D  , 0.00               ,base_ref , 0.00               ,base_ref , -0.00              ,        
+                            ,                    ,         ,                    ,         ,                    ,        
+Col Min                     , 0.00               ,         , 0.00               ,         , -0.00              ,        
+Col Max                     , 0.00               ,         , 0.00               ,         , -0.00              ,        
+Col Avg                     , 0.00               ,         , 0.00               ,         , -0.00              ,        
+Col Std Dev                 , 0.00               ,         , 0.00               ,         , 0.00               ,        

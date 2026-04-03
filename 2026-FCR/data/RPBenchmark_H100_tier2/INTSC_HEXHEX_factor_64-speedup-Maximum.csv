@@ -1,0 +1,4 @@
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant            , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning             , default  , block_64  , block_64 
+Apps_INTSC_HEXHEX  ,    1.000 ,   212.774 ,   209.169

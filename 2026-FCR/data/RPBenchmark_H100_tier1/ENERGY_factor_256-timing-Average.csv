@@ -1,4 +1,4 @@
-Mean Runtime Report (sec.)  ,  , 
-Variant      , Base_CUDA , RAJA_CUDA
-Tuning       , block_256 , block_256
-Apps_ENERGY  ,  0.002107 ,  0.002100
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant      , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning       , default  , block_256 , block_256
+Apps_ENERGY  , 0.082682 ,  0.002105 ,  0.002103

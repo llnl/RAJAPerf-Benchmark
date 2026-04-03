@@ -1,0 +1,74 @@
+Kernels run on 4 MPI ranks
+Kernel                   ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_MATVEC_3D_STENCIL   ,          157464 ,     100 ,            157464 ,              1 ,          22182432 ,      8345592 ,            22182432 ,         20922720 ,             1259712 ,                         0 ,                               0 ,              25795904 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        3
+
+
+Kernels run on 4 MPI ranks
+Kernel                   , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MATVEC_3D_STENCIL   , Base_Seq    , default     ,          157464 , PASSED     ,                  0.00164964 ,                          12.5233 ,                           5.05904
+Apps_MATVEC_3D_STENCIL   , Base_CUDA   , block_256   ,          157464 , PASSED     ,                 7.88336e-06 ,                          2620.58 ,                           1058.63
+Apps_MATVEC_3D_STENCIL   , RAJA_CUDA   , block_256   ,          157464 , PASSED     ,                 8.88336e-06 ,                          2325.58 ,                           939.463
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel                 
+........................................................
+Variants               Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                       (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_MATVEC_3D_STENCIL 
+........................................................
+Base_Seq-default       PASSED  1.0000000000000000364e-10   64557.178150198951801       0.0000000000000000000       0.0000000000000000000       
+Base_CUDA-block_256    PASSED  1.0000000000000000364e-10   64557.178150198951833       4.9528842532139038113e-19   0.0000000000000000000       
+RAJA_CUDA-block_256    PASSED  1.0000000000000000364e-10   64557.178150198951833       4.9528842532139038113e-19   0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant                 , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  , 0.164964 ,  0.000788 ,  0.000888
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                 , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  ,    1.000 ,   209.256 ,   185.700
+
+
+Min Runtime Report (sec.)  ,  ,  , 
+Variant                 , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  , 0.164964 ,  0.000788 ,  0.000888
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                 , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  ,    1.000 ,   209.256 ,   185.700
+
+
+Max Runtime Report (sec.)  ,  ,  , 
+Variant                 , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  , 0.164964 ,  0.000788 ,  0.000888
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                 , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  ,    1.000 ,   209.256 ,   185.700
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel                  , Base_Seq-default   ,         , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
+Apps_MATVEC_3D_STENCIL  , 0.00               ,base_ref , 0.00               ,base_ref , 0.13               ,OVER_TOL
+                        ,                    ,         ,                    ,         ,                    ,        
+Col Min                 , 0.00               ,         , 0.00               ,         , 0.13               ,        
+Col Max                 , 0.00               ,         , 0.00               ,         , 0.13               ,        
+Col Avg                 , 0.00               ,         , 0.00               ,         , 0.13               ,        
+Col Std Dev             , 0.00               ,         , 0.00               ,         , 0.00               ,        

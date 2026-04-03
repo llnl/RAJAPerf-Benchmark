@@ -1,0 +1,4 @@
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant                , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                 , default  , block_256 , block_256
+Basic_INDEXLIST_3LOOP  , 8.942483 ,  0.025893 ,  0.025939

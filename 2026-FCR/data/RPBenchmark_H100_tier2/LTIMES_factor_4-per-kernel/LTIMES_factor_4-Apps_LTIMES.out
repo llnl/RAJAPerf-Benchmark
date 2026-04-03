@@ -1,0 +1,76 @@
+Kernels run on 4 MPI ranks
+Kernel        ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_LTIMES   ,            4992 ,      50 ,             20800 ,              1 ,            373936 ,       249600 ,              207536 ,           207536 ,              166400 ,                    166400 ,                               0 ,                207536 , ConsistentPerVariantTuning   , O(N)                    ,                           3 ,                        3
+
+
+Kernels run on 4 MPI ranks
+Kernel        , Variant     , Tuning       ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_LTIMES   , Base_Seq    , default      ,            4992 , PASSED     ,                 4.90400e-05 ,                          7.10145 ,                           5.08973
+Apps_LTIMES   , Base_CUDA   , block_256    ,            4992 , PASSED     ,                 3.39278e-06 ,                          102.646 ,                           73.5680
+Apps_LTIMES   , RAJA_CUDA   , kernel_256   ,            4992 , PASSED     ,                 3.55478e-06 ,                          97.9681 ,                           70.2153
+Apps_LTIMES   , RAJA_CUDA   , launch_256   ,            4992 , PASSED     ,                 3.42678e-06 ,                          101.627 ,                           72.8381
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel               
+........................................................
+Variants             Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                     (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_LTIMES          
+........................................................
+Base_Seq-default     PASSED  1.0000000000000000364e-10   124545.40857903205488       0.0000000000000000000       0.0000000000000000000       
+Base_CUDA-block_256  PASSED  1.0000000000000000364e-10   124545.40857903205492       3.4230538589909489202e-19   0.0000000000000000000       
+RAJA_CUDA-kernel_256 PASSED  1.0000000000000000364e-10   124545.40857903205492       3.4230538589909489202e-19   0.0000000000000000000       
+RAJA_CUDA-launch_256 PASSED  1.0000000000000000364e-10   124545.40857903205492       3.4230538589909489202e-19   0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  ,  , 
+Variant      , Base_Seq , Base_CUDA , RAJA_CUDA  , RAJA_CUDA 
+Tuning       , default  , block_256 , kernel_256 , launch_256
+Apps_LTIMES  , 0.002452 ,  0.000170 ,   0.000178 ,   0.000171
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  , 
+Variant      , Base_Seq , Base_CUDA , RAJA_CUDA  , RAJA_CUDA 
+Tuning       , default  , block_256 , kernel_256 , launch_256
+Apps_LTIMES  ,    1.000 ,    14.454 ,     13.795 ,     14.311
+
+
+Min Runtime Report (sec.)  ,  ,  ,  , 
+Variant      , Base_Seq , Base_CUDA , RAJA_CUDA  , RAJA_CUDA 
+Tuning       , default  , block_256 , kernel_256 , launch_256
+Apps_LTIMES  , 0.002452 ,  0.000170 ,   0.000178 ,   0.000171
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  , 
+Variant      , Base_Seq , Base_CUDA , RAJA_CUDA  , RAJA_CUDA 
+Tuning       , default  , block_256 , kernel_256 , launch_256
+Apps_LTIMES  ,    1.000 ,    14.454 ,     13.795 ,     14.311
+
+
+Max Runtime Report (sec.)  ,  ,  ,  , 
+Variant      , Base_Seq , Base_CUDA , RAJA_CUDA  , RAJA_CUDA 
+Tuning       , default  , block_256 , kernel_256 , launch_256
+Apps_LTIMES  , 0.002452 ,  0.000170 ,   0.000178 ,   0.000171
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  , 
+Variant      , Base_Seq , Base_CUDA , RAJA_CUDA  , RAJA_CUDA 
+Tuning       , default  , block_256 , kernel_256 , launch_256
+Apps_LTIMES  ,    1.000 ,    14.454 ,     13.795 ,     14.311
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  , 
+Kernel       , Base_Seq-default    ,         , Base_CUDA-block_256 ,         , RAJA_CUDA-kernel_256,         , RAJA_CUDA-launch_256,        
+Apps_LTIMES  , 0.00                ,base_ref , 0.00                ,base_ref , 0.05                ,         , 0.01                ,        
+             ,                     ,         ,                     ,         ,                     ,         ,                     ,        
+Col Min      , 0.00                ,         , 0.00                ,         , 0.05                ,         , 0.01                ,        
+Col Max      , 0.00                ,         , 0.00                ,         , 0.05                ,         , 0.01                ,        
+Col Avg      , 0.00                ,         , 0.00                ,         , 0.05                ,         , 0.01                ,        
+Col Std Dev  , 0.00                ,         , 0.00                ,         , 0.00                ,         , 0.00                ,        

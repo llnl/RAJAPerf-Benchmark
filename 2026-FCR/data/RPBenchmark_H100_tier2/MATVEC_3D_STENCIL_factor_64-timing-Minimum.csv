@@ -1,0 +1,4 @@
+Min Runtime Report (sec.)  ,  ,  , 
+Variant                 , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  , 0.019226 ,  0.000370 ,  0.000347

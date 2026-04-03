@@ -27,16 +27,18 @@ TIER="${1:-}"
 # to use ~150MB of allocated memory, which is about 3 times the L2-cache
 # size on the H100. The L2-cache is 50 MB (50 * 1024 * 1024 = 52428800 bytes).
 #
-# IMPORTANT NOTE: Tier1 kernels, FEMSWEEP and MASS3DEA, are run over
+# IMPORTANT NOTE: Tier1 kernels FEMSWEEP and MASS3DEA are run over
 #                 different problem size ranges than what's described above.
 #                 These kernels do not have clear saturation points.
 #
-# IMPORTANT NOTES: Tier2 kernels, INDEXLIST_3LOOP and HALO_PACKING_FUSED,
+# IMPORTANT NOTES: Tier2 kernels INDEXLIST_3LOOP, HALO_PACKING_FUSED,
+#                  MULTI_REDUCE, and REDUCE_STRUCT are run over different
+#                  problem size ranges than what's described above to better
+#                  expose their throughput scaling behavior.
+#
+#                  The Tier2 kernels INDEXLIST_3LOOP and HALO_PACKING_FUSED
 #                  do not perform any floating point operations. So we
-#                  recommend looking at bandwidth plots for those. Also,
-#                  they are run over different problem size ranges than
-#                  what's described above to better expose their bandwidth
-#                  behavior.
+#                  recommend looking at bandwidth plots for those.
 #
 ############################################################################
 
@@ -90,10 +92,10 @@ salloc ${ALLOC_ARGS} bash -lc '
                 "INTSC_HEXHEX"
                 "LTIMES"
                 "MASS3DPA"
-                "MATVEC_3D_STENCIL"
-                "MULTI_REDUCE"
-                "REDUCE_STRUCT")
-       KERNELS_DIFFRANGE=("INDEXLIST_3LOOP"
+                "MATVEC_3D_STENCIL")
+       KERNELS_DIFFRANGE=("MULTI_REDUCE"
+                          "REDUCE_STRUCT"
+                          "INDEXLIST_3LOOP"
                           "HALO_PACKING_FUSED")
       ;;
     *)

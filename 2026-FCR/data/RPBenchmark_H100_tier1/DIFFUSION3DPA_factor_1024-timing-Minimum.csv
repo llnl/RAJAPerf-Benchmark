@@ -1,4 +1,4 @@
-Min Runtime Report (sec.)  ,  , 
-Variant             , Base_CUDA , RAJA_CUDA
-Tuning              , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,  0.001560 ,  0.001516
+Min Runtime Report (sec.)  ,  ,  , 
+Variant             , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning              , default  , block_64  , block_64 
+Apps_DIFFUSION3DPA  , 0.491416 ,  0.001559 ,  0.001515

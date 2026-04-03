@@ -1,7 +1,8 @@
 Kernels run on 4 MPI ranks
 Kernel             , Variant     , Tuning                         ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASSVEC3DPA   , Base_CUDA   , runtime_block_stride_loop_64   ,         5437248 , PASSED     ,                 9.05835e-05 ,                          526.415 ,                           1725.71
-Apps_MASSVEC3DPA   , Base_CUDA   , direct_64                      ,         5437248 , PASSED     ,                 6.23709e-05 ,                          764.532 ,                           2506.31
-Apps_MASSVEC3DPA   , RAJA_CUDA   , runtime_block_stride_loop_64   ,         5437248 , PASSED     ,                 9.61355e-05 ,                          496.013 ,                           1626.05
-Apps_MASSVEC3DPA   , RAJA_CUDA   , direct_64                      ,         5437248 , PASSED     ,                 6.31935e-05 ,                          754.580 ,                           2473.69
-Apps_MASSVEC3DPA   , RAJA_CUDA   , cached_block_stride_loop_64    ,         5437248 , PASSED     ,                 9.62533e-05 ,                          495.406 ,                           1624.06
+Apps_MASSVEC3DPA   , Base_Seq    , default                        ,         5437248 , PASSED     ,                   0.0128020 ,                          3.72476 ,                           12.2106
+Apps_MASSVEC3DPA   , Base_CUDA   , runtime_block_stride_loop_64   ,         5437248 , PASSED     ,                 9.14447e-05 ,                          521.457 ,                           1709.46
+Apps_MASSVEC3DPA   , Base_CUDA   , direct_64                      ,         5437248 , PASSED     ,                 6.28716e-05 ,                          758.443 ,                           2486.35
+Apps_MASSVEC3DPA   , RAJA_CUDA   , runtime_block_stride_loop_64   ,         5437248 , PASSED     ,                 9.68036e-05 ,                          492.590 ,                           1614.83
+Apps_MASSVEC3DPA   , RAJA_CUDA   , direct_64                      ,         5437248 , PASSED     ,                 6.36234e-05 ,                          749.481 ,                           2456.97
+Apps_MASSVEC3DPA   , RAJA_CUDA   , cached_block_stride_loop_64    ,         5437248 , PASSED     ,                 9.68645e-05 ,                          492.280 ,                           1613.81

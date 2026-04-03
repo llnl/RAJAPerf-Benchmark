@@ -5,8 +5,9 @@ Apps_DIFFUSION3DPA   ,           24678 ,      50 ,             24678 ,          
 
 Kernels run on 4 MPI ranks
 Kernel               , Variant     , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_DIFFUSION3DPA   , Base_CUDA   , block_64   ,           24678 , PASSED     ,                 5.04758e-06 ,                          627.380 ,                           941.419
-Apps_DIFFUSION3DPA   , RAJA_CUDA   , block_64   ,           24678 , PASSED     ,                 4.80006e-06 ,                          659.731 ,                           989.964
+Apps_DIFFUSION3DPA   , Base_Seq    , default    ,           24678 , PASSED     ,                 0.000391458 ,                          8.08964 ,                           12.1390
+Apps_DIFFUSION3DPA   , Base_CUDA   , block_64   ,           24678 , PASSED     ,                 5.05298e-06 ,                          626.709 ,                           940.413
+Apps_DIFFUSION3DPA   , RAJA_CUDA   , block_64   ,           24678 , PASSED     ,                 4.82312e-06 ,                          656.577 ,                           985.231
 
 
 ===================================================================================================
@@ -19,54 +20,55 @@ Variants           Result  Tolerance                   Average Checksum         
 ----------------------------------------------------------------------------------------
 Apps_DIFFUSION3DPA 
 ........................................................
+Base_Seq-default   PASSED  1.0000000000000000364e-10   19168069749.880921023       0.0000000000000000000       0.0000000000000000000       
 Base_CUDA-block_64 PASSED  1.0000000000000000364e-10   19168069749.880921023       0.0000000000000000000       0.0000000000000000000       
 RAJA_CUDA-block_64 PASSED  1.0000000000000000364e-10   19168069749.880921023       0.0000000000000000000       0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  , 
-Variant             , Base_CUDA , RAJA_CUDA
-Tuning              , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,  0.000252 ,  0.000240
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant             , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning              , default  , block_64  , block_64 
+Apps_DIFFUSION3DPA  , 0.019573 ,  0.000253 ,  0.000241
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant             , Base_CUDA , RAJA_CUDA
-Tuning              , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,     1.000 ,     1.052
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant             , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning              , default  , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,    1.000 ,    77.471 ,    81.163
 
 
-Min Runtime Report (sec.)  ,  , 
-Variant             , Base_CUDA , RAJA_CUDA
-Tuning              , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,  0.000252 ,  0.000240
+Min Runtime Report (sec.)  ,  ,  , 
+Variant             , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning              , default  , block_64  , block_64 
+Apps_DIFFUSION3DPA  , 0.019573 ,  0.000253 ,  0.000241
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant             , Base_CUDA , RAJA_CUDA
-Tuning              , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,     1.000 ,     1.052
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant             , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning              , default  , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,    1.000 ,    77.471 ,    81.163
 
 
-Max Runtime Report (sec.)  ,  , 
-Variant             , Base_CUDA , RAJA_CUDA
-Tuning              , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,  0.000252 ,  0.000240
+Max Runtime Report (sec.)  ,  ,  , 
+Variant             , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning              , default  , block_64  , block_64 
+Apps_DIFFUSION3DPA  , 0.019573 ,  0.000253 ,  0.000241
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant             , Base_CUDA , RAJA_CUDA
-Tuning              , block_64  , block_64 
-Apps_DIFFUSION3DPA  ,     1.000 ,     1.052
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant             , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning              , default  , block_64  , block_64 
+Apps_DIFFUSION3DPA  ,    1.000 ,    77.471 ,    81.163
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
-Kernel              , Base_CUDA-block_64,         , RAJA_CUDA-block_64,        
-Apps_DIFFUSION3DPA  , 0.00              ,base_ref , -0.05             ,        
-                    ,                   ,         ,                   ,        
-Col Min             , 0.00              ,         , -0.05             ,        
-Col Max             , 0.00              ,         , -0.05             ,        
-Col Avg             , 0.00              ,         , -0.05             ,        
-Col Std Dev         , 0.00              ,         , 0.00              ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel              , Base_Seq-default  ,         , Base_CUDA-block_64,         , RAJA_CUDA-block_64,        
+Apps_DIFFUSION3DPA  , 0.00              ,base_ref , 0.00              ,base_ref , -0.05             ,        
+                    ,                   ,         ,                   ,         ,                   ,        
+Col Min             , 0.00              ,         , 0.00              ,         , -0.05             ,        
+Col Max             , 0.00              ,         , 0.00              ,         , -0.05             ,        
+Col Avg             , 0.00              ,         , 0.00              ,         , -0.05             ,        
+Col Std Dev         , 0.00              ,         , 0.00              ,         , 0.00              ,        
