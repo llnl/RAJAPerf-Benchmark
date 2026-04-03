@@ -1,0 +1,74 @@
+Kernels run on 24 MPI ranks
+Kernel                   ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_MATVEC_3D_STENCIL   ,           17576 ,     100 ,             17576 ,              1 ,           2567648 ,       931528 ,             2567648 ,          2427040 ,              140608 ,                         0 ,                               0 ,               3477440 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        3
+
+
+Kernels run on 24 MPI ranks
+Kernel                   , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MATVEC_3D_STENCIL   , Base_Seq   , default     ,           17576 , PASSED     ,                 0.000194791 ,                          12.2763 ,                           4.78219
+Apps_MATVEC_3D_STENCIL   , Base_HIP   , block_256   ,           17576 , PASSED     ,                 5.39324e-06 ,                          443.390 ,                           172.721
+Apps_MATVEC_3D_STENCIL   , RAJA_HIP   , block_256   ,           17576 , PASSED     ,                 5.07074e-06 ,                          471.590 ,                           183.707
+
+
+===================================================================================================
+Checksum Report for 24 MPI ranks 
+===================================================================================================
+Kernel                 
+........................................................
+Variants               Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                       (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_MATVEC_3D_STENCIL 
+........................................................
+Base_Seq-default       PASSED  1.0000000000000000364e-10   7199.5053747875417005       0.0000000000000000000       0.0000000000000000000       
+Base_HIP-block_256     PASSED  1.0000000000000000364e-10   7199.5053747875417138       1.8504988331778323479e-18   0.0000000000000000000       
+RAJA_HIP-block_256     PASSED  1.0000000000000000364e-10   7199.5053747875417138       1.8504988331778323479e-18   0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant                 , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  , 0.019479 ,  0.000539 ,  0.000507
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                 , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  ,    1.000 ,    36.118 ,    38.415
+
+
+Min Runtime Report (sec.)  ,  ,  , 
+Variant                 , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  , 0.019479 ,  0.000539 ,  0.000507
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                 , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  ,    1.000 ,    36.118 ,    38.415
+
+
+Max Runtime Report (sec.)  ,  ,  , 
+Variant                 , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  , 0.019479 ,  0.000539 ,  0.000507
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                 , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  ,    1.000 ,    36.118 ,    38.415
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel                  , Base_Seq-default  ,         , Base_HIP-block_256,         , RAJA_HIP-block_256,        
+Apps_MATVEC_3D_STENCIL  , 0.00              ,base_ref , 0.00              ,base_ref , -0.06             ,        
+                        ,                   ,         ,                   ,         ,                   ,        
+Col Min                 , 0.00              ,         , 0.00              ,         , -0.06             ,        
+Col Max                 , 0.00              ,         , 0.00              ,         , -0.06             ,        
+Col Avg                 , 0.00              ,         , 0.00              ,         , -0.06             ,        
+Col Std Dev             , 0.00              ,         , 0.00              ,         , 0.00              ,        

@@ -1,0 +1,13 @@
+Kernels run on 24 MPI ranks
+Kernel                , Variant    , Tuning                  ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Basic_REDUCE_STRUCT   , Base_Seq   , default                 ,          400000 , PASSED     ,                 0.000332584 ,                          17.9217 ,                           2.40541
+Basic_REDUCE_STRUCT   , Base_Seq   , kahan                   ,          400000 , PASSED     ,                  0.00129928 ,                          4.58753 ,                          0.615729
+Basic_REDUCE_STRUCT   , Base_Seq   , cascade                 ,          400000 , PASSED     ,                 0.000631813 ,                          9.43391 ,                           1.26620
+Basic_REDUCE_STRUCT   , Base_HIP   , blkatm_direct_256       ,          400000 , PASSED     ,                 0.000729383 ,                          8.17193 ,                           1.09682
+Basic_REDUCE_STRUCT   , Base_HIP   , blkatm_occgs_256        ,          400000 , PASSED     ,                 0.000113421 ,                          52.5516 ,                           7.05338
+Basic_REDUCE_STRUCT   , RAJA_HIP   , blkatm_direct_256       ,          400000 , PASSED     ,                 9.62844e-05 ,                          61.9048 ,                           8.30874
+Basic_REDUCE_STRUCT   , RAJA_HIP   , blkdev_direct_256       ,          400000 , PASSED     ,                 0.000109261 ,                          54.5527 ,                           7.32195
+Basic_REDUCE_STRUCT   , RAJA_HIP   , blkdev_direct_new_256   ,          400000 , PASSED     ,                 0.000152918 ,                          38.9782 ,                           5.23158
+Basic_REDUCE_STRUCT   , RAJA_HIP   , blkatm_occgs_256        ,          400000 , PASSED     ,                 3.76461e-05 ,                          158.329 ,                           21.2506
+Basic_REDUCE_STRUCT   , RAJA_HIP   , blkdev_occgs_256        ,          400000 , PASSED     ,                 4.31967e-05 ,                          137.984 ,                           18.5200
+Basic_REDUCE_STRUCT   , RAJA_HIP   , blkdev_occgs_new_256    ,          400000 , PASSED     ,                 4.95181e-05 ,                          120.369 ,                           16.1557

@@ -1,0 +1,4 @@
+Mean Runtime Report (sec.)  ,  ,  ,  , 
+Variant      , Base_Seq , Base_CUDA , RAJA_CUDA  , RAJA_CUDA 
+Tuning       , default  , block_256 , kernel_256 , launch_256
+Apps_LTIMES  , 0.154091 ,  0.001204 ,   0.001216 ,   0.001178

@@ -1,0 +1,4 @@
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant              , Base_Seq , Base_HIP , RAJA_HIP
+Tuning               , default  , block_64 , block_64
+Apps_CONVECTION3DPA  , 5.069323 , 0.008366 , 0.008464

@@ -1,0 +1,7 @@
+Kernels run on 4 MPI ranks
+Kernel                    , Variant     , Tuning          ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Comm_HALO_PACKING_FUSED   , Base_Seq    , direct          ,         1860867 , PASSED     ,                 0.000726923 ,                          14.1839 ,                           0.00000
+Comm_HALO_PACKING_FUSED   , Base_CUDA   , direct_1024     ,         1860867 , PASSED     ,                 0.000140216 ,                          73.5342 ,                           0.00000
+Comm_HALO_PACKING_FUSED   , RAJA_CUDA   , direct_1024     ,         1860867 , PASSED     ,                 0.000136501 ,                          75.5354 ,                           0.00000
+Comm_HALO_PACKING_FUSED   , RAJA_CUDA   , funcptr_1024    ,         1860867 , PASSED     ,                 0.000141866 ,                          72.6788 ,                           0.00000
+Comm_HALO_PACKING_FUSED   , RAJA_CUDA   , virtfunc_1024   ,         1860867 , PASSED     ,                 0.000142139 ,                          72.5391 ,                           0.00000

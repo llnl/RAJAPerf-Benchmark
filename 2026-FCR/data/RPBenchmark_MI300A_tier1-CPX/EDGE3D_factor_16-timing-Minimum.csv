@@ -1,4 +1,4 @@
-Min Runtime Report (sec.)  ,  , 
-Variant      , Base_HIP  , RAJA_HIP 
-Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.000827 ,  0.000786
+Min Runtime Report (sec.)  ,  ,  , 
+Variant      , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning       , default  , block_256 , block_256
+Apps_EDGE3D  , 0.397288 ,  0.000850 ,  0.000814

@@ -1,4 +1,4 @@
-Min Runtime Report (sec.)  ,  , 
-Variant     , Base_HIP  , RAJA_HIP 
-Tuning      , block_256 , block_256
-Apps_VOL3D  ,  0.002119 ,  0.002144
+Min Runtime Report (sec.)  ,  ,  , 
+Variant     , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning      , default  , block_256 , block_256
+Apps_VOL3D  , 0.354642 ,  0.002013 ,  0.002027

@@ -1,0 +1,4 @@
+Mean Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant             , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP        
+Tuning              , default  , atomic_direct_256 , atomic_occgs_256 , atomic_direct_256 , atomic_occgs_256
+Basic_MULTI_REDUCE  , 0.002007 ,          0.000526 ,         0.000528 ,          0.000548 ,         0.000560

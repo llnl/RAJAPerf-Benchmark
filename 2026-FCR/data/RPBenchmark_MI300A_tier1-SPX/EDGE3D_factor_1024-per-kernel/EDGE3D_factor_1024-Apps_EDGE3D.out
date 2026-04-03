@@ -5,8 +5,9 @@ Apps_EDGE3D   ,         2985984 ,      10 ,           3197686 ,              1 ,
 
 Kernels run on 4 MPI ranks
 Kernel        , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_EDGE3D   , Base_HIP   , block_256   ,         2985984 , PASSED     ,                  0.00154420 ,                          62.0329 ,                           27363.1
-Apps_EDGE3D   , RAJA_HIP   , block_256   ,         2985984 , PASSED     ,                  0.00153231 ,                          62.5145 ,                           27575.6
+Apps_EDGE3D   , Base_Seq   , default     ,         2985984 , PASSED     ,                     5.04570 ,                        0.0189848 ,                           8.37430
+Apps_EDGE3D   , Base_HIP   , block_256   ,         2985984 , PASSED     ,                  0.00150339 ,                          63.7170 ,                           28106.0
+Apps_EDGE3D   , RAJA_HIP   , block_256   ,         2985984 , PASSED     ,                  0.00149804 ,                          63.9446 ,                           28206.4
 
 
 ===================================================================================================
@@ -19,54 +20,55 @@ Variants           Result  Tolerance                   Average Checksum         
 ----------------------------------------------------------------------------------------
 Apps_EDGE3D        
 ........................................................
-Base_HIP-block_256 PASSED  1.0000000000000000364e-10   6177878.3357488460938       0.0000000000000000000       0.0000000000000000000       
-RAJA_HIP-block_256 PASSED  1.0000000000000000364e-10   6177878.3357488460938       0.0000000000000000000       0.0000000000000000000       
+Base_Seq-default   PASSED  1.0000000000000000364e-10   6177878.3357488470760       0.0000000000000000000       0.0000000000000000000       
+Base_HIP-block_256 PASSED  1.0000000000000000364e-10   6177878.3357488460938       1.5899540659952139566e-16   0.0000000000000000000       
+RAJA_HIP-block_256 PASSED  1.0000000000000000364e-10   6177878.3357488460938       1.5899540659952139566e-16   0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  , 
-Variant      , Base_HIP  , RAJA_HIP 
-Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.015442 ,  0.015323
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant      , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning       , default  , block_256 , block_256
+Apps_EDGE3D  , 50.456997 ,  0.015034 ,  0.014980
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant      , Base_HIP  , RAJA_HIP 
-Tuning       , block_256 , block_256
-Apps_EDGE3D  ,     1.000 ,     1.008
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant      , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning       , default  , block_256 , block_256
+Apps_EDGE3D  ,    1.000 ,  3356.221 ,  3368.205
 
 
-Min Runtime Report (sec.)  ,  , 
-Variant      , Base_HIP  , RAJA_HIP 
-Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.015442 ,  0.015323
+Min Runtime Report (sec.)  ,  ,  , 
+Variant      , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning       , default  , block_256 , block_256
+Apps_EDGE3D  , 50.456997 ,  0.015034 ,  0.014980
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant      , Base_HIP  , RAJA_HIP 
-Tuning       , block_256 , block_256
-Apps_EDGE3D  ,     1.000 ,     1.008
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant      , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning       , default  , block_256 , block_256
+Apps_EDGE3D  ,    1.000 ,  3356.221 ,  3368.205
 
 
-Max Runtime Report (sec.)  ,  , 
-Variant      , Base_HIP  , RAJA_HIP 
-Tuning       , block_256 , block_256
-Apps_EDGE3D  ,  0.015442 ,  0.015323
+Max Runtime Report (sec.)  ,  ,  , 
+Variant      , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning       , default  , block_256 , block_256
+Apps_EDGE3D  , 50.456997 ,  0.015034 ,  0.014980
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant      , Base_HIP  , RAJA_HIP 
-Tuning       , block_256 , block_256
-Apps_EDGE3D  ,     1.000 ,     1.008
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant      , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning       , default  , block_256 , block_256
+Apps_EDGE3D  ,    1.000 ,  3356.221 ,  3368.205
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
-Kernel       , Base_HIP-block_256,         , RAJA_HIP-block_256,        
-Apps_EDGE3D  , 0.00              ,base_ref , -0.01             ,        
-             ,                   ,         ,                   ,        
-Col Min      , 0.00              ,         , -0.01             ,        
-Col Max      , 0.00              ,         , -0.01             ,        
-Col Avg      , 0.00              ,         , -0.01             ,        
-Col Std Dev  , 0.00              ,         , 0.00              ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel       , Base_Seq-default  ,         , Base_HIP-block_256,         , RAJA_HIP-block_256,        
+Apps_EDGE3D  , 0.00              ,base_ref , 0.00              ,base_ref , -0.00             ,        
+             ,                   ,         ,                   ,         ,                   ,        
+Col Min      , 0.00              ,         , 0.00              ,         , -0.00             ,        
+Col Max      , 0.00              ,         , 0.00              ,         , -0.00             ,        
+Col Avg      , 0.00              ,         , 0.00              ,         , -0.00             ,        
+Col Std Dev  , 0.00              ,         , 0.00              ,         , 0.00              ,        

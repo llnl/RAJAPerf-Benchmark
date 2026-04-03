@@ -5,8 +5,9 @@ Apps_MASS3DPA_ATOMIC   ,         1442897 ,      50 ,           1580544 ,        
 
 Kernels run on 4 MPI ranks
 Kernel                 , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASS3DPA_ATOMIC   , Base_HIP   , block_64   ,         1442897 , PASSED     ,                 0.000142965 ,                          1058.44 ,                           2293.40
-Apps_MASS3DPA_ATOMIC   , RAJA_HIP   , block_64   ,         1442897 , PASSED     ,                 0.000143680 ,                          1053.17 ,                           2281.98
+Apps_MASS3DPA_ATOMIC   , Base_Seq   , default    ,         1442897 , PASSED     ,                   0.0354300 ,                          4.27094 ,                           9.25416
+Apps_MASS3DPA_ATOMIC   , Base_HIP   , block_64   ,         1442897 , PASSED     ,                 0.000137042 ,                          1104.19 ,                           2392.52
+Apps_MASS3DPA_ATOMIC   , RAJA_HIP   , block_64   ,         1442897 , PASSED     ,                 0.000134097 ,                          1128.44 ,                           2445.07
 
 
 ===================================================================================================
@@ -19,54 +20,55 @@ Variants             Result  Tolerance                   Average Checksum       
 ----------------------------------------------------------------------------------------
 Apps_MASS3DPA_ATOMIC 
 ........................................................
+Base_Seq-default     PASSED  1.0000000000000000364e-10   409669195612.52623427       0.0000000000000000000       0.0000000000000000000       
 Base_HIP-block_64    PASSED  1.0000000000000000364e-10   409669195612.52623427       0.0000000000000000000       0.0000000000000000000       
 RAJA_HIP-block_64    PASSED  1.0000000000000000364e-10   409669195612.52623427       0.0000000000000000000       0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  , 
-Variant               , Base_HIP , RAJA_HIP
-Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  , 0.007148 , 0.007184
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant               , Base_Seq , Base_HIP , RAJA_HIP
+Tuning                , default  , block_64 , block_64
+Apps_MASS3DPA_ATOMIC  , 1.771501 , 0.006852 , 0.006705
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant               , Base_HIP , RAJA_HIP
-Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  ,    1.000 ,    0.995
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant               , Base_Seq , Base_HIP , RAJA_HIP
+Tuning                , default  , block_64 , block_64
+Apps_MASS3DPA_ATOMIC  ,    1.000 ,  258.535 ,  264.213
 
 
-Min Runtime Report (sec.)  ,  , 
-Variant               , Base_HIP , RAJA_HIP
-Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  , 0.007148 , 0.007184
+Min Runtime Report (sec.)  ,  ,  , 
+Variant               , Base_Seq , Base_HIP , RAJA_HIP
+Tuning                , default  , block_64 , block_64
+Apps_MASS3DPA_ATOMIC  , 1.771501 , 0.006852 , 0.006705
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant               , Base_HIP , RAJA_HIP
-Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  ,    1.000 ,    0.995
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant               , Base_Seq , Base_HIP , RAJA_HIP
+Tuning                , default  , block_64 , block_64
+Apps_MASS3DPA_ATOMIC  ,    1.000 ,  258.535 ,  264.213
 
 
-Max Runtime Report (sec.)  ,  , 
-Variant               , Base_HIP , RAJA_HIP
-Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  , 0.007148 , 0.007184
+Max Runtime Report (sec.)  ,  ,  , 
+Variant               , Base_Seq , Base_HIP , RAJA_HIP
+Tuning                , default  , block_64 , block_64
+Apps_MASS3DPA_ATOMIC  , 1.771501 , 0.006852 , 0.006705
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant               , Base_HIP , RAJA_HIP
-Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  ,    1.000 ,    0.995
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant               , Base_Seq , Base_HIP , RAJA_HIP
+Tuning                , default  , block_64 , block_64
+Apps_MASS3DPA_ATOMIC  ,    1.000 ,  258.535 ,  264.213
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
-Kernel                , Base_HIP-block_64,         , RAJA_HIP-block_64,        
-Apps_MASS3DPA_ATOMIC  , 0.00             ,base_ref , 0.01             ,        
-                      ,                  ,         ,                  ,        
-Col Min               , 0.00             ,         , 0.01             ,        
-Col Max               , 0.00             ,         , 0.01             ,        
-Col Avg               , 0.00             ,         , 0.01             ,        
-Col Std Dev           , 0.00             ,         , 0.00             ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel                , Base_Seq-default ,         , Base_HIP-block_64,         , RAJA_HIP-block_64,        
+Apps_MASS3DPA_ATOMIC  , 0.00             ,base_ref , 0.00             ,base_ref , -0.02            ,        
+                      ,                  ,         ,                  ,         ,                  ,        
+Col Min               , 0.00             ,         , 0.00             ,         , -0.02            ,        
+Col Max               , 0.00             ,         , 0.00             ,         , -0.02            ,        
+Col Avg               , 0.00             ,         , 0.00             ,         , -0.02            ,        
+Col Std Dev           , 0.00             ,         , 0.00             ,         , 0.00             ,        

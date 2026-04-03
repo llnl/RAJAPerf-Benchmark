@@ -6,7 +6,11 @@ The results include throughput studies for:
   * AMD MI300A
   * NVIDIA H100
 
-Performance data is generated for two subsets of kernels: Tier 1 and Tier 2. 
+Performance data is generated for two subsets of kernels, Tier 1 and Tier 2,
+that are described here:
+
+https://software.llnl.gov/benchmarks/13_rajaperf/rajaperf.html
+
 The summarized metrics for each kernel include:
 
   * Problem size at the saturation (iteration space size)

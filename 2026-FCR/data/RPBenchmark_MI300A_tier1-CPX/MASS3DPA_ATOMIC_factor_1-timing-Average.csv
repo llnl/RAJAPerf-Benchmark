@@ -1,4 +1,4 @@
-Mean Runtime Report (sec.)  ,  , 
-Variant               , Base_HIP , RAJA_HIP
-Tuning                , block_64 , block_64
-Apps_MASS3DPA_ATOMIC  , 0.000162 , 0.000151
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant               , Base_Seq , Base_HIP , RAJA_HIP
+Tuning                , default  , block_64 , block_64
+Apps_MASS3DPA_ATOMIC  , 0.000592 , 0.000145 , 0.000151

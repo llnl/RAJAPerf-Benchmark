@@ -1,0 +1,4 @@
+Max Runtime Report (sec.)  ,  ,  , 
+Variant            , Base_Seq , Base_HIP , RAJA_HIP
+Tuning             , default  , block_64 , block_64
+Apps_INTSC_HEXHEX  , 0.027777 , 0.030340 , 0.017492

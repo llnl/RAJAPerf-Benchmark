@@ -1,4 +1,4 @@
-Max Runtime Report (sec.)  ,  , 
-Variant        , Base_CUDA , RAJA_CUDA
-Tuning         , block_128 , block_128
-Apps_FEMSWEEP  ,  0.003309 ,  0.003991
+Max Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning         , default  , block_128 , block_128
+Apps_FEMSWEEP  , 0.342707 ,  0.003322 ,  0.003973

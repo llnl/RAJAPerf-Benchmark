@@ -1,0 +1,7 @@
+Kernels run on 4 MPI ranks
+Kernel               , Variant    , Tuning              ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Basic_MULTI_REDUCE   , Base_Seq   , default             ,        12799995 , PASSED     ,                   0.0416726 ,                          4.57698 ,                          0.307156
+Basic_MULTI_REDUCE   , Base_HIP   , atomic_direct_256   ,        12799995 , PASSED     ,                 6.75148e-05 ,                          2825.08 ,                           189.588
+Basic_MULTI_REDUCE   , Base_HIP   , atomic_occgs_256    ,        12799995 , PASSED     ,                 6.43008e-05 ,                          2966.29 ,                           199.064
+Basic_MULTI_REDUCE   , RAJA_HIP   , atomic_direct_256   ,        12799995 , PASSED     ,                 7.42704e-05 ,                          2568.11 ,                           172.343
+Basic_MULTI_REDUCE   , RAJA_HIP   , atomic_occgs_256    ,        12799995 , PASSED     ,                 6.51102e-05 ,                          2929.42 ,                           196.590

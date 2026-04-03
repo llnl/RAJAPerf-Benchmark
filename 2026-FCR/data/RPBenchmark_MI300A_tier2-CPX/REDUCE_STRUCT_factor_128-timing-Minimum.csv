@@ -1,0 +1,4 @@
+Min Runtime Report (sec.)  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Variant              , Base_Seq , Base_Seq , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP          , RAJA_HIP              , RAJA_HIP         , RAJA_HIP         , RAJA_HIP            
+Tuning               , default  , kahan    , cascade  , blkatm_direct_256 , blkatm_occgs_256 , blkatm_direct_256 , blkdev_direct_256 , blkdev_direct_new_256 , blkatm_occgs_256 , blkdev_occgs_256 , blkdev_occgs_new_256
+Basic_REDUCE_STRUCT  , 0.016629 , 0.064964 , 0.031591 ,          0.036469 ,         0.005671 ,          0.004814 ,          0.005463 ,              0.007646 ,         0.001882 ,         0.002160 ,             0.002476

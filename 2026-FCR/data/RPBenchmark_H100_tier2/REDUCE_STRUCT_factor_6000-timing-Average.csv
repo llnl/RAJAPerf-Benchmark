@@ -1,0 +1,4 @@
+Mean Runtime Report (sec.)  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Variant              , Base_Seq , Base_Seq , Base_Seq , Base_CUDA         , Base_CUDA        , RAJA_CUDA         , RAJA_CUDA         , RAJA_CUDA             , RAJA_CUDA        , RAJA_CUDA        , RAJA_CUDA           
+Tuning               , default  , kahan    , cascade  , blkatm_direct_256 , blkatm_occgs_256 , blkatm_direct_256 , blkdev_direct_256 , blkdev_direct_new_256 , blkatm_occgs_256 , blkdev_occgs_256 , blkdev_occgs_new_256
+Basic_REDUCE_STRUCT  , 1.490655 , 2.050604 , 2.118978 ,          0.043493 ,         0.039709 ,          0.064214 ,          0.072699 ,              0.050259 ,         0.060188 ,         0.006265 ,             0.006406

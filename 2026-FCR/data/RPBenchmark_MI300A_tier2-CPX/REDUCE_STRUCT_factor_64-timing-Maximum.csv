@@ -1,0 +1,4 @@
+Max Runtime Report (sec.)  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Variant              , Base_Seq , Base_Seq , Base_Seq , Base_HIP          , Base_HIP         , RAJA_HIP          , RAJA_HIP          , RAJA_HIP              , RAJA_HIP         , RAJA_HIP         , RAJA_HIP            
+Tuning               , default  , kahan    , cascade  , blkatm_direct_256 , blkatm_occgs_256 , blkatm_direct_256 , blkdev_direct_256 , blkdev_direct_new_256 , blkatm_occgs_256 , blkdev_occgs_256 , blkdev_occgs_new_256
+Basic_REDUCE_STRUCT  , 0.008356 , 0.032501 , 0.015831 ,          0.019083 ,         0.005187 ,          0.002706 ,          0.003068 ,              0.004469 ,         0.001489 ,         0.001747 ,             0.002174

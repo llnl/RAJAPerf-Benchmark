@@ -5,8 +5,9 @@ Apps_ENERGY   ,         1250000 ,     130 ,           7500000 ,              6 ,
 
 Kernels run on 4 MPI ranks
 Kernel        , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_ENERGY   , Base_CUDA   , block_256   ,         1250000 , PASSED     ,                 9.52629e-05 ,                          2639.61 ,                           721.687
-Apps_ENERGY   , RAJA_CUDA   , block_256   ,         1250000 , PASSED     ,                 9.51726e-05 ,                          2642.12 ,                           722.372
+Apps_ENERGY   , Base_Seq    , default     ,         1250000 , PASSED     ,                   0.0134145 ,                          18.7451 ,                           5.12504
+Apps_ENERGY   , Base_CUDA   , block_256   ,         1250000 , PASSED     ,                 9.51400e-05 ,                          2643.02 ,                           722.619
+Apps_ENERGY   , RAJA_CUDA   , block_256   ,         1250000 , PASSED     ,                 9.50073e-05 ,                          2646.71 ,                           723.629
 
 
 ===================================================================================================
@@ -19,54 +20,55 @@ Variants            Result  Tolerance                   Average Checksum        
 ----------------------------------------------------------------------------------------
 Apps_ENERGY         
 ........................................................
+Base_Seq-default    PASSED  1.0000000000000000364e-10   122390.63081370959043       0.0000000000000000000       0.0000000000000000000       
 Base_CUDA-block_256 PASSED  1.0000000000000000364e-10   122390.63081370959043       0.0000000000000000000       0.0000000000000000000       
 RAJA_CUDA-block_256 PASSED  1.0000000000000000364e-10   122390.63081370959043       0.0000000000000000000       0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  , 
-Variant      , Base_CUDA , RAJA_CUDA
-Tuning       , block_256 , block_256
-Apps_ENERGY  ,  0.012384 ,  0.012372
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant      , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning       , default  , block_256 , block_256
+Apps_ENERGY  , 1.743887 ,  0.012368 ,  0.012351
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant      , Base_CUDA , RAJA_CUDA
-Tuning       , block_256 , block_256
-Apps_ENERGY  ,     1.000 ,     1.001
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant      , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning       , default  , block_256 , block_256
+Apps_ENERGY  ,    1.000 ,   140.998 ,   141.195
 
 
-Min Runtime Report (sec.)  ,  , 
-Variant      , Base_CUDA , RAJA_CUDA
-Tuning       , block_256 , block_256
-Apps_ENERGY  ,  0.012384 ,  0.012372
+Min Runtime Report (sec.)  ,  ,  , 
+Variant      , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning       , default  , block_256 , block_256
+Apps_ENERGY  , 1.743887 ,  0.012368 ,  0.012351
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant      , Base_CUDA , RAJA_CUDA
-Tuning       , block_256 , block_256
-Apps_ENERGY  ,     1.000 ,     1.001
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant      , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning       , default  , block_256 , block_256
+Apps_ENERGY  ,    1.000 ,   140.998 ,   141.195
 
 
-Max Runtime Report (sec.)  ,  , 
-Variant      , Base_CUDA , RAJA_CUDA
-Tuning       , block_256 , block_256
-Apps_ENERGY  ,  0.012384 ,  0.012372
+Max Runtime Report (sec.)  ,  ,  , 
+Variant      , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning       , default  , block_256 , block_256
+Apps_ENERGY  , 1.743887 ,  0.012368 ,  0.012351
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant      , Base_CUDA , RAJA_CUDA
-Tuning       , block_256 , block_256
-Apps_ENERGY  ,     1.000 ,     1.001
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant      , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning       , default  , block_256 , block_256
+Apps_ENERGY  ,    1.000 ,   140.998 ,   141.195
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
-Kernel       , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
-Apps_ENERGY  , 0.00               ,base_ref , -0.00              ,        
-             ,                    ,         ,                    ,        
-Col Min      , 0.00               ,         , -0.00              ,        
-Col Max      , 0.00               ,         , -0.00              ,        
-Col Avg      , 0.00               ,         , -0.00              ,        
-Col Std Dev  , 0.00               ,         , 0.00               ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel       , Base_Seq-default   ,         , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
+Apps_ENERGY  , 0.00               ,base_ref , 0.00               ,base_ref , -0.00              ,        
+             ,                    ,         ,                    ,         ,                    ,        
+Col Min      , 0.00               ,         , 0.00               ,         , -0.00              ,        
+Col Max      , 0.00               ,         , 0.00               ,         , -0.00              ,        
+Col Avg      , 0.00               ,         , 0.00               ,         , -0.00              ,        
+Col Std Dev  , 0.00               ,         , 0.00               ,         , 0.00               ,        

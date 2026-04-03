@@ -1,0 +1,4 @@
+Max Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant                  , Base_Seq , Base_CUDA   , RAJA_CUDA   , RAJA_CUDA    , RAJA_CUDA    
+Tuning                   , direct   , direct_1024 , direct_1024 , funcptr_1024 , virtfunc_1024
+Comm_HALO_PACKING_FUSED  , 0.082826 ,    0.016154 ,    0.016909 ,     0.018120 ,      0.017842

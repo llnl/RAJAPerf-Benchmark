@@ -5,8 +5,9 @@ Apps_DIFFUSION3DPA   ,          577935 ,      50 ,            577935 ,          
 
 Kernels run on 24 MPI ranks
 Kernel               , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_DIFFUSION3DPA   , Base_HIP   , block_64   ,          577935 , PASSED     ,                 0.000225668 ,                          328.617 ,                           493.135
-Apps_DIFFUSION3DPA   , RAJA_HIP   , block_64   ,          577935 , PASSED     ,                 0.000218871 ,                          338.821 ,                           508.447
+Apps_DIFFUSION3DPA   , Base_Seq   , default    ,          577935 , PASSED     ,                   0.0526467 ,                          1.40860 ,                           2.11380
+Apps_DIFFUSION3DPA   , Base_HIP   , block_64   ,          577935 , PASSED     ,                 0.000227944 ,                          325.335 ,                           488.210
+Apps_DIFFUSION3DPA   , RAJA_HIP   , block_64   ,          577935 , PASSED     ,                 0.000222301 ,                          333.594 ,                           500.604
 
 
 ===================================================================================================
@@ -19,54 +20,55 @@ Variants           Result  Tolerance                   Average Checksum         
 ----------------------------------------------------------------------------------------
 Apps_DIFFUSION3DPA 
 ........................................................
+Base_Seq-default   PASSED  1.0000000000000000364e-10   449373197484.57891408       0.0000000000000000000       0.0000000000000000000       
 Base_HIP-block_64  PASSED  1.0000000000000000364e-10   449373197484.57891408       0.0000000000000000000       0.0000000000000000000       
 RAJA_HIP-block_64  PASSED  1.0000000000000000364e-10   449373197484.57891408       0.0000000000000000000       0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  , 
-Variant             , Base_HIP , RAJA_HIP
-Tuning              , block_64 , block_64
-Apps_DIFFUSION3DPA  , 0.011283 , 0.010944
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant             , Base_Seq , Base_HIP , RAJA_HIP
+Tuning              , default  , block_64 , block_64
+Apps_DIFFUSION3DPA  , 2.632333 , 0.011397 , 0.011115
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant             , Base_HIP , RAJA_HIP
-Tuning              , block_64 , block_64
-Apps_DIFFUSION3DPA  ,    1.000 ,    1.031
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant             , Base_Seq , Base_HIP , RAJA_HIP
+Tuning              , default  , block_64 , block_64
+Apps_DIFFUSION3DPA  ,    1.000 ,  230.963 ,  236.826
 
 
-Min Runtime Report (sec.)  ,  , 
-Variant             , Base_HIP , RAJA_HIP
-Tuning              , block_64 , block_64
-Apps_DIFFUSION3DPA  , 0.011283 , 0.010944
+Min Runtime Report (sec.)  ,  ,  , 
+Variant             , Base_Seq , Base_HIP , RAJA_HIP
+Tuning              , default  , block_64 , block_64
+Apps_DIFFUSION3DPA  , 2.632333 , 0.011397 , 0.011115
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant             , Base_HIP , RAJA_HIP
-Tuning              , block_64 , block_64
-Apps_DIFFUSION3DPA  ,    1.000 ,    1.031
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant             , Base_Seq , Base_HIP , RAJA_HIP
+Tuning              , default  , block_64 , block_64
+Apps_DIFFUSION3DPA  ,    1.000 ,  230.963 ,  236.826
 
 
-Max Runtime Report (sec.)  ,  , 
-Variant             , Base_HIP , RAJA_HIP
-Tuning              , block_64 , block_64
-Apps_DIFFUSION3DPA  , 0.011283 , 0.010944
+Max Runtime Report (sec.)  ,  ,  , 
+Variant             , Base_Seq , Base_HIP , RAJA_HIP
+Tuning              , default  , block_64 , block_64
+Apps_DIFFUSION3DPA  , 2.632333 , 0.011397 , 0.011115
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant             , Base_HIP , RAJA_HIP
-Tuning              , block_64 , block_64
-Apps_DIFFUSION3DPA  ,    1.000 ,    1.031
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant             , Base_Seq , Base_HIP , RAJA_HIP
+Tuning              , default  , block_64 , block_64
+Apps_DIFFUSION3DPA  ,    1.000 ,  230.963 ,  236.826
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
-Kernel              , Base_HIP-block_64,         , RAJA_HIP-block_64,        
-Apps_DIFFUSION3DPA  , 0.00             ,base_ref , -0.03            ,        
-                    ,                  ,         ,                  ,        
-Col Min             , 0.00             ,         , -0.03            ,        
-Col Max             , 0.00             ,         , -0.03            ,        
-Col Avg             , 0.00             ,         , -0.03            ,        
-Col Std Dev         , 0.00             ,         , 0.00             ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel              , Base_Seq-default ,         , Base_HIP-block_64,         , RAJA_HIP-block_64,        
+Apps_DIFFUSION3DPA  , 0.00             ,base_ref , 0.00             ,base_ref , -0.02            ,        
+                    ,                  ,         ,                  ,         ,                  ,        
+Col Min             , 0.00             ,         , 0.00             ,         , -0.02            ,        
+Col Max             , 0.00             ,         , 0.00             ,         , -0.02            ,        
+Col Avg             , 0.00             ,         , 0.00             ,         , -0.02            ,        
+Col Std Dev         , 0.00             ,         , 0.00             ,         , 0.00             ,        

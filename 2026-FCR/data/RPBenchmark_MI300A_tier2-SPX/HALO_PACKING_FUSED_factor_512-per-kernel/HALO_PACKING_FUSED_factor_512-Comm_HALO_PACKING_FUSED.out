@@ -1,0 +1,78 @@
+Kernels run on 4 MPI ranks
+Kernel                    ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency   , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Comm_HALO_PACKING_FUSED   ,         1860867 ,     200 ,            553548 ,              2 ,          11070960 ,            0 ,            11070960 ,          6642576 ,             4428384 ,                         0 ,                               0 ,              52041448 , Consistent            , O(N^(2/3))              ,                           1 ,                        3
+
+
+Kernels run on 4 MPI ranks
+Kernel                    , Variant    , Tuning          ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Comm_HALO_PACKING_FUSED   , Base_Seq   , direct          ,         1860867 , PASSED     ,                 0.000382529 ,                          26.9538 ,                           0.00000
+Comm_HALO_PACKING_FUSED   , Base_HIP   , direct_1024     ,         1860867 , PASSED     ,                 3.36967e-05 ,                          305.984 ,                           0.00000
+Comm_HALO_PACKING_FUSED   , RAJA_HIP   , direct_1024     ,         1860867 , PASSED     ,                 4.09810e-05 ,                          251.596 ,                           0.00000
+Comm_HALO_PACKING_FUSED   , RAJA_HIP   , funcptr_1024    ,         1860867 , PASSED     ,                 3.80987e-05 ,                          270.630 ,                           0.00000
+Comm_HALO_PACKING_FUSED   , RAJA_HIP   , virtfunc_1024   ,         1860867 , PASSED     ,                 3.91021e-05 ,                          263.685 ,                           0.00000
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel                  
+........................................................
+Variants                Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                        (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Comm_HALO_PACKING_FUSED 
+........................................................
+Base_Seq-direct         PASSED  0.0000000000000000000       5721747024974.5734739       0.0000000000000000000       0.0000000000000000000       
+Base_HIP-direct_1024    PASSED  0.0000000000000000000       5721747024974.5734739       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-direct_1024    PASSED  0.0000000000000000000       5721747024974.5734739       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-funcptr_1024   PASSED  0.0000000000000000000       5721747024974.5734739       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-virtfunc_1024  PASSED  0.0000000000000000000       5721747024974.5734739       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant                  , Base_Seq , Base_HIP    , RAJA_HIP    , RAJA_HIP     , RAJA_HIP     
+Tuning                   , direct   , direct_1024 , direct_1024 , funcptr_1024 , virtfunc_1024
+Comm_HALO_PACKING_FUSED  , 0.076506 ,    0.006739 ,    0.008196 ,     0.007620 ,      0.007820
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  ,  , 
+Variant                  , Base_Seq , Base_HIP    , RAJA_HIP    , RAJA_HIP     , RAJA_HIP     
+Tuning                   , direct   , direct_1024 , direct_1024 , funcptr_1024 , virtfunc_1024
+Comm_HALO_PACKING_FUSED  ,    1.000 ,      11.352 ,       9.334 ,       10.040 ,         9.783
+
+
+Min Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant                  , Base_Seq , Base_HIP    , RAJA_HIP    , RAJA_HIP     , RAJA_HIP     
+Tuning                   , direct   , direct_1024 , direct_1024 , funcptr_1024 , virtfunc_1024
+Comm_HALO_PACKING_FUSED  , 0.076506 ,    0.006739 ,    0.008196 ,     0.007620 ,      0.007820
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  ,  , 
+Variant                  , Base_Seq , Base_HIP    , RAJA_HIP    , RAJA_HIP     , RAJA_HIP     
+Tuning                   , direct   , direct_1024 , direct_1024 , funcptr_1024 , virtfunc_1024
+Comm_HALO_PACKING_FUSED  ,    1.000 ,      11.352 ,       9.334 ,       10.040 ,         9.783
+
+
+Max Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant                  , Base_Seq , Base_HIP    , RAJA_HIP    , RAJA_HIP     , RAJA_HIP     
+Tuning                   , direct   , direct_1024 , direct_1024 , funcptr_1024 , virtfunc_1024
+Comm_HALO_PACKING_FUSED  , 0.076506 ,    0.006739 ,    0.008196 ,     0.007620 ,      0.007820
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  ,  , 
+Variant                  , Base_Seq , Base_HIP    , RAJA_HIP    , RAJA_HIP     , RAJA_HIP     
+Tuning                   , direct   , direct_1024 , direct_1024 , funcptr_1024 , virtfunc_1024
+Comm_HALO_PACKING_FUSED  ,    1.000 ,      11.352 ,       9.334 ,       10.040 ,         9.783
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Kernel                   , Base_Seq-direct       ,         , Base_HIP-direct_1024  ,         , RAJA_HIP-direct_1024  ,         , RAJA_HIP-funcptr_1024 ,         , RAJA_HIP-virtfunc_1024,        
+Comm_HALO_PACKING_FUSED  , 0.00                  ,base_ref , 0.00                  ,base_ref , 0.22                  ,OVER_TOL , 0.13                  ,OVER_TOL , 0.16                  ,OVER_TOL
+                         ,                       ,         ,                       ,         ,                       ,         ,                       ,         ,                       ,        
+Col Min                  , 0.00                  ,         , 0.00                  ,         , 0.22                  ,         , 0.13                  ,         , 0.16                  ,        
+Col Max                  , 0.00                  ,         , 0.00                  ,         , 0.22                  ,         , 0.13                  ,         , 0.16                  ,        
+Col Avg                  , 0.00                  ,         , 0.00                  ,         , 0.22                  ,         , 0.13                  ,         , 0.16                  ,        
+Col Std Dev              , 0.00                  ,         , 0.00                  ,         , 0.00                  ,         , 0.00                  ,         , 0.00                  ,        

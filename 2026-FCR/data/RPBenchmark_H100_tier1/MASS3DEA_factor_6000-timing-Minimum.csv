@@ -1,4 +1,4 @@
-Min Runtime Report (sec.)  ,  ,  , 
-Variant        , Base_CUDA                         , RAJA_CUDA                         , RAJA_CUDA                  
-Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
-Apps_MASS3DEA  ,                          0.001392 ,                          0.001269 ,                    0.001338
+Min Runtime Report (sec.)  ,  ,  ,  , 
+Variant        , Base_Seq , Base_CUDA                         , RAJA_CUDA                         , RAJA_CUDA                  
+Tuning         , default  , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  , 1.510754 ,                          0.001220 ,                          0.001302 ,                    0.001343

@@ -1,0 +1,4 @@
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant        , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning         , default  , block_25  , block_25 
+Apps_MASS3DPA  ,    1.000 ,    97.647 ,    97.779

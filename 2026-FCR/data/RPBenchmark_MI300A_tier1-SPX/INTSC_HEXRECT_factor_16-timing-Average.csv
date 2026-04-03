@@ -1,4 +1,4 @@
-Mean Runtime Report (sec.)  ,  , 
-Variant             , Base_HIP , RAJA_HIP
-Tuning              , block_64 , block_64
-Apps_INTSC_HEXRECT  , 0.000279 , 0.000273
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant             , Base_Seq , Base_HIP , RAJA_HIP
+Tuning              , default  , block_64 , block_64
+Apps_INTSC_HEXRECT  , 0.032767 , 0.000272 , 0.000269

@@ -1,0 +1,4 @@
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant              , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning               , default  , block_64  , block_64 
+Apps_CONVECTION3DPA  , 0.557169 ,  0.002711 ,  0.002791

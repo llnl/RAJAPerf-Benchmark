@@ -1,0 +1,4 @@
+Mean Runtime Report (sec.)  ,  ,  ,  , 
+Variant      , Base_Seq , Base_HIP  , RAJA_HIP   , RAJA_HIP  
+Tuning       , default  , block_256 , kernel_256 , launch_256
+Apps_LTIMES  , 0.261157 ,  0.002425 ,   0.002896 ,   0.002450

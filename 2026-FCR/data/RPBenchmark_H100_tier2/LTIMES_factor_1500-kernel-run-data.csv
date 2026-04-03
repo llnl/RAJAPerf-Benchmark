@@ -1,0 +1,6 @@
+Kernels run on 4 MPI ranks
+Kernel        , Variant     , Tuning       ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_LTIMES   , Base_Seq    , default      ,         1814592 , PASSED     ,                   0.0199534 ,                          6.32401 ,                           4.54707
+Apps_LTIMES   , Base_CUDA   , block_256    ,         1814592 , PASSED     ,                 0.000130216 ,                          969.049 ,                           696.763
+Apps_LTIMES   , RAJA_CUDA   , kernel_256   ,         1814592 , PASSED     ,                 0.000133785 ,                          943.198 ,                           678.176
+Apps_LTIMES   , RAJA_CUDA   , launch_256   ,         1814592 , PASSED     ,                 0.000132435 ,                          952.809 ,                           685.086

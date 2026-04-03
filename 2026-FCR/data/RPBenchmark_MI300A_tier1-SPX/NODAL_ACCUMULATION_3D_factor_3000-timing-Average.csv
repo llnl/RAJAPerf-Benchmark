@@ -1,4 +1,4 @@
-Mean Runtime Report (sec.)  ,  , 
-Variant                     , Base_HIP  , RAJA_HIP 
-Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,  0.048147 ,  0.048082
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant                     , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                      , default  , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  , 8.215640 ,  0.048041 ,  0.048152

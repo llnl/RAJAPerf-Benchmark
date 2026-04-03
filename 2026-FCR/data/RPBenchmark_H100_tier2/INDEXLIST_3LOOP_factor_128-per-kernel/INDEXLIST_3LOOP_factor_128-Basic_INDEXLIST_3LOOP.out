@@ -1,0 +1,74 @@
+Kernels run on 4 MPI ranks
+Kernel                  ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency   , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Basic_INDEXLIST_3LOOP   ,          320000 ,     100 ,            960001 ,              3 ,          13440026 ,            0 ,            10880018 ,          7680016 ,             5760010 ,                   2560008 ,                               0 ,               6400008 , Consistent            , O(N)                    ,                           1 ,                        1
+
+
+Kernels run on 4 MPI ranks
+Kernel                  , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Basic_INDEXLIST_3LOOP   , Base_Seq    , default     ,          320000 , PASSED     ,                  0.00157409 ,                          7.95189 ,                           0.00000
+Basic_INDEXLIST_3LOOP   , Base_CUDA   , block_256   ,          320000 , PASSED     ,                 1.96111e-05 ,                          638.260 ,                           0.00000
+Basic_INDEXLIST_3LOOP   , RAJA_CUDA   , block_256   ,          320000 , PASSED     ,                 1.99029e-05 ,                          628.902 ,                           0.00000
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel                
+........................................................
+Variants              Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                      (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Basic_INDEXLIST_3LOOP 
+........................................................
+Base_Seq-default      PASSED  0.0000000000000000000       25638862928.419469077       0.0000000000000000000       0.0000000000000000000       
+Base_CUDA-block_256   PASSED  0.0000000000000000000       25638862928.419469077       0.0000000000000000000       0.0000000000000000000       
+RAJA_CUDA-block_256   PASSED  0.0000000000000000000       25638862928.419469077       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant                , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                 , default  , block_256 , block_256
+Basic_INDEXLIST_3LOOP  , 0.157409 ,  0.001961 ,  0.001990
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                 , default  , block_256 , block_256
+Basic_INDEXLIST_3LOOP  ,    1.000 ,    80.265 ,    79.088
+
+
+Min Runtime Report (sec.)  ,  ,  , 
+Variant                , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                 , default  , block_256 , block_256
+Basic_INDEXLIST_3LOOP  , 0.157409 ,  0.001961 ,  0.001990
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                 , default  , block_256 , block_256
+Basic_INDEXLIST_3LOOP  ,    1.000 ,    80.265 ,    79.088
+
+
+Max Runtime Report (sec.)  ,  ,  , 
+Variant                , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                 , default  , block_256 , block_256
+Basic_INDEXLIST_3LOOP  , 0.157409 ,  0.001961 ,  0.001990
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                 , default  , block_256 , block_256
+Basic_INDEXLIST_3LOOP  ,    1.000 ,    80.265 ,    79.088
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel                 , Base_Seq-default   ,         , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
+Basic_INDEXLIST_3LOOP  , 0.00               ,base_ref , 0.00               ,base_ref , 0.01               ,        
+                       ,                    ,         ,                    ,         ,                    ,        
+Col Min                , 0.00               ,         , 0.00               ,         , 0.01               ,        
+Col Max                , 0.00               ,         , 0.00               ,         , 0.01               ,        
+Col Avg                , 0.00               ,         , 0.00               ,         , 0.01               ,        
+Col Std Dev            , 0.00               ,         , 0.00               ,         , 0.00               ,        
