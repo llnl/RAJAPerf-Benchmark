@@ -1,0 +1,74 @@
+Kernels run on 4 MPI ranks
+Kernel              ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,     FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_INTSC_HEXHEX   ,           97336 ,       1 ,             97336 ,              2 ,         436065280 ,   18838020096 ,           436065280 ,        355081728 ,            80983552 ,                         0 ,                               0 ,             404917760 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        3
+
+
+Kernels run on 4 MPI ranks
+Kernel              , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_INTSC_HEXHEX   , Base_Seq   , default    ,           97336 , PASSED     ,                     5.26920 ,                        0.0770738 ,                           3.57512
+Apps_INTSC_HEXHEX   , Base_HIP   , block_64   ,           97336 , PASSED     ,                    0.902761 ,                         0.449862 ,                           20.8671
+Apps_INTSC_HEXHEX   , RAJA_HIP   , block_64   ,           97336 , PASSED     ,                    0.503213 ,                         0.807049 ,                           37.4355
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel            
+........................................................
+Variants          Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                  (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_INTSC_HEXHEX 
+........................................................
+Base_Seq-default  PASSED  1.0000000000000000364e-10   1160.8693733947758656       0.0000000000000000000       0.0000000000000000000       
+Base_HIP-block_64 PASSED  1.0000000000000000364e-10   1160.8693733947759593       8.0717801180631002984e-17   0.0000000000000000000       
+RAJA_HIP-block_64 PASSED  1.0000000000000000364e-10   1160.8693733947759593       8.0717801180631002984e-17   0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant            , Base_Seq , Base_HIP , RAJA_HIP
+Tuning             , default  , block_64 , block_64
+Apps_INTSC_HEXHEX  , 5.269204 , 0.902761 , 0.503213
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant            , Base_Seq , Base_HIP , RAJA_HIP
+Tuning             , default  , block_64 , block_64
+Apps_INTSC_HEXHEX  ,    1.000 ,    5.837 ,   10.471
+
+
+Min Runtime Report (sec.)  ,  ,  , 
+Variant            , Base_Seq , Base_HIP , RAJA_HIP
+Tuning             , default  , block_64 , block_64
+Apps_INTSC_HEXHEX  , 5.269204 , 0.902761 , 0.503213
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant            , Base_Seq , Base_HIP , RAJA_HIP
+Tuning             , default  , block_64 , block_64
+Apps_INTSC_HEXHEX  ,    1.000 ,    5.837 ,   10.471
+
+
+Max Runtime Report (sec.)  ,  ,  , 
+Variant            , Base_Seq , Base_HIP , RAJA_HIP
+Tuning             , default  , block_64 , block_64
+Apps_INTSC_HEXHEX  , 5.269204 , 0.902761 , 0.503213
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant            , Base_Seq , Base_HIP , RAJA_HIP
+Tuning             , default  , block_64 , block_64
+Apps_INTSC_HEXHEX  ,    1.000 ,    5.837 ,   10.471
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel             , Base_Seq-default ,         , Base_HIP-block_64,         , RAJA_HIP-block_64,        
+Apps_INTSC_HEXHEX  , 0.00             ,base_ref , 0.00             ,base_ref , -0.44            ,        
+                   ,                  ,         ,                  ,         ,                  ,        
+Col Min            , 0.00             ,         , 0.00             ,         , -0.44            ,        
+Col Max            , 0.00             ,         , 0.00             ,         , -0.44            ,        
+Col Avg            , 0.00             ,         , 0.00             ,         , -0.44            ,        
+Col Std Dev        , 0.00             ,         , 0.00             ,         , 0.00             ,        

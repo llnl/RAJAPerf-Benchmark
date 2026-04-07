@@ -1,4 +1,4 @@
-Max Runtime Report (sec.)  ,  ,  , 
-Variant        , Base_HIP                          , RAJA_HIP                          , RAJA_HIP                   
-Tuning         , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
-Apps_MASS3DEA  ,                          0.000242 ,                          0.001129 ,                    0.000282
+Max Runtime Report (sec.)  ,  ,  ,  , 
+Variant        , Base_Seq , Base_HIP                          , RAJA_HIP                          , RAJA_HIP                   
+Tuning         , default  , compile_time_block_stride_loop_64 , compile_time_block_stride_loop_64 , cached_block_stride_loop_64
+Apps_MASS3DEA  , 0.067960 ,                          0.000256 ,                          0.001137 ,                    0.000286

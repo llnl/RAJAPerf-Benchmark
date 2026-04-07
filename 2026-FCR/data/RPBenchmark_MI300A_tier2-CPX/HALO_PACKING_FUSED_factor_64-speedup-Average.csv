@@ -1,0 +1,4 @@
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  ,  , 
+Variant                  , Base_Seq , Base_HIP    , RAJA_HIP    , RAJA_HIP     , RAJA_HIP     
+Tuning                   , direct   , direct_1024 , direct_1024 , funcptr_1024 , virtfunc_1024
+Comm_HALO_PACKING_FUSED  ,    1.000 ,       1.722 ,       1.415 ,        1.511 ,         1.448

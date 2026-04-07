@@ -1,4 +1,4 @@
-Max Runtime Report (sec.)  ,  , 
-Variant             , Base_HIP , RAJA_HIP
-Tuning              , block_64 , block_64
-Apps_DIFFUSION3DPA  , 0.000181 , 0.000159
+Max Runtime Report (sec.)  ,  ,  , 
+Variant             , Base_Seq , Base_HIP , RAJA_HIP
+Tuning              , default  , block_64 , block_64
+Apps_DIFFUSION3DPA  , 0.001527 , 0.000166 , 0.000160

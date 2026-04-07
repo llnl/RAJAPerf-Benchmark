@@ -1,0 +1,4 @@
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant                 , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                  , default  , block_256 , block_256
+Apps_MATVEC_3D_STENCIL  ,    1.000 ,    42.160 ,    42.105

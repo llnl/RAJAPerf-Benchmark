@@ -1,0 +1,4 @@
+Min Runtime Report (sec.)  ,  ,  , 
+Variant                , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning                 , default  , block_256 , block_256
+Basic_INDEXLIST_3LOOP  , 10.847625 ,  0.037706 ,  0.037933

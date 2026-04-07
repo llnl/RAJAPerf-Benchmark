@@ -1,4 +1,5 @@
 Kernels run on 4 MPI ranks
 Kernel                 , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASS3DPA_ATOMIC   , Base_HIP   , block_64   ,           19683 , PASSED     ,                 4.92420e-06 ,                          391.863 ,                           832.988
-Apps_MASS3DPA_ATOMIC   , RAJA_HIP   , block_64   ,           19683 , PASSED     ,                 4.85240e-06 ,                          397.661 ,                           845.313
+Apps_MASS3DPA_ATOMIC   , Base_Seq   , default    ,           19683 , PASSED     ,                 0.000409404 ,                          4.71322 ,                           10.0190
+Apps_MASS3DPA_ATOMIC   , Base_HIP   , block_64   ,           19683 , PASSED     ,                 4.81102e-06 ,                          401.081 ,                           852.584
+Apps_MASS3DPA_ATOMIC   , RAJA_HIP   , block_64   ,           19683 , PASSED     ,                 4.87002e-06 ,                          396.222 ,                           842.255

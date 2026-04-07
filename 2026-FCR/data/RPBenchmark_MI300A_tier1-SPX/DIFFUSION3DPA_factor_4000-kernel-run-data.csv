@@ -1,4 +1,5 @@
 Kernels run on 4 MPI ranks
 Kernel               , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_DIFFUSION3DPA   , Base_HIP   , block_64   ,         3082212 , PASSED     ,                 0.000211506 ,                          1869.90 ,                           2806.05
-Apps_DIFFUSION3DPA   , RAJA_HIP   , block_64   ,         3082212 , PASSED     ,                 0.000204428 ,                          1934.65 ,                           2903.21
+Apps_DIFFUSION3DPA   , Base_Seq   , default    ,         3082212 , PASSED     ,                    0.127561 ,                          3.10045 ,                           4.65266
+Apps_DIFFUSION3DPA   , Base_HIP   , block_64   ,         3082212 , PASSED     ,                 0.000204995 ,                          1929.30 ,                           2895.18
+Apps_DIFFUSION3DPA   , RAJA_HIP   , block_64   ,         3082212 , PASSED     ,                 0.000196137 ,                          2016.42 ,                           3025.93

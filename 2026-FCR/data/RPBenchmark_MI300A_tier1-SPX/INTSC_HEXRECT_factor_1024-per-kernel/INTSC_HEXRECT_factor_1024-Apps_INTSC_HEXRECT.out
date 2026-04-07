@@ -5,8 +5,9 @@ Apps_INTSC_HEXRECT   ,         2197000 ,       1 ,           2197000 ,          
 
 Kernels run on 4 MPI ranks
 Kernel               , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_INTSC_HEXRECT   , Base_HIP   , block_64   ,         2197000 , PASSED     ,                  0.00869785 ,                          11.0895 ,                           909.328
-Apps_INTSC_HEXRECT   , RAJA_HIP   , block_64   ,         2197000 , PASSED     ,                  0.00877026 ,                          10.9980 ,                           901.821
+Apps_INTSC_HEXRECT   , Base_Seq   , default    ,         2197000 , PASSED     ,                     1.81711 ,                        0.0530816 ,                           4.35263
+Apps_INTSC_HEXRECT   , Base_HIP   , block_64   ,         2197000 , PASSED     ,                  0.00856661 ,                          11.2594 ,                           923.259
+Apps_INTSC_HEXRECT   , RAJA_HIP   , block_64   ,         2197000 , PASSED     ,                  0.00873471 ,                          11.0427 ,                           905.491
 
 
 ===================================================================================================
@@ -19,54 +20,55 @@ Variants           Result  Tolerance                   Average Checksum         
 ----------------------------------------------------------------------------------------
 Apps_INTSC_HEXRECT 
 ........................................................
-Base_HIP-block_64  PASSED  1.0000000000000000364e-10   2591.3967416336587304       0.0000000000000000000       0.0000000000000000000       
-RAJA_HIP-block_64  PASSED  1.0000000000000000364e-10   2591.3967416336587304       0.0000000000000000000       0.0000000000000000000       
+Base_Seq-default   PASSED  1.0000000000000000364e-10   2591.3967416336587231       0.0000000000000000000       0.0000000000000000000       
+Base_HIP-block_64  PASSED  1.0000000000000000364e-10   2591.3967416336587304       2.8276148706996812336e-18   0.0000000000000000000       
+RAJA_HIP-block_64  PASSED  1.0000000000000000364e-10   2591.3967416336587304       2.8276148706996812336e-18   0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  , 
-Variant             , Base_HIP , RAJA_HIP
-Tuning              , block_64 , block_64
-Apps_INTSC_HEXRECT  , 0.008698 , 0.008770
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant             , Base_Seq , Base_HIP , RAJA_HIP
+Tuning              , default  , block_64 , block_64
+Apps_INTSC_HEXRECT  , 1.817110 , 0.008567 , 0.008735
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant             , Base_HIP , RAJA_HIP
-Tuning              , block_64 , block_64
-Apps_INTSC_HEXRECT  ,    1.000 ,    0.992
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant             , Base_Seq , Base_HIP , RAJA_HIP
+Tuning              , default  , block_64 , block_64
+Apps_INTSC_HEXRECT  ,    1.000 ,  212.116 ,  208.033
 
 
-Min Runtime Report (sec.)  ,  , 
-Variant             , Base_HIP , RAJA_HIP
-Tuning              , block_64 , block_64
-Apps_INTSC_HEXRECT  , 0.008698 , 0.008770
+Min Runtime Report (sec.)  ,  ,  , 
+Variant             , Base_Seq , Base_HIP , RAJA_HIP
+Tuning              , default  , block_64 , block_64
+Apps_INTSC_HEXRECT  , 1.817110 , 0.008567 , 0.008735
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant             , Base_HIP , RAJA_HIP
-Tuning              , block_64 , block_64
-Apps_INTSC_HEXRECT  ,    1.000 ,    0.992
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant             , Base_Seq , Base_HIP , RAJA_HIP
+Tuning              , default  , block_64 , block_64
+Apps_INTSC_HEXRECT  ,    1.000 ,  212.116 ,  208.033
 
 
-Max Runtime Report (sec.)  ,  , 
-Variant             , Base_HIP , RAJA_HIP
-Tuning              , block_64 , block_64
-Apps_INTSC_HEXRECT  , 0.008698 , 0.008770
+Max Runtime Report (sec.)  ,  ,  , 
+Variant             , Base_Seq , Base_HIP , RAJA_HIP
+Tuning              , default  , block_64 , block_64
+Apps_INTSC_HEXRECT  , 1.817110 , 0.008567 , 0.008735
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant             , Base_HIP , RAJA_HIP
-Tuning              , block_64 , block_64
-Apps_INTSC_HEXRECT  ,    1.000 ,    0.992
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant             , Base_Seq , Base_HIP , RAJA_HIP
+Tuning              , default  , block_64 , block_64
+Apps_INTSC_HEXRECT  ,    1.000 ,  212.116 ,  208.033
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
-Kernel              , Base_HIP-block_64,         , RAJA_HIP-block_64,        
-Apps_INTSC_HEXRECT  , 0.00             ,base_ref , 0.01             ,        
-                    ,                  ,         ,                  ,        
-Col Min             , 0.00             ,         , 0.01             ,        
-Col Max             , 0.00             ,         , 0.01             ,        
-Col Avg             , 0.00             ,         , 0.01             ,        
-Col Std Dev         , 0.00             ,         , 0.00             ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel              , Base_Seq-default ,         , Base_HIP-block_64,         , RAJA_HIP-block_64,        
+Apps_INTSC_HEXRECT  , 0.00             ,base_ref , 0.00             ,base_ref , 0.02             ,        
+                    ,                  ,         ,                  ,         ,                  ,        
+Col Min             , 0.00             ,         , 0.00             ,         , 0.02             ,        
+Col Max             , 0.00             ,         , 0.00             ,         , 0.02             ,        
+Col Avg             , 0.00             ,         , 0.00             ,         , 0.02             ,        
+Col Std Dev         , 0.00             ,         , 0.00             ,         , 0.00             ,        

@@ -1,0 +1,5 @@
+Kernels run on 4 MPI ranks
+Kernel                , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_DEL_DOT_VEC_2D   , Base_Seq   , default     ,         8317456 , PASSED     ,                   0.0571895 ,                          6.50454 ,                           7.85359
+Apps_DEL_DOT_VEC_2D   , Base_HIP   , block_256   ,         8317456 , PASSED     ,                 0.000204320 ,                          1820.63 ,                           2198.23
+Apps_DEL_DOT_VEC_2D   , RAJA_HIP   , block_256   ,         8317456 , PASSED     ,                 0.000202391 ,                          1837.98 ,                           2219.18

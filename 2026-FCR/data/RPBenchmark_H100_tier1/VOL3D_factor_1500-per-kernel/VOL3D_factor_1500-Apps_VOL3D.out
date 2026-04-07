@@ -5,8 +5,9 @@ Apps_VOL3D   ,         2146689 ,     100 ,           2316991 ,              1 , 
 
 Kernels run on 4 MPI ranks
 Kernel       , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_VOL3D   , Base_CUDA   , block_256   ,         2146689 , PASSED     ,                 3.51016e-05 ,                          1978.54 ,                           4752.58
-Apps_VOL3D   , RAJA_CUDA   , block_256   ,         2146689 , PASSED     ,                 3.31287e-05 ,                          2096.37 ,                           5035.61
+Apps_VOL3D   , Base_Seq    , default     ,         2146689 , PASSED     ,                   0.0172879 ,                          4.01726 ,                           9.64971
+Apps_VOL3D   , Base_CUDA   , block_256   ,         2146689 , PASSED     ,                 3.57233e-05 ,                          1944.11 ,                           4669.88
+Apps_VOL3D   , RAJA_CUDA   , block_256   ,         2146689 , PASSED     ,                 3.32067e-05 ,                          2091.45 ,                           5023.79
 
 
 ===================================================================================================
@@ -19,54 +20,55 @@ Variants            Result  Tolerance                   Average Checksum        
 ----------------------------------------------------------------------------------------
 Apps_VOL3D          
 ........................................................
-Base_CUDA-block_256 PASSED  1.0000000000000000364e-10   54080.821817266068244       0.0000000000000000000       0.0000000000000000000       
-RAJA_CUDA-block_256 PASSED  1.0000000000000000364e-10   54080.821817266068244       0.0000000000000000000       0.0000000000000000000       
+Base_Seq-default    PASSED  1.0000000000000000364e-10   54080.821817266068901       0.0000000000000000000       0.0000000000000000000       
+Base_CUDA-block_256 PASSED  1.0000000000000000364e-10   54080.821817266068244       1.2153144284657590861e-17   0.0000000000000000000       
+RAJA_CUDA-block_256 PASSED  1.0000000000000000364e-10   54080.821817266068244       1.2153144284657590861e-17   0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  , 
-Variant     , Base_CUDA , RAJA_CUDA
-Tuning      , block_256 , block_256
-Apps_VOL3D  ,  0.003510 ,  0.003313
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant     , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning      , default  , block_256 , block_256
+Apps_VOL3D  , 1.728792 ,  0.003572 ,  0.003321
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant     , Base_CUDA , RAJA_CUDA
-Tuning      , block_256 , block_256
-Apps_VOL3D  ,     1.000 ,     1.060
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant     , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning      , default  , block_256 , block_256
+Apps_VOL3D  ,    1.000 ,   483.940 ,   520.616
 
 
-Min Runtime Report (sec.)  ,  , 
-Variant     , Base_CUDA , RAJA_CUDA
-Tuning      , block_256 , block_256
-Apps_VOL3D  ,  0.003510 ,  0.003313
+Min Runtime Report (sec.)  ,  ,  , 
+Variant     , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning      , default  , block_256 , block_256
+Apps_VOL3D  , 1.728792 ,  0.003572 ,  0.003321
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant     , Base_CUDA , RAJA_CUDA
-Tuning      , block_256 , block_256
-Apps_VOL3D  ,     1.000 ,     1.060
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant     , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning      , default  , block_256 , block_256
+Apps_VOL3D  ,    1.000 ,   483.940 ,   520.616
 
 
-Max Runtime Report (sec.)  ,  , 
-Variant     , Base_CUDA , RAJA_CUDA
-Tuning      , block_256 , block_256
-Apps_VOL3D  ,  0.003510 ,  0.003313
+Max Runtime Report (sec.)  ,  ,  , 
+Variant     , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning      , default  , block_256 , block_256
+Apps_VOL3D  , 1.728792 ,  0.003572 ,  0.003321
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant     , Base_CUDA , RAJA_CUDA
-Tuning      , block_256 , block_256
-Apps_VOL3D  ,     1.000 ,     1.060
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant     , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning      , default  , block_256 , block_256
+Apps_VOL3D  ,    1.000 ,   483.940 ,   520.616
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
-Kernel      , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
-Apps_VOL3D  , 0.00               ,base_ref , -0.06              ,        
-            ,                    ,         ,                    ,        
-Col Min     , 0.00               ,         , -0.06              ,        
-Col Max     , 0.00               ,         , -0.06              ,        
-Col Avg     , 0.00               ,         , -0.06              ,        
-Col Std Dev , 0.00               ,         , 0.00               ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel      , Base_Seq-default   ,         , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
+Apps_VOL3D  , 0.00               ,base_ref , 0.00               ,base_ref , -0.07              ,        
+            ,                    ,         ,                    ,         ,                    ,        
+Col Min     , 0.00               ,         , 0.00               ,         , -0.07              ,        
+Col Max     , 0.00               ,         , 0.00               ,         , -0.07              ,        
+Col Avg     , 0.00               ,         , 0.00               ,         , -0.07              ,        
+Col Std Dev , 0.00               ,         , 0.00               ,         , 0.00               ,        

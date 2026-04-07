@@ -5,8 +5,9 @@ Apps_VOL3D   ,         1442897 ,     100 ,           1573999 ,              1 , 
 
 Kernels run on 24 MPI ranks
 Kernel       , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_VOL3D   , Base_HIP   , block_256   ,         1442897 , PASSED     ,                 0.000192279 ,                          245.567 ,                           589.392
-Apps_VOL3D   , RAJA_HIP   , block_256   ,         1442897 , PASSED     ,                 0.000192184 ,                          245.689 ,                           589.685
+Apps_VOL3D   , Base_Seq   , default     ,         1442897 , PASSED     ,                  0.00739325 ,                          6.38656 ,                           15.3286
+Apps_VOL3D   , Base_HIP   , block_256   ,         1442897 , PASSED     ,                 0.000198018 ,                          238.451 ,                           572.313
+Apps_VOL3D   , RAJA_HIP   , block_256   ,         1442897 , PASSED     ,                 0.000198884 ,                          237.412 ,                           569.819
 
 
 ===================================================================================================
@@ -19,54 +20,55 @@ Variants           Result  Tolerance                   Average Checksum         
 ----------------------------------------------------------------------------------------
 Apps_VOL3D         
 ........................................................
-Base_HIP-block_256 PASSED  1.0000000000000000364e-10   36818.459927246944901       0.0000000000000000000       0.0000000000000000000       
-RAJA_HIP-block_256 PASSED  1.0000000000000000364e-10   36818.459927246944901       0.0000000000000000000       0.0000000000000000000       
+Base_Seq-default   PASSED  1.0000000000000000364e-10   36818.459927246945373       0.0000000000000000000       0.0000000000000000000       
+Base_HIP-block_256 PASSED  1.0000000000000000364e-10   36818.459927246944901       1.2930025696348135970e-17   7.5231638452626400510e-37   
+RAJA_HIP-block_256 PASSED  1.0000000000000000364e-10   36818.459927246944901       1.2930025696348135970e-17   7.5231638452626400510e-37   
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  , 
-Variant     , Base_HIP  , RAJA_HIP 
-Tuning      , block_256 , block_256
-Apps_VOL3D  ,  0.019228 ,  0.019218
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant     , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning      , default  , block_256 , block_256
+Apps_VOL3D  , 0.739325 ,  0.019802 ,  0.019888
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant     , Base_HIP  , RAJA_HIP 
-Tuning      , block_256 , block_256
-Apps_VOL3D  ,     1.000 ,     1.000
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant     , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning      , default  , block_256 , block_256
+Apps_VOL3D  ,    1.000 ,    37.336 ,    37.174
 
 
-Min Runtime Report (sec.)  ,  , 
-Variant     , Base_HIP  , RAJA_HIP 
-Tuning      , block_256 , block_256
-Apps_VOL3D  ,  0.019228 ,  0.019218
+Min Runtime Report (sec.)  ,  ,  , 
+Variant     , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning      , default  , block_256 , block_256
+Apps_VOL3D  , 0.739325 ,  0.019802 ,  0.019888
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant     , Base_HIP  , RAJA_HIP 
-Tuning      , block_256 , block_256
-Apps_VOL3D  ,     1.000 ,     1.000
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant     , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning      , default  , block_256 , block_256
+Apps_VOL3D  ,    1.000 ,    37.336 ,    37.174
 
 
-Max Runtime Report (sec.)  ,  , 
-Variant     , Base_HIP  , RAJA_HIP 
-Tuning      , block_256 , block_256
-Apps_VOL3D  ,  0.019228 ,  0.019218
+Max Runtime Report (sec.)  ,  ,  , 
+Variant     , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning      , default  , block_256 , block_256
+Apps_VOL3D  , 0.739325 ,  0.019802 ,  0.019888
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant     , Base_HIP  , RAJA_HIP 
-Tuning      , block_256 , block_256
-Apps_VOL3D  ,     1.000 ,     1.000
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant     , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning      , default  , block_256 , block_256
+Apps_VOL3D  ,    1.000 ,    37.336 ,    37.174
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
-Kernel      , Base_HIP-block_256,         , RAJA_HIP-block_256,        
-Apps_VOL3D  , 0.00              ,base_ref , -0.00             ,        
-            ,                   ,         ,                   ,        
-Col Min     , 0.00              ,         , -0.00             ,        
-Col Max     , 0.00              ,         , -0.00             ,        
-Col Avg     , 0.00              ,         , -0.00             ,        
-Col Std Dev , 0.00              ,         , 0.00              ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel      , Base_Seq-default  ,         , Base_HIP-block_256,         , RAJA_HIP-block_256,        
+Apps_VOL3D  , 0.00              ,base_ref , 0.00              ,base_ref , 0.00              ,        
+            ,                   ,         ,                   ,         ,                   ,        
+Col Min     , 0.00              ,         , 0.00              ,         , 0.00              ,        
+Col Max     , 0.00              ,         , 0.00              ,         , 0.00              ,        
+Col Avg     , 0.00              ,         , 0.00              ,         , 0.00              ,        
+Col Std Dev , 0.00              ,         , 0.00              ,         , 0.00              ,        

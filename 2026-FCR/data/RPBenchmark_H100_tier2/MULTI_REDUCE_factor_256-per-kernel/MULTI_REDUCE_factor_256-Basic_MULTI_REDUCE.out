@@ -1,0 +1,78 @@
+Kernels run on 4 MPI ranks
+Kernel               ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency   , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Basic_MULTI_REDUCE   ,          799995 ,      50 ,            799995 ,              1 ,          12800080 ,       799995 ,            12800000 ,         12799920 ,                   0 ,                         0 ,                              80 ,              12800000 , Inconsistent          , O(N)                    ,                           1 ,                        1
+
+
+Kernels run on 4 MPI ranks
+Kernel               , Variant     , Tuning              ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Basic_MULTI_REDUCE   , Base_Seq    , default             ,          799995 , PASSED     ,                  0.00171672 ,                          6.94406 ,                          0.466002
+Basic_MULTI_REDUCE   , Base_CUDA   , atomic_direct_256   ,          799995 , PASSED     ,                  0.00118691 ,                          10.0437 ,                          0.674012
+Basic_MULTI_REDUCE   , Base_CUDA   , atomic_occgs_256    ,          799995 , PASSED     ,                  0.00118430 ,                          10.0659 ,                          0.675501
+Basic_MULTI_REDUCE   , RAJA_CUDA   , atomic_direct_256   ,          799995 , PASSED     ,                  0.00122105 ,                          9.76294 ,                          0.655172
+Basic_MULTI_REDUCE   , RAJA_CUDA   , atomic_occgs_256    ,          799995 , PASSED     ,                  0.00124317 ,                          9.58923 ,                          0.643515
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel                      
+........................................................
+Variants                    Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                            (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Basic_MULTI_REDUCE          
+........................................................
+Base_Seq-default            PASSED  1.0000000000000000364e-10   406501.57492472995722       0.0000000000000000000       0.0000000000000000000       
+Base_CUDA-atomic_direct_256 PASSED  1.0000000000000000364e-10   406501.57492472739369       6.3626626835690449095e-15   5.2611125554677658528e-17   
+Base_CUDA-atomic_occgs_256  PASSED  1.0000000000000000364e-10   406501.57492472747811       6.1583627741012447597e-15   7.4538155465724881088e-17   
+RAJA_CUDA-atomic_direct_256 PASSED  1.0000000000000000364e-10   406501.57492472740267       6.3551115575517545551e-15   6.6732943770019535002e-17   
+RAJA_CUDA-atomic_occgs_256  PASSED  1.0000000000000000364e-10   406501.57492472747424       6.2074450932136320649e-15   7.6861318646313688028e-17   
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant             , Base_Seq , Base_CUDA         , Base_CUDA        , RAJA_CUDA         , RAJA_CUDA       
+Tuning              , default  , atomic_direct_256 , atomic_occgs_256 , atomic_direct_256 , atomic_occgs_256
+Basic_MULTI_REDUCE  , 0.085836 ,          0.059346 ,         0.059215 ,          0.061052 ,         0.062158
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  ,  , 
+Variant             , Base_Seq , Base_CUDA         , Base_CUDA        , RAJA_CUDA         , RAJA_CUDA       
+Tuning              , default  , atomic_direct_256 , atomic_occgs_256 , atomic_direct_256 , atomic_occgs_256
+Basic_MULTI_REDUCE  ,    1.000 ,             1.446 ,            1.450 ,             1.406 ,            1.381
+
+
+Min Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant             , Base_Seq , Base_CUDA         , Base_CUDA        , RAJA_CUDA         , RAJA_CUDA       
+Tuning              , default  , atomic_direct_256 , atomic_occgs_256 , atomic_direct_256 , atomic_occgs_256
+Basic_MULTI_REDUCE  , 0.085836 ,          0.059346 ,         0.059215 ,          0.061052 ,         0.062158
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  ,  , 
+Variant             , Base_Seq , Base_CUDA         , Base_CUDA        , RAJA_CUDA         , RAJA_CUDA       
+Tuning              , default  , atomic_direct_256 , atomic_occgs_256 , atomic_direct_256 , atomic_occgs_256
+Basic_MULTI_REDUCE  ,    1.000 ,             1.446 ,            1.450 ,             1.406 ,            1.381
+
+
+Max Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant             , Base_Seq , Base_CUDA         , Base_CUDA        , RAJA_CUDA         , RAJA_CUDA       
+Tuning              , default  , atomic_direct_256 , atomic_occgs_256 , atomic_direct_256 , atomic_occgs_256
+Basic_MULTI_REDUCE  , 0.085836 ,          0.059346 ,         0.059215 ,          0.061052 ,         0.062158
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  ,  ,  , 
+Variant             , Base_Seq , Base_CUDA         , Base_CUDA        , RAJA_CUDA         , RAJA_CUDA       
+Tuning              , default  , atomic_direct_256 , atomic_occgs_256 , atomic_direct_256 , atomic_occgs_256
+Basic_MULTI_REDUCE  ,    1.000 ,             1.446 ,            1.450 ,             1.406 ,            1.381
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Kernel              , Base_Seq-default           ,         , Base_CUDA-atomic_direct_256,         , Base_CUDA-atomic_occgs_256 ,         , RAJA_CUDA-atomic_direct_256,         , RAJA_CUDA-atomic_occgs_256 ,        
+Basic_MULTI_REDUCE  , 0.00                       ,base_ref , 0.00                       ,base_ref , -0.00                      ,         , 0.03                       ,         , 0.05                       ,        
+                    ,                            ,         ,                            ,         ,                            ,         ,                            ,         ,                            ,        
+Col Min             , 0.00                       ,         , 0.00                       ,         , -0.00                      ,         , 0.03                       ,         , 0.05                       ,        
+Col Max             , 0.00                       ,         , 0.00                       ,         , -0.00                      ,         , 0.03                       ,         , 0.05                       ,        
+Col Avg             , 0.00                       ,         , 0.00                       ,         , -0.00                      ,         , 0.03                       ,         , 0.05                       ,        
+Col Std Dev         , 0.00                       ,         , 0.00                       ,         , 0.00                       ,         , 0.00                       ,         , 0.00                       ,        

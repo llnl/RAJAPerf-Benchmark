@@ -1,0 +1,3 @@
+Kernels run on 4 MPI ranks
+Kernel               ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency   , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Basic_MULTI_REDUCE   ,        15624995 ,      50 ,          15624995 ,              1 ,         250000080 ,     15624995 ,           250000000 ,        249999920 ,                   0 ,                         0 ,                              80 ,             250000000 , Inconsistent          , O(N)                    ,                           1 ,                        1

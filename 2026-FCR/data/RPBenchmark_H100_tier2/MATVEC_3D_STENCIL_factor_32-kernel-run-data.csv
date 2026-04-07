@@ -1,0 +1,5 @@
+Kernels run on 4 MPI ranks
+Kernel                   , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MATVEC_3D_STENCIL   , Base_Seq    , default     ,            8000 , PASSED     ,                 8.12208e-05 ,                          13.6766 ,                           5.22034
+Apps_MATVEC_3D_STENCIL   , Base_CUDA   , block_256   ,            8000 , PASSED     ,                 3.63063e-06 ,                          305.958 ,                           116.784
+Apps_MATVEC_3D_STENCIL   , RAJA_CUDA   , block_256   ,            8000 , PASSED     ,                 3.42591e-06 ,                          324.241 ,                           123.763

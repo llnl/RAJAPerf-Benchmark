@@ -1,0 +1,4 @@
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_Seq , Base_HIP , RAJA_HIP
+Tuning         , default  , block_25 , block_25
+Apps_MASS3DPA  , 0.035963 , 0.000991 , 0.000994

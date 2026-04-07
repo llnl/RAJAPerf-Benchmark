@@ -5,8 +5,9 @@ Apps_FEMSWEEP   ,         1533312 ,       1 ,                 1 ,              1
 
 Kernels run on 4 MPI ranks
 Kernel          , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_FEMSWEEP   , Base_HIP   , block_64   ,         1533312 , PASSED     ,                  0.00123325 ,                          210.439 ,                           1086.43
-Apps_FEMSWEEP   , RAJA_HIP   , block_64   ,         1533312 , PASSED     ,                  0.00117445 ,                          220.975 ,                           1140.82
+Apps_FEMSWEEP   , Base_Seq   , default    ,         1533312 , PASSED     ,                    0.592243 ,                         0.438205 ,                           2.26231
+Apps_FEMSWEEP   , Base_HIP   , block_64   ,         1533312 , PASSED     ,                  0.00135780 ,                          191.136 ,                           986.771
+Apps_FEMSWEEP   , RAJA_HIP   , block_64   ,         1533312 , PASSED     ,                  0.00133486 ,                          194.421 ,                           1003.73
 
 
 ===================================================================================================
@@ -19,54 +20,55 @@ Variants          Result  Tolerance                   Average Checksum          
 ----------------------------------------------------------------------------------------
 Apps_FEMSWEEP     
 ........................................................
-Base_HIP-block_64 PASSED  5.0000000000000004090e-06   105797333.57854922472       0.0000000000000000000       0.0000000000000000000       
-RAJA_HIP-block_64 PASSED  5.0000000000000004090e-06   105797333.57854922472       0.0000000000000000000       0.0000000000000000000       
+Base_Seq-default  PASSED  5.0000000000000004090e-06   105797333.60499872038       0.0000000000000000000       0.0000000000000000000       
+Base_HIP-block_64 PASSED  5.0000000000000004090e-06   105797333.57854922472       2.5000153371838101680e-10   0.0000000000000000000       
+RAJA_HIP-block_64 PASSED  5.0000000000000004090e-06   105797333.57854922472       2.5000153371838101680e-10   0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  , 
-Variant        , Base_HIP , RAJA_HIP
-Tuning         , block_64 , block_64
-Apps_FEMSWEEP  , 0.001233 , 0.001174
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_Seq , Base_HIP , RAJA_HIP
+Tuning         , default  , block_64 , block_64
+Apps_FEMSWEEP  , 0.592243 , 0.001358 , 0.001335
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant        , Base_HIP , RAJA_HIP
-Tuning         , block_64 , block_64
-Apps_FEMSWEEP  ,    1.000 ,    1.050
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant        , Base_Seq , Base_HIP , RAJA_HIP
+Tuning         , default  , block_64 , block_64
+Apps_FEMSWEEP  ,    1.000 ,  436.179 ,  443.675
 
 
-Min Runtime Report (sec.)  ,  , 
-Variant        , Base_HIP , RAJA_HIP
-Tuning         , block_64 , block_64
-Apps_FEMSWEEP  , 0.001233 , 0.001174
+Min Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_Seq , Base_HIP , RAJA_HIP
+Tuning         , default  , block_64 , block_64
+Apps_FEMSWEEP  , 0.592243 , 0.001358 , 0.001335
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant        , Base_HIP , RAJA_HIP
-Tuning         , block_64 , block_64
-Apps_FEMSWEEP  ,    1.000 ,    1.050
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant        , Base_Seq , Base_HIP , RAJA_HIP
+Tuning         , default  , block_64 , block_64
+Apps_FEMSWEEP  ,    1.000 ,  436.179 ,  443.675
 
 
-Max Runtime Report (sec.)  ,  , 
-Variant        , Base_HIP , RAJA_HIP
-Tuning         , block_64 , block_64
-Apps_FEMSWEEP  , 0.001233 , 0.001174
+Max Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_Seq , Base_HIP , RAJA_HIP
+Tuning         , default  , block_64 , block_64
+Apps_FEMSWEEP  , 0.592243 , 0.001358 , 0.001335
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_HIP  ,  , 
-Variant        , Base_HIP , RAJA_HIP
-Tuning         , block_64 , block_64
-Apps_FEMSWEEP  ,    1.000 ,    1.050
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant        , Base_Seq , Base_HIP , RAJA_HIP
+Tuning         , default  , block_64 , block_64
+Apps_FEMSWEEP  ,    1.000 ,  436.179 ,  443.675
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
-Kernel         , Base_HIP-block_64,         , RAJA_HIP-block_64,        
-Apps_FEMSWEEP  , 0.00             ,base_ref , -0.05            ,        
-               ,                  ,         ,                  ,        
-Col Min        , 0.00             ,         , -0.05            ,        
-Col Max        , 0.00             ,         , -0.05            ,        
-Col Avg        , 0.00             ,         , -0.05            ,        
-Col Std Dev    , 0.00             ,         , 0.00             ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel         , Base_Seq-default ,         , Base_HIP-block_64,         , RAJA_HIP-block_64,        
+Apps_FEMSWEEP  , 0.00             ,base_ref , 0.00             ,base_ref , -0.02            ,        
+               ,                  ,         ,                  ,         ,                  ,        
+Col Min        , 0.00             ,         , 0.00             ,         , -0.02            ,        
+Col Max        , 0.00             ,         , 0.00             ,         , -0.02            ,        
+Col Avg        , 0.00             ,         , 0.00             ,         , -0.02            ,        
+Col Std Dev    , 0.00             ,         , 0.00             ,         , 0.00             ,        

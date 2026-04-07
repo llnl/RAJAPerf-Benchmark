@@ -1,5 +1,6 @@
 Kernels run on 4 MPI ranks
 Kernel          , Variant    , Tuning                              ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASS3DEA   , Base_HIP   , compile_time_block_stride_loop_64   ,        18198528 , PASSED     ,                 0.000653950 ,                          213.667 ,                           194.800
-Apps_MASS3DEA   , RAJA_HIP   , compile_time_block_stride_loop_64   ,        18198528 , PASSED     ,                  0.00318723 ,                          43.8399 ,                           39.9688
-Apps_MASS3DEA   , RAJA_HIP   , cached_block_stride_loop_64         ,        18198528 , PASSED     ,                 0.000571479 ,                          244.502 ,                           222.912
+Apps_MASS3DEA   , Base_Seq   , default                             ,        18198528 , PASSED     ,                     1.58544 ,                        0.0881316 ,                         0.0803496
+Apps_MASS3DEA   , Base_HIP   , compile_time_block_stride_loop_64   ,        18198528 , PASSED     ,                 0.000658503 ,                          212.190 ,                           193.453
+Apps_MASS3DEA   , RAJA_HIP   , compile_time_block_stride_loop_64   ,        18198528 , PASSED     ,                  0.00312076 ,                          44.7736 ,                           40.8201
+Apps_MASS3DEA   , RAJA_HIP   , cached_block_stride_loop_64         ,        18198528 , PASSED     ,                 0.000553713 ,                          252.347 ,                           230.064

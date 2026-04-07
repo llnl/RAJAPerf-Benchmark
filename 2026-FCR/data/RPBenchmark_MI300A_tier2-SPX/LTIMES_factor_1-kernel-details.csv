@@ -1,0 +1,3 @@
+Kernels run on 4 MPI ranks
+Kernel        ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_LTIMES   ,            2496 ,      50 ,             10400 ,              1 ,            187568 ,       124800 ,              104368 ,           104368 ,               83200 ,                     83200 ,                               0 ,                104368 , ConsistentPerVariantTuning   , O(N)                    ,                           3 ,                        3

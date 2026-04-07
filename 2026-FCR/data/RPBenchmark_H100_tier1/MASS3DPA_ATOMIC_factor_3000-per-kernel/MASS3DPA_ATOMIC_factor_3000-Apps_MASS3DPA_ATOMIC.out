@@ -5,8 +5,9 @@ Apps_MASS3DPA_ATOMIC   ,         1442897 ,      50 ,           1580544 ,        
 
 Kernels run on 4 MPI ranks
 Kernel                 , Variant     , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_MASS3DPA_ATOMIC   , Base_CUDA   , block_64   ,         1442897 , PASSED     ,                 0.000176000 ,                          859.770 ,                           1862.93
-Apps_MASS3DPA_ATOMIC   , RAJA_CUDA   , block_64   ,         1442897 , PASSED     ,                 0.000175892 ,                          860.298 ,                           1864.07
+Apps_MASS3DPA_ATOMIC   , Base_Seq    , default    ,         1442897 , PASSED     ,                   0.0340937 ,                          4.43834 ,                           9.61689
+Apps_MASS3DPA_ATOMIC   , Base_CUDA   , block_64   ,         1442897 , PASSED     ,                 0.000176986 ,                          854.982 ,                           1852.55
+Apps_MASS3DPA_ATOMIC   , RAJA_CUDA   , block_64   ,         1442897 , PASSED     ,                 0.000177120 ,                          854.334 ,                           1851.15
 
 
 ===================================================================================================
@@ -19,54 +20,55 @@ Variants             Result  Tolerance                   Average Checksum       
 ----------------------------------------------------------------------------------------
 Apps_MASS3DPA_ATOMIC 
 ........................................................
+Base_Seq-default     PASSED  1.0000000000000000364e-10   409669195612.52623427       0.0000000000000000000       0.0000000000000000000       
 Base_CUDA-block_64   PASSED  1.0000000000000000364e-10   409669195612.52623427       0.0000000000000000000       0.0000000000000000000       
 RAJA_CUDA-block_64   PASSED  1.0000000000000000364e-10   409669195612.52623427       0.0000000000000000000       0.0000000000000000000       
 
 -------------------------------------------------------
 
 
-Mean Runtime Report (sec.)  ,  , 
-Variant               , Base_CUDA , RAJA_CUDA
-Tuning                , block_64  , block_64 
-Apps_MASS3DPA_ATOMIC  ,  0.008800 ,  0.008795
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant               , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                , default  , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  , 1.704684 ,  0.008849 ,  0.008856
 
 
-Mean Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant               , Base_CUDA , RAJA_CUDA
-Tuning                , block_64  , block_64 
-Apps_MASS3DPA_ATOMIC  ,     1.000 ,     1.001
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant               , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                , default  , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,    1.000 ,   192.635 ,   192.489
 
 
-Min Runtime Report (sec.)  ,  , 
-Variant               , Base_CUDA , RAJA_CUDA
-Tuning                , block_64  , block_64 
-Apps_MASS3DPA_ATOMIC  ,  0.008800 ,  0.008795
+Min Runtime Report (sec.)  ,  ,  , 
+Variant               , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                , default  , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  , 1.704684 ,  0.008849 ,  0.008856
 
 
-Min Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant               , Base_CUDA , RAJA_CUDA
-Tuning                , block_64  , block_64 
-Apps_MASS3DPA_ATOMIC  ,     1.000 ,     1.001
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant               , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                , default  , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,    1.000 ,   192.635 ,   192.489
 
 
-Max Runtime Report (sec.)  ,  , 
-Variant               , Base_CUDA , RAJA_CUDA
-Tuning                , block_64  , block_64 
-Apps_MASS3DPA_ATOMIC  ,  0.008800 ,  0.008795
+Max Runtime Report (sec.)  ,  ,  , 
+Variant               , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                , default  , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  , 1.704684 ,  0.008849 ,  0.008856
 
 
-Max Speedup Report (T_ref/T_var): ref var = Base_CUDA  ,  , 
-Variant               , Base_CUDA , RAJA_CUDA
-Tuning                , block_64  , block_64 
-Apps_MASS3DPA_ATOMIC  ,     1.000 ,     1.001
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant               , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                , default  , block_64  , block_64 
+Apps_MASS3DPA_ATOMIC  ,    1.000 ,   192.635 ,   192.489
 
 
-FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  , 
-'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  , 
-Kernel                , Base_CUDA-block_64,         , RAJA_CUDA-block_64,        
-Apps_MASS3DPA_ATOMIC  , 0.00              ,base_ref , -0.00             ,        
-                      ,                   ,         ,                   ,        
-Col Min               , 0.00              ,         , -0.00             ,        
-Col Max               , 0.00              ,         , -0.00             ,        
-Col Avg               , 0.00              ,         , -0.00             ,        
-Col Std Dev           , 0.00              ,         , 0.00              ,        
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel                , Base_Seq-default  ,         , Base_CUDA-block_64,         , RAJA_CUDA-block_64,        
+Apps_MASS3DPA_ATOMIC  , 0.00              ,base_ref , 0.00              ,base_ref , 0.00              ,        
+                      ,                   ,         ,                   ,         ,                   ,        
+Col Min               , 0.00              ,         , 0.00              ,         , 0.00              ,        
+Col Max               , 0.00              ,         , 0.00              ,         , 0.00              ,        
+Col Avg               , 0.00              ,         , 0.00              ,         , 0.00              ,        
+Col Std Dev           , 0.00              ,         , 0.00              ,         , 0.00              ,        

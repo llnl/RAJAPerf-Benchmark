@@ -1,0 +1,5 @@
+Kernels run on 24 MPI ranks
+Kernel                  , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Basic_INDEXLIST_3LOOP   , Base_Seq   , default     ,         2560000 , PASSED     ,                   0.0108399 ,                          9.23769 ,                           0.00000
+Basic_INDEXLIST_3LOOP   , Base_HIP   , block_256   ,         2560000 , PASSED     ,                 0.000214471 ,                          466.897 ,                           0.00000
+Basic_INDEXLIST_3LOOP   , RAJA_HIP   , block_256   ,         2560000 , PASSED     ,                 0.000214766 ,                          466.256 ,                           0.00000

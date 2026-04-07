@@ -1,4 +1,5 @@
 Kernels run on 4 MPI ranks
 Kernel                       , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_NODAL_ACCUMULATION_3D   , Base_CUDA   , block_256   ,         2985984 , PASSED     ,                 0.000101815 ,                          883.199 ,                           263.948
-Apps_NODAL_ACCUMULATION_3D   , RAJA_CUDA   , block_256   ,         2985984 , PASSED     ,                 0.000101790 ,                          883.413 ,                           264.012
+Apps_NODAL_ACCUMULATION_3D   , Base_Seq    , default     ,         2985984 , PASSED     ,                  0.00910079 ,                          9.88076 ,                           2.95292
+Apps_NODAL_ACCUMULATION_3D   , Base_CUDA   , block_256   ,         2985984 , PASSED     ,                 0.000101832 ,                          883.048 ,                           263.904
+Apps_NODAL_ACCUMULATION_3D   , RAJA_CUDA   , block_256   ,         2985984 , PASSED     ,                 0.000101725 ,                          883.978 ,                           264.181

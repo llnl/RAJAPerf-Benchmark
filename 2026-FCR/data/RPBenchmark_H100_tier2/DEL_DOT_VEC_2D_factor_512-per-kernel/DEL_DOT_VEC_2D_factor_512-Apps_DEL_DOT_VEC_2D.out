@@ -1,0 +1,74 @@
+Kernels run on 4 MPI ranks
+Kernel                ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_DEL_DOT_VEC_2D   ,          528529 ,     100 ,            528529 ,              1 ,          25415952 ,     28540566 ,            25415952 ,         21187720 ,             4228232 ,                         0 ,                               0 ,              25602672 , ConsistentPerVariantTuning   , O(N)                    ,                           1 ,                        2
+
+
+Kernels run on 4 MPI ranks
+Kernel                , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_DEL_DOT_VEC_2D   , Base_Seq    , default     ,          528529 , PASSED     ,                  0.00290632 ,                          8.14447 ,                           9.82016
+Apps_DEL_DOT_VEC_2D   , Base_CUDA   , block_256   ,          528529 , PASSED     ,                 8.60536e-06 ,                          2750.66 ,                           3316.60
+Apps_DEL_DOT_VEC_2D   , RAJA_CUDA   , block_256   ,          528529 , PASSED     ,                 8.56361e-06 ,                          2764.07 ,                           3332.77
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel              
+........................................................
+Variants            Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                    (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_DEL_DOT_VEC_2D 
+........................................................
+Base_Seq-default    PASSED  1.0000000000000000364e-10   8557.7100671090088602       0.0000000000000000000       0.0000000000000000000       
+Base_CUDA-block_256 PASSED  1.0000000000000000364e-10   8557.7100671090088602       0.0000000000000000000       0.0000000000000000000       
+RAJA_CUDA-block_256 PASSED  1.0000000000000000364e-10   8557.7100671090088602       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant              , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning               , default  , block_256 , block_256
+Apps_DEL_DOT_VEC_2D  , 0.290632 ,  0.000861 ,  0.000856
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant              , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning               , default  , block_256 , block_256
+Apps_DEL_DOT_VEC_2D  ,    1.000 ,   337.734 ,   339.381
+
+
+Min Runtime Report (sec.)  ,  ,  , 
+Variant              , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning               , default  , block_256 , block_256
+Apps_DEL_DOT_VEC_2D  , 0.290632 ,  0.000861 ,  0.000856
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant              , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning               , default  , block_256 , block_256
+Apps_DEL_DOT_VEC_2D  ,    1.000 ,   337.734 ,   339.381
+
+
+Max Runtime Report (sec.)  ,  ,  , 
+Variant              , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning               , default  , block_256 , block_256
+Apps_DEL_DOT_VEC_2D  , 0.290632 ,  0.000861 ,  0.000856
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant              , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning               , default  , block_256 , block_256
+Apps_DEL_DOT_VEC_2D  ,    1.000 ,   337.734 ,   339.381
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel               , Base_Seq-default   ,         , Base_CUDA-block_256,         , RAJA_CUDA-block_256,        
+Apps_DEL_DOT_VEC_2D  , 0.00               ,base_ref , 0.00               ,base_ref , -0.00              ,        
+                     ,                    ,         ,                    ,         ,                    ,        
+Col Min              , 0.00               ,         , 0.00               ,         , -0.00              ,        
+Col Max              , 0.00               ,         , 0.00               ,         , -0.00              ,        
+Col Avg              , 0.00               ,         , 0.00               ,         , -0.00              ,        
+Col Std Dev          , 0.00               ,         , 0.00               ,         , 0.00               ,        

@@ -1,0 +1,6 @@
+Kernels run on 24 MPI ranks
+Kernel        , Variant    , Tuning       ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_LTIMES   , Base_Seq   , default      ,            1344 , PASSED     ,                 1.08737e-05 ,                          8.69785 ,                           6.18006
+Apps_LTIMES   , Base_HIP   , block_256    ,            1344 , FAILED     ,                 3.07262e-06 ,                          30.7808 ,                           21.8706
+Apps_LTIMES   , RAJA_HIP   , kernel_256   ,            1344 , FAILED     ,                 3.09042e-06 ,                          30.6035 ,                           21.7446
+Apps_LTIMES   , RAJA_HIP   , launch_256   ,            1344 , FAILED     ,                 4.16324e-06 ,                          22.7173 ,                           16.1413

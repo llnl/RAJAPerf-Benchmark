@@ -1,0 +1,4 @@
+Max Runtime Report (sec.)  ,  ,  , 
+Variant        , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning         , default  , block_25  , block_25 
+Apps_MASS3DPA  , 0.110162 ,  0.000588 ,  0.000591

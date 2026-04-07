@@ -27,9 +27,18 @@ TIER="${1:-}"
 # to use ~150MB of allocated memory, which is about 3 times the L2-cache
 # size on the H100. The L2-cache is 50 MB (50 * 1024 * 1024 = 52428800 bytes).
 #
-# IMPORTANT NOTE: Tier1 kernels, FEMSWEEP and MASS3DEA, are run over
+# IMPORTANT NOTE: Tier1 kernels FEMSWEEP and MASS3DEA are run over
 #                 different problem size ranges than what's described above.
 #                 These kernels do not have clear saturation points.
+#
+# IMPORTANT NOTES: Tier2 kernels INDEXLIST_3LOOP, HALO_PACKING_FUSED,
+#                  MULTI_REDUCE, and REDUCE_STRUCT are run over different
+#                  problem size ranges than what's described above to better
+#                  expose their throughput scaling behavior.
+#
+#                  The Tier2 kernels INDEXLIST_3LOOP and HALO_PACKING_FUSED
+#                  do not perform any floating point operations. So we
+#                  recommend looking at bandwidth plots for those.
 #
 ############################################################################
 
@@ -78,15 +87,16 @@ salloc ${ALLOC_ARGS} bash -lc '
                           "MASS3DEA")
      ;;
     tier2)
-      KERNELS=("CONVECTION3DPA"
-               "DEL_DOT_VEC_2D"
-               "INTSC_HEXHEX"
-               "LTIMES"
-               "MASS3DPA"
-               "MULTI_REDUCEC"
-               "REDUCE_STRUCT"
-               "INDEXLIST_3LOOP"
-               "HALO_PACKING_FUSED")
+       KERNELS=("CONVECTION3DPA"
+                "DEL_DOT_VEC_2D"
+                "INTSC_HEXHEX"
+                "LTIMES"
+                "MASS3DPA"
+                "MATVEC_3D_STENCIL")
+       KERNELS_DIFFRANGE=("MULTI_REDUCE"
+                          "REDUCE_STRUCT"
+                          "INDEXLIST_3LOOP"
+                          "HALO_PACKING_FUSED")
       ;;
     *)
       echo "Error: unknown kernel set: ${TIER}"
@@ -111,11 +121,11 @@ salloc ${ALLOC_ARGS} bash -lc '
         --outfile "${KERNEL_NAME}_factor_${factor}" \
         --memory-allocated "${mem}" \
         --warmup-perfrun-same \
-        -ev Seq Lambda
+        -ev RAJA_Seq Lambda
     done
   done
 
-  if [[ -n "$KERNELS_DIFFRANGE" ]]; then
+  if [[ -n "${KERNELS_DIFFRANGE:-}" ]]; then
 
     for KERNEL_NAME in "${KERNELS_DIFFRANGE[@]}"; do
       echo "Running kernel: ${KERNEL_NAME}"
@@ -131,7 +141,7 @@ salloc ${ALLOC_ARGS} bash -lc '
           --outfile "${KERNEL_NAME}_factor_${factor}" \
           --memory-allocated "${mem}" \
           --warmup-perfrun-same \
-          -ev Seq Lambda
+          -ev RAJA_Seq Lambda
       done
     done
 

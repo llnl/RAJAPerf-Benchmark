@@ -1,4 +1,5 @@
 Kernels run on 4 MPI ranks
 Kernel       , Variant     , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_VOL3D   , Base_CUDA   , block_256   ,          343000 , PASSED     ,                 8.17977e-06 ,                          1451.12 ,                           3469.14
-Apps_VOL3D   , RAJA_CUDA   , block_256   ,          343000 , PASSED     ,                 6.03787e-06 ,                          1965.90 ,                           4699.80
+Apps_VOL3D   , Base_Seq    , default     ,          343000 , PASSED     ,                  0.00264511 ,                          4.48746 ,                           10.7280
+Apps_VOL3D   , Base_CUDA   , block_256   ,          343000 , PASSED     ,                 8.32725e-06 ,                          1425.42 ,                           3407.70
+Apps_VOL3D   , RAJA_CUDA   , block_256   ,          343000 , PASSED     ,                 6.09938e-06 ,                          1946.07 ,                           4652.40

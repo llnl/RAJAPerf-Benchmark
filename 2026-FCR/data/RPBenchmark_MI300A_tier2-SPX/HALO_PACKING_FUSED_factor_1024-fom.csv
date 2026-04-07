@@ -1,0 +1,9 @@
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  ,  ,  ,  ,  , 
+Kernel                   , Base_Seq-direct       ,         , Base_HIP-direct_1024  ,         , RAJA_HIP-direct_1024  ,         , RAJA_HIP-funcptr_1024 ,         , RAJA_HIP-virtfunc_1024,        
+Comm_HALO_PACKING_FUSED  , 0                     ,base_ref , 0                     ,base_ref , 0.24                  ,OVER_TOL , 0.11                  ,OVER_TOL , 0.16                  ,OVER_TOL
+                         ,                       ,         ,                       ,         ,                       ,         ,                       ,         ,                       ,        
+Col Min                  , 0                     ,         , 0                     ,         , 0.24                  ,         , 0.11                  ,         , 0.16                  ,        
+Col Max                  , 0                     ,         , 0                     ,         , 0.24                  ,         , 0.11                  ,         , 0.16                  ,        
+Col Avg                  , 0                     ,         , 0                     ,         , 0.24                  ,         , 0.11                  ,         , 0.16                  ,        
+Col Std Dev              , 0                     ,         , 0                     ,         , 0                     ,         , 0                     ,         , 0                     ,        

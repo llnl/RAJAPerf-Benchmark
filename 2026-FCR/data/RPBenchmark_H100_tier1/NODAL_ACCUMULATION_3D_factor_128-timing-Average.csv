@@ -1,4 +1,4 @@
-Mean Runtime Report (sec.)  ,  , 
-Variant                     , Base_CUDA , RAJA_CUDA
-Tuning                      , block_256 , block_256
-Apps_NODAL_ACCUMULATION_3D  ,  0.001007 ,  0.001001
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant                     , Base_Seq , Base_CUDA , RAJA_CUDA
+Tuning                      , default  , block_256 , block_256
+Apps_NODAL_ACCUMULATION_3D  , 0.047674 ,  0.001003 ,  0.001003

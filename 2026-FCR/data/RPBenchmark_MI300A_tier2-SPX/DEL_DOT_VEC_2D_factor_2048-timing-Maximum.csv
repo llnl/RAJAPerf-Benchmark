@@ -1,0 +1,4 @@
+Max Runtime Report (sec.)  ,  ,  , 
+Variant              , Base_Seq , Base_HIP  , RAJA_HIP 
+Tuning               , default  , block_256 , block_256
+Apps_DEL_DOT_VEC_2D  , 3.053509 ,  0.009224 ,  0.009285

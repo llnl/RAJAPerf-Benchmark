@@ -1,0 +1,4 @@
+Min Runtime Report (sec.)  ,  ,  ,  ,  , 
+Variant                  , Base_Seq , Base_HIP    , RAJA_HIP    , RAJA_HIP     , RAJA_HIP     
+Tuning                   , direct   , direct_1024 , direct_1024 , funcptr_1024 , virtfunc_1024
+Comm_HALO_PACKING_FUSED  , 0.026329 ,    0.006624 ,    0.007811 ,     0.007472 ,      0.007865

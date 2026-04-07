@@ -1,4 +1,5 @@
 Kernels run on 4 MPI ranks
 Kernel        , Variant    , Tuning      ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
-Apps_ENERGY   , Base_HIP   , block_256   ,            3334 , PASSED     ,                 1.16869e-05 ,                          57.3879 ,                           15.6902
-Apps_ENERGY   , RAJA_HIP   , block_256   ,            3334 , PASSED     ,                 1.19325e-05 ,                          56.2066 ,                           15.3672
+Apps_ENERGY   , Base_Seq   , default     ,            3334 , PASSED     ,                 1.61679e-05 ,                          41.4825 ,                           11.3416
+Apps_ENERGY   , Base_HIP   , block_256   ,            3334 , PASSED     ,                 1.17104e-05 ,                          57.2725 ,                           15.6587
+Apps_ENERGY   , RAJA_HIP   , block_256   ,            3334 , PASSED     ,                 1.22608e-05 ,                          54.7015 ,                           14.9557

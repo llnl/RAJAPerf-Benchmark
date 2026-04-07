@@ -1,0 +1,5 @@
+Kernels run on 24 MPI ranks
+Kernel                , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_CONVECTION3DPA   , Base_Seq   , default    ,         1028970 , PASSED     ,                   0.0376482 ,                          2.05897 ,                           3.72818
+Apps_CONVECTION3DPA   , Base_HIP   , block_64   ,         1028970 , PASSED     ,                 0.000379837 ,                          204.078 ,                           369.525
+Apps_CONVECTION3DPA   , RAJA_HIP   , block_64   ,         1028970 , PASSED     ,                 0.000378437 ,                          204.833 ,                           370.892

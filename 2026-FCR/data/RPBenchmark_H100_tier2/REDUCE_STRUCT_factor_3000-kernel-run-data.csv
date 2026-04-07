@@ -1,0 +1,13 @@
+Kernels run on 4 MPI ranks
+Kernel                , Variant     , Tuning                  ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Basic_REDUCE_STRUCT   , Base_Seq    , default                 ,         9375000 , PASSED     ,                   0.0152428 ,                          9.16486 ,                           1.23009
+Basic_REDUCE_STRUCT   , Base_Seq    , kahan                   ,         9375000 , PASSED     ,                   0.0241246 ,                          5.79071 ,                          0.777216
+Basic_REDUCE_STRUCT   , Base_Seq    , cascade                 ,         9375000 , PASSED     ,                   0.0246052 ,                          5.67759 ,                          0.762034
+Basic_REDUCE_STRUCT   , Base_CUDA   , blkatm_direct_256       ,         9375000 , PASSED     ,                  0.00106026 ,                          131.759 ,                           17.6844
+Basic_REDUCE_STRUCT   , Base_CUDA   , blkatm_occgs_256        ,         9375000 , PASSED     ,                  0.00118735 ,                          117.655 ,                           15.7914
+Basic_REDUCE_STRUCT   , RAJA_CUDA   , blkatm_direct_256       ,         9375000 , PASSED     ,                  0.00104376 ,                          133.842 ,                           17.9640
+Basic_REDUCE_STRUCT   , RAJA_CUDA   , blkdev_direct_256       ,         9375000 , PASSED     ,                 0.000717588 ,                          194.678 ,                           26.1292
+Basic_REDUCE_STRUCT   , RAJA_CUDA   , blkdev_direct_new_256   ,         9375000 , PASSED     ,                 0.000520792 ,                          268.242 ,                           36.0028
+Basic_REDUCE_STRUCT   , RAJA_CUDA   , blkatm_occgs_256        ,         9375000 , PASSED     ,                  0.00118794 ,                          117.597 ,                           15.7837
+Basic_REDUCE_STRUCT   , RAJA_CUDA   , blkdev_occgs_256        ,         9375000 , PASSED     ,                 7.64178e-05 ,                          1828.09 ,                           245.362
+Basic_REDUCE_STRUCT   , RAJA_CUDA   , blkdev_occgs_new_256    ,         9375000 , PASSED     ,                 8.68140e-05 ,                          1609.17 ,                           215.979

@@ -1,0 +1,74 @@
+Kernels run on 4 MPI ranks
+Kernel                ,    Problem size ,    Reps ,    Iterations/rep ,    Kernels/rep ,    BytesMoved/rep ,    FLOPS/rep ,    BytesTouched/rep ,    BytesRead/rep ,    BytesWritten/rep ,    BytesModifyWritten/rep ,    BytesAtomicModifyWritten/rep ,    BytesAllocated/rep , ChecksumConsistency          , OperationalComplexity   , MaxPerfectLoopDimensions    , ProblemDimensionality   
+Apps_CONVECTION3DPA   ,         4115853 ,      50 ,           4115853 ,              1 ,         332927064 ,    561432837 ,           300000240 ,        300000240 ,            32926824 ,                  32926824 ,                               0 ,             300000240 , ConsistentPerVariantTuning   , O(N)                    ,                           3 ,                        3
+
+
+Kernels run on 4 MPI ranks
+Kernel                , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_CONVECTION3DPA   , Base_Seq   , default    ,         4115853 , PASSED     ,                    0.151362 ,                          2.04849 ,                           3.70921
+Apps_CONVECTION3DPA   , Base_HIP   , block_64   ,         4115853 , PASSED     ,                 0.000247403 ,                          1253.27 ,                           2269.31
+Apps_CONVECTION3DPA   , RAJA_HIP   , block_64   ,         4115853 , PASSED     ,                 0.000246720 ,                          1256.74 ,                           2275.59
+
+
+===================================================================================================
+Checksum Report for 4 MPI ranks 
+===================================================================================================
+Kernel              
+........................................................
+Variants            Result  Tolerance                   Average Checksum            Max Checksum Rel Diff       Checksum Rel Diff StdDev    
+                                                                                    (vs. first variant listed)                              
+----------------------------------------------------------------------------------------
+Apps_CONVECTION3DPA 
+........................................................
+Base_Seq-default    PASSED  1.0000000000000000364e-10   1066819150238.6197934       0.0000000000000000000       0.0000000000000000000       
+Base_HIP-block_64   PASSED  1.0000000000000000364e-10   1066819150238.6197934       0.0000000000000000000       0.0000000000000000000       
+RAJA_HIP-block_64   PASSED  1.0000000000000000364e-10   1066819150238.6197934       0.0000000000000000000       0.0000000000000000000       
+
+-------------------------------------------------------
+
+
+Mean Runtime Report (sec.)  ,  ,  , 
+Variant              , Base_Seq , Base_HIP , RAJA_HIP
+Tuning               , default  , block_64 , block_64
+Apps_CONVECTION3DPA  , 7.568088 , 0.012370 , 0.012336
+
+
+Mean Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant              , Base_Seq , Base_HIP , RAJA_HIP
+Tuning               , default  , block_64 , block_64
+Apps_CONVECTION3DPA  ,    1.000 ,  611.803 ,  613.496
+
+
+Min Runtime Report (sec.)  ,  ,  , 
+Variant              , Base_Seq , Base_HIP , RAJA_HIP
+Tuning               , default  , block_64 , block_64
+Apps_CONVECTION3DPA  , 7.568088 , 0.012370 , 0.012336
+
+
+Min Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant              , Base_Seq , Base_HIP , RAJA_HIP
+Tuning               , default  , block_64 , block_64
+Apps_CONVECTION3DPA  ,    1.000 ,  611.803 ,  613.496
+
+
+Max Runtime Report (sec.)  ,  ,  , 
+Variant              , Base_Seq , Base_HIP , RAJA_HIP
+Tuning               , default  , block_64 , block_64
+Apps_CONVECTION3DPA  , 7.568088 , 0.012370 , 0.012336
+
+
+Max Speedup Report (T_ref/T_var): ref var = Base_Seq  ,  ,  , 
+Variant              , Base_Seq , Base_HIP , RAJA_HIP
+Tuning               , default  , block_64 , block_64
+Apps_CONVECTION3DPA  ,    1.000 ,  611.803 ,  613.496
+
+
+FOM Report : signed speedup(-)/slowdown(+) for each PM (base vs. RAJA) -> (T_RAJA - T_base) / T_base ) ,  ,  ,  ,  ,  , 
+'OVER_TOL' in column to right if RAJA speedup is over tolerance ,  ,  ,  ,  ,  , 
+Kernel               , Base_Seq-default ,         , Base_HIP-block_64,         , RAJA_HIP-block_64,        
+Apps_CONVECTION3DPA  , 0.00             ,base_ref , 0.00             ,base_ref , -0.00            ,        
+                     ,                  ,         ,                  ,         ,                  ,        
+Col Min              , 0.00             ,         , 0.00             ,         , -0.00            ,        
+Col Max              , 0.00             ,         , 0.00             ,         , -0.00            ,        
+Col Avg              , 0.00             ,         , 0.00             ,         , -0.00            ,        
+Col Std Dev          , 0.00             ,         , 0.00             ,         , 0.00             ,        

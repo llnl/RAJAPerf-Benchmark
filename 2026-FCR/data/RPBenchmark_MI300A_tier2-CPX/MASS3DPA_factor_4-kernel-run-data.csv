@@ -1,0 +1,5 @@
+Kernels run on 24 MPI ranks
+Kernel          , Variant    , Tuning     ,    Problem size , Checksum   ,    Mean time per rep (sec.) ,    Mean Bandwidth (GiB per sec.) ,    Mean flops (gigaFLOP per sec.)
+Apps_MASS3DPA   , Base_Seq   , default    ,            6336 , PASSED     ,                 4.44523e-05 ,                          5.26676 ,                           11.2892
+Apps_MASS3DPA   , Base_HIP   , block_25   ,            6336 , PASSED     ,                 4.15182e-06 ,                          56.3896 ,                           120.870
+Apps_MASS3DPA   , RAJA_HIP   , block_25   ,            6336 , PASSED     ,                 4.18842e-06 ,                          55.8969 ,                           119.814
