@@ -1,6 +1,6 @@
 This directory contains performance data and scripts to generate and process
 that data for the RAJA Performance Suite benchmarking exercise corresponding to
-version v2026.04.1 of this repo (2026 FCR). The scripts and data are contained in the
+version v2026.10.0 of this repo. The scripts and data are contained in the
 `scripts` and `data` subdirectories of this directory, respectively.
 
 A detailed discussion of the kernels and results can be found here:
@@ -24,13 +24,13 @@ each kernel include:
 
 Code version, compilation, execution:
  
-   * Performance data was generated using the RAJA Performance Suite v2025.12.1.
+   * Performance data was generated using the RAJA Performance Suite v2026.07.0.
      To make sure you have the correct version of this benchmark repo and the
      corresponding version of the RAJAPerf code:
 
      $ cd RAJAPerf-Benchmark   (top-level of this repo)
      $ git pull
-     $ git checkout v2026.04.1
+     $ git checkout v2026.10.0
      $ git submodule update --init --recursive
 
    * For MI300A architecture:
@@ -89,6 +89,4 @@ generated with the command:
     --root-dir path/to/build_lc_toss4-cray-mpich-9.0.1-amdclang-6.4.3-gfx942/RPBenchmark_MI300A_tier1-SPX \
     --output-dir path/to/build_lc_toss4-cray-mpich-9.0.1-amdclang-6.4.3-gfx942/RPBenchmark_MI300A_tier1-SPX/Output \
     --exclude-plot-variant Base_Seq
-
-
 
