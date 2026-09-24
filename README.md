@@ -24,6 +24,10 @@ parallel programming models, such as OpenMP and CUDA, directly.
 This project is used to maintain scripts and data associated with RAJA
 Performance Suite benchmarking activities.
 
+Each benchmark activity is located in a separate subdirectory that contains
+a description of the results along with instructions for building and running
+the code and generating the results.
+
 Documentation
 -------------------
 
