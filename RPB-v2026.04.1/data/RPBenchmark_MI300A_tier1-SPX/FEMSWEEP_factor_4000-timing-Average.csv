@@ -1,4 +1,0 @@
-Mean Runtime Report (sec.)  ,  ,  , 
-Variant        , Base_Seq , Base_HIP , RAJA_HIP
-Tuning         , default  , block_64 , block_64
-Apps_FEMSWEEP  , 1.251956 , 0.002610 , 0.002599
