@@ -1,4 +1,0 @@
-Max Runtime Report (sec.)  ,  ,  ,  ,  ,  , 
-Variant           , Base_Seq , Base_CUDA                    , Base_CUDA , RAJA_CUDA                    , RAJA_CUDA , RAJA_CUDA                  
-Tuning            , default  , runtime_block_stride_loop_64 , direct_64 , runtime_block_stride_loop_64 , direct_64 , cached_block_stride_loop_64
-Apps_MASSVEC3DPA  , 0.291942 ,                     0.002383 ,  0.001634 ,                     0.002433 ,  0.001645 ,                    0.002438

@@ -1,4 +1,0 @@
-Min Runtime Report (sec.)  ,  ,  , 
-Variant        , Base_Seq , Base_CUDA , RAJA_CUDA
-Tuning         , default  , block_128 , block_128
-Apps_FEMSWEEP  , 0.497560 ,  0.004199 ,  0.004943
