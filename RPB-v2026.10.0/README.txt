@@ -90,3 +90,4 @@ generated with the command:
     --output-dir path/to/build_lc_toss4-cray-mpich-9.0.1-amdclang-6.4.3-gfx942/RPBenchmark_MI300A_tier1-SPX/Output \
     --exclude-plot-variant Base_Seq
 
+Processing the data for other runs is similar with the directory names changed.
