@@ -1,12 +1,12 @@
 This directory contains performance data and scripts to generate and process
 that data for the RAJA Performance Suite benchmarking exercise corresponding to
-version v2026.04.1 of this repo (2026 FCR). The scripts and data are contained in the
+version v2026.04.1 of this repo. The scripts and data are contained in the
 `scripts` and `data` subdirectories of this directory, respectively.
 
-A detailed discussion of the kernels and results can be found here:
+A detailed discussion of the kernels and *latest* results can be found here:
 https://software.llnl.gov/benchmarks/13_rajaperf/rajaperf.html
 
-However, the information there may not match what is described below due to
+However, the information there may not match what is described in this file due to
 the independent nature of the LLNL Benchmarks project and this repo.
 
 The results here include throughput studies for two GPU architectures:
@@ -18,7 +18,7 @@ The benchmark uses two subsets of kernels in the RAJA Performance Suite called
 Tier 1 and Tier 2. Each Tier contains ten kernels. The summarized metrics for
 each kernel include:
 
-  * Problem size at the saturation (iteration space size)
+  * Problem size (GB - allocated memory) at the saturation point
   * Compute rate (GFLOP/s) at the saturation point
   * Memory bandwidth rate (GB/s) at the saturation point
 
@@ -90,7 +90,4 @@ generated with the command:
     --output-dir path/to/build_lc_toss4-cray-mpich-9.0.1-amdclang-6.4.3-gfx942/RPBenchmark_MI300A_tier1-SPX/Output \
     --exclude-plot-variant Base_Seq
 
-Processing the data for other runs is similar with the directory names changed.
-
-
-
+Processing the data for other runs is similar using appropriate directory names.

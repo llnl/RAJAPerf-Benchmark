@@ -3,10 +3,10 @@ that data for the RAJA Performance Suite benchmarking exercise corresponding to
 version v2026.10.0 of this repo. The scripts and data are contained in the
 `scripts` and `data` subdirectories of this directory, respectively.
 
-A detailed discussion of the kernels and results can be found here:
+A detailed discussion of the kernels and *latest* results can be found here:
 https://software.llnl.gov/benchmarks/13_rajaperf/rajaperf.html
 
-However, the information there may not match what is described below due to
+However, the information there may not match what is described in this file due to
 the independent nature of the LLNL Benchmarks project and this repo.
 
 The results here include throughput studies for two GPU architectures:
@@ -18,7 +18,7 @@ The benchmark uses two subsets of kernels in the RAJA Performance Suite called
 Tier 1 and Tier 2. Each Tier contains ten kernels. The summarized metrics for
 each kernel include:
 
-  * Problem size at the saturation (iteration space size)
+  * Problem size (GB - allocated memory) at the saturation point
   * Compute rate (GFLOP/s) at the saturation point
   * Memory bandwidth rate (GB/s) at the saturation point
 
@@ -63,13 +63,13 @@ Code version, compilation, execution:
    * For H100 architecture:
 
        * The code was built using version 2.3.7 of the MVAPICH2 MPI library,
-         version 12.9.1 of the nvcc compiler for CUDA targeting GPU compute
+         version 13.1.1 of the nvcc compiler for CUDA targeting GPU compute
          architecture sm_90, and version 10.3.1 of the GNU compiler for
          compiling host code.
 
            $ cd path/to/RAJAPerf
-           $ ./scripts/lc-builds/toss4_mvapich2_nvcc_gcc.sh 2.3.7 12.9.1 90 10.3.1
-           $ cd build_lc_toss4-mvapich2-2.3.7-nvcc-12.9.1-90-gcc-10.3.1
+           $ ./scripts/lc-builds/toss4_mvapich2_nvcc_gcc.sh 2.3.7 13.1.1 90 10.3.1
+           $ cd build_lc_toss4-mvapich2-2.3.7-nvcc-13.1.1-90-gcc-10.3.1
            $ make -j
 
        * The code was run on a single compute node containing 4 H100 GPUs
@@ -77,7 +77,7 @@ Code version, compilation, execution:
          directory, which runs the code using 4 MPI ranks (1 per GPU).
 
            $ cd path/to/RAJAPerf
-           $ cd build_lc_toss4-mvapich2-2.3.7-nvcc-12.9.1-90-gcc-10.3.1
+           $ cd build_lc_toss4-mvapich2-2.3.7-nvcc-13.1.1-90-gcc-10.3.1
            $ ./run_tier_h100a.sh tier1/tier2 
 
 After completing the runs described above, the raw run data was processed to generate
@@ -90,4 +90,4 @@ generated with the command:
     --output-dir path/to/build_lc_toss4-cray-mpich-9.0.1-amdclang-6.4.3-gfx942/RPBenchmark_MI300A_tier1-SPX/Output \
     --exclude-plot-variant Base_Seq
 
-Processing the data for other runs is similar with the directory names changed.
+Processing the data for other runs is similar using appropriate directory names.
