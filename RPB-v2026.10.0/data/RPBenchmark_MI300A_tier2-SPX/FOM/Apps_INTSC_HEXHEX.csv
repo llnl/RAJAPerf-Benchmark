@@ -1,0 +1,4 @@
+Kernel,Sat Problem Size,Sat GFLOP/s,Sat B/W (GiB per sec.)
+Apps_INTSC_HEXHEX-Base_Seq-default,27.0,4.67961,0.100885
+Apps_INTSC_HEXHEX-Base_HIP-block_64,125.0,21.7452,0.468793
+Apps_INTSC_HEXHEX-RAJA_HIP-block_64,6859.0,88.4545,1.90694

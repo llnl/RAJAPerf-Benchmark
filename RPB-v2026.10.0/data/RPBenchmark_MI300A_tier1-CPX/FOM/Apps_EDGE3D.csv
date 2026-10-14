@@ -1,0 +1,4 @@
+Kernel,Sat Problem Size,Sat GFLOP/s,Sat B/W (GiB per sec.)
+Apps_EDGE3D-Base_Seq-default,512.0,8.38987,0.0204979
+Apps_EDGE3D-Base_HIP-block_256,35937.0,4501.14,10.3756
+Apps_EDGE3D-RAJA_HIP-block_256,35937.0,4532.44,10.4478

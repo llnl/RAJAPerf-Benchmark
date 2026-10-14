@@ -1,4 +1,0 @@
-Mean Runtime Report (sec.)  ,  ,  , 
-Variant      , Base_Seq , Base_HIP  , RAJA_HIP 
-Tuning       , default  , block_256 , block_256
-Apps_ENERGY  , 3.309614 ,  0.025800 ,  0.025752
