@@ -277,6 +277,29 @@ def moving_median_smooth(y, k: int = 5):
         y_smooth.append(statistics.median(window))
     return y_smooth
 
+def has_zero_range(y) -> bool:
+    """Return whether all finite values in a non-empty curve are identical."""
+    values = np.asarray(y, dtype=float)
+    values = values[np.isfinite(values)]
+    return len(values) > 0 and np.ptp(values) == 0
+
+def select_saturation_curve(
+    subdf: pd.DataFrame,
+    preferred_raw_col: str = RAW_FLOPS_COL,
+    preferred_smooth_col: str = SMOOTH_FLOPS_COL,
+    alternate_raw_col: str = BANDWIDTH_COL,
+    alternate_smooth_col: str = SMOOTH_BW_COL,
+):
+    """Select the preferred curve unless it is constant and the alternate varies."""
+    preferred_raw = subdf[preferred_raw_col].astype(float).values
+
+    if alternate_raw_col in subdf.columns and alternate_smooth_col in subdf.columns:
+        alternate_raw = subdf[alternate_raw_col].astype(float).values
+        if has_zero_range(preferred_raw) and not has_zero_range(alternate_raw):
+            return subdf[alternate_smooth_col].astype(float).values
+
+    return subdf[preferred_smooth_col].astype(float).values
+
 def find_saturation_point(x, y_smooth, eps: float = 0.1, w: int = 3):
     """
     Returns the index of the x value at the first saturation point,
@@ -423,7 +446,7 @@ def find_saturation_kernel(
         subdf = df[df[VARIANT_TUNING_COL] == variant].copy()
         subdf = subdf.sort_values(PROBLEM_SIZE_COL)
         x = subdf[PROBLEM_SIZE_COL].astype(float).values
-        y_smooth = subdf[SMOOTH_FLOPS_COL].astype(float).values
+        y_smooth = select_saturation_curve(subdf)
         sat_size = ""
         sat_flops = ""
         sat_bw = ""
@@ -909,7 +932,7 @@ def save_fom_tables(
             subdf = df_kernel[df_kernel[VARIANT_TUNING_COL] == vt].copy()
             subdf = subdf.sort_values(PROBLEM_SIZE_COL)
             x = subdf[PROBLEM_SIZE_COL].astype(float).values
-            y_smooth = subdf[SMOOTH_FLOPS_COL].astype(float).values
+            y_smooth = select_saturation_curve(subdf)
             sat_size = None
             sat_flops_raw = ""
             sat_bw = ""
