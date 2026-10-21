@@ -22,6 +22,16 @@ each kernel include:
   * Compute rate (GFLOP/s) at the saturation point
   * Memory bandwidth rate (GB/s) at the saturation point
 
+===================================================================
+IMPORTANT:
+  - The saturation point for all kernels, except two, is estimated
+    based on compute rate data.
+  - The Tier 2 kernels INDEXLIST_3LOOP and HALO_PACKING_FUSED
+    perform no floating point operations. Thus, we estimate
+    the saturation point for those kernels based on memory
+    bandwidth data.
+===================================================================
+
 Code version, compilation, execution:
  
    * Performance data was generated using the RAJA Performance Suite v2026.07.0.
