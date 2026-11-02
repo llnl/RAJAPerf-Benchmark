@@ -75,7 +75,8 @@ salloc ${ALLOC_ARGS} bash -lc '
 
   case "${TIER,,}" in
     tier1)
-       KERNELS=("DIFFUSION3DPA"
+       KERNELS=("TRIAD"
+                "DIFFUSION3DPA"
                 "EDGE3D"
                 "ENERGY"
                 "INTSC_HEXRECT"
